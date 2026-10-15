@@ -1,0 +1,23 @@
+{
+  "built_on": "2026-10-15",
+  "source": "arXiv OAI-PMH (oaipmh.arxiv.org), set physics:astro-ph (incl. cross-lists), metadataPrefix arXivRaw; published = v1 date",
+  "harvest_years": [
+    2013,
+    2026
+  ],
+  "snapshot_end": "2026-10-14",
+  "n_papers_total": 236290,
+  "corpus_sha256": "00747b52595560f2b5101ef9e77454f018ebb32251550902dc9ab10c0191df66",
+  "subfield_paper_totals": {
+    "exoplanet_atmospheres": 4224,
+    "protoplanetary_disks": 8649,
+    "stellar_activity": 3796,
+    "fast_radio_bursts": 2205,
+    "gravitational_waves": 17636,
+    "galaxy_evolution": 18109,
+    "cosmology_tensions": 12909,
+    "compact_objects": 27397
+  },
+  "agreement_with_paper3": "per-year totals identical 2014-2021, within 0.02% 2022-2025; per-subfield ratios 1.000-1.003 (data/corpus/harvest_comparison.json)",
+  "rebuild": "python -m forecast.harvest_oai (4 datestamp windows) && python -m forecast.corpus_build"
+}

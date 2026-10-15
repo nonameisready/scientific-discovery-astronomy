@@ -1,0 +1,572 @@
+{
+  "total": {
+    "2014": {
+      "paper3": 14558,
+      "this_harvest": 14558,
+      "ratio": 1.0
+    },
+    "2015": {
+      "paper3": 14938,
+      "this_harvest": 14938,
+      "ratio": 1.0
+    },
+    "2016": {
+      "paper3": 15179,
+      "this_harvest": 15179,
+      "ratio": 1.0
+    },
+    "2017": {
+      "paper3": 15137,
+      "this_harvest": 15137,
+      "ratio": 1.0
+    },
+    "2018": {
+      "paper3": 15948,
+      "this_harvest": 15948,
+      "ratio": 1.0
+    },
+    "2019": {
+      "paper3": 16602,
+      "this_harvest": 16602,
+      "ratio": 1.0
+    },
+    "2020": {
+      "paper3": 17289,
+      "this_harvest": 17289,
+      "ratio": 1.0
+    },
+    "2021": {
+      "paper3": 17118,
+      "this_harvest": 17118,
+      "ratio": 1.0
+    },
+    "2022": {
+      "paper3": 17143,
+      "this_harvest": 17144,
+      "ratio": 1.0001
+    },
+    "2023": {
+      "paper3": 18003,
+      "this_harvest": 18004,
+      "ratio": 1.0001
+    },
+    "2024": {
+      "paper3": 19226,
+      "this_harvest": 19228,
+      "ratio": 1.0001
+    },
+    "2025": {
+      "paper3": 21869,
+      "this_harvest": 21873,
+      "ratio": 1.0002
+    }
+  },
+  "subfields": {
+    "exoplanet_atmospheres": {
+      "2014": {
+        "paper3": 166,
+        "this_harvest": 166,
+        "ratio": 1.0
+      },
+      "2015": {
+        "paper3": 169,
+        "this_harvest": 169,
+        "ratio": 1.0
+      },
+      "2016": {
+        "paper3": 189,
+        "this_harvest": 189,
+        "ratio": 1.0
+      },
+      "2017": {
+        "paper3": 239,
+        "this_harvest": 239,
+        "ratio": 1.0
+      },
+      "2018": {
+        "paper3": 272,
+        "this_harvest": 272,
+        "ratio": 1.0
+      },
+      "2019": {
+        "paper3": 302,
+        "this_harvest": 302,
+        "ratio": 1.0
+      },
+      "2020": {
+        "paper3": 344,
+        "this_harvest": 344,
+        "ratio": 1.0
+      },
+      "2021": {
+        "paper3": 324,
+        "this_harvest": 324,
+        "ratio": 1.0
+      },
+      "2022": {
+        "paper3": 346,
+        "this_harvest": 346,
+        "ratio": 1.0
+      },
+      "2023": {
+        "paper3": 357,
+        "this_harvest": 357,
+        "ratio": 1.0
+      },
+      "2024": {
+        "paper3": 429,
+        "this_harvest": 429,
+        "ratio": 1.0
+      },
+      "2025": {
+        "paper3": 473,
+        "this_harvest": 474,
+        "ratio": 1.0021
+      }
+    },
+    "protoplanetary_disks": {
+      "2014": {
+        "paper3": 517,
+        "this_harvest": 517,
+        "ratio": 1.0
+      },
+      "2015": {
+        "paper3": 508,
+        "this_harvest": 508,
+        "ratio": 1.0
+      },
+      "2016": {
+        "paper3": 573,
+        "this_harvest": 573,
+        "ratio": 1.0
+      },
+      "2017": {
+        "paper3": 537,
+        "this_harvest": 537,
+        "ratio": 1.0
+      },
+      "2018": {
+        "paper3": 609,
+        "this_harvest": 609,
+        "ratio": 1.0
+      },
+      "2019": {
+        "paper3": 612,
+        "this_harvest": 612,
+        "ratio": 1.0
+      },
+      "2020": {
+        "paper3": 664,
+        "this_harvest": 664,
+        "ratio": 1.0
+      },
+      "2021": {
+        "paper3": 615,
+        "this_harvest": 615,
+        "ratio": 1.0
+      },
+      "2022": {
+        "paper3": 594,
+        "this_harvest": 594,
+        "ratio": 1.0
+      },
+      "2023": {
+        "paper3": 679,
+        "this_harvest": 679,
+        "ratio": 1.0
+      },
+      "2024": {
+        "paper3": 753,
+        "this_harvest": 753,
+        "ratio": 1.0
+      },
+      "2025": {
+        "paper3": 805,
+        "this_harvest": 805,
+        "ratio": 1.0
+      }
+    },
+    "stellar_activity": {
+      "2014": {
+        "paper3": 179,
+        "this_harvest": 179,
+        "ratio": 1.0
+      },
+      "2015": {
+        "paper3": 220,
+        "this_harvest": 220,
+        "ratio": 1.0
+      },
+      "2016": {
+        "paper3": 259,
+        "this_harvest": 259,
+        "ratio": 1.0
+      },
+      "2017": {
+        "paper3": 224,
+        "this_harvest": 224,
+        "ratio": 1.0
+      },
+      "2018": {
+        "paper3": 250,
+        "this_harvest": 250,
+        "ratio": 1.0
+      },
+      "2019": {
+        "paper3": 249,
+        "this_harvest": 249,
+        "ratio": 1.0
+      },
+      "2020": {
+        "paper3": 281,
+        "this_harvest": 281,
+        "ratio": 1.0
+      },
+      "2021": {
+        "paper3": 270,
+        "this_harvest": 270,
+        "ratio": 1.0
+      },
+      "2022": {
+        "paper3": 314,
+        "this_harvest": 314,
+        "ratio": 1.0
+      },
+      "2023": {
+        "paper3": 292,
+        "this_harvest": 292,
+        "ratio": 1.0
+      },
+      "2024": {
+        "paper3": 341,
+        "this_harvest": 341,
+        "ratio": 1.0
+      },
+      "2025": {
+        "paper3": 393,
+        "this_harvest": 393,
+        "ratio": 1.0
+      }
+    },
+    "fast_radio_bursts": {
+      "2014": {
+        "paper3": 39,
+        "this_harvest": 39,
+        "ratio": 1.0
+      },
+      "2015": {
+        "paper3": 45,
+        "this_harvest": 45,
+        "ratio": 1.0
+      },
+      "2016": {
+        "paper3": 94,
+        "this_harvest": 94,
+        "ratio": 1.0
+      },
+      "2017": {
+        "paper3": 122,
+        "this_harvest": 122,
+        "ratio": 1.0
+      },
+      "2018": {
+        "paper3": 117,
+        "this_harvest": 117,
+        "ratio": 1.0
+      },
+      "2019": {
+        "paper3": 159,
+        "this_harvest": 159,
+        "ratio": 1.0
+      },
+      "2020": {
+        "paper3": 242,
+        "this_harvest": 242,
+        "ratio": 1.0
+      },
+      "2021": {
+        "paper3": 208,
+        "this_harvest": 208,
+        "ratio": 1.0
+      },
+      "2022": {
+        "paper3": 192,
+        "this_harvest": 192,
+        "ratio": 1.0
+      },
+      "2023": {
+        "paper3": 222,
+        "this_harvest": 222,
+        "ratio": 1.0
+      },
+      "2024": {
+        "paper3": 227,
+        "this_harvest": 227,
+        "ratio": 1.0
+      },
+      "2025": {
+        "paper3": 267,
+        "this_harvest": 267,
+        "ratio": 1.0
+      }
+    },
+    "gravitational_waves": {
+      "2014": {
+        "paper3": 463,
+        "this_harvest": 463,
+        "ratio": 1.0
+      },
+      "2015": {
+        "paper3": 463,
+        "this_harvest": 463,
+        "ratio": 1.0
+      },
+      "2016": {
+        "paper3": 754,
+        "this_harvest": 754,
+        "ratio": 1.0
+      },
+      "2017": {
+        "paper3": 901,
+        "this_harvest": 901,
+        "ratio": 1.0
+      },
+      "2018": {
+        "paper3": 1061,
+        "this_harvest": 1061,
+        "ratio": 1.0
+      },
+      "2019": {
+        "paper3": 1334,
+        "this_harvest": 1334,
+        "ratio": 1.0
+      },
+      "2020": {
+        "paper3": 1546,
+        "this_harvest": 1546,
+        "ratio": 1.0
+      },
+      "2021": {
+        "paper3": 1504,
+        "this_harvest": 1504,
+        "ratio": 1.0
+      },
+      "2022": {
+        "paper3": 1502,
+        "this_harvest": 1502,
+        "ratio": 1.0
+      },
+      "2023": {
+        "paper3": 1808,
+        "this_harvest": 1808,
+        "ratio": 1.0
+      },
+      "2024": {
+        "paper3": 1882,
+        "this_harvest": 1882,
+        "ratio": 1.0
+      },
+      "2025": {
+        "paper3": 2199,
+        "this_harvest": 2199,
+        "ratio": 1.0
+      }
+    },
+    "galaxy_evolution": {
+      "2014": {
+        "paper3": 1048,
+        "this_harvest": 1048,
+        "ratio": 1.0
+      },
+      "2015": {
+        "paper3": 1127,
+        "this_harvest": 1127,
+        "ratio": 1.0
+      },
+      "2016": {
+        "paper3": 1201,
+        "this_harvest": 1201,
+        "ratio": 1.0
+      },
+      "2017": {
+        "paper3": 1109,
+        "this_harvest": 1109,
+        "ratio": 1.0
+      },
+      "2018": {
+        "paper3": 1242,
+        "this_harvest": 1242,
+        "ratio": 1.0
+      },
+      "2019": {
+        "paper3": 1252,
+        "this_harvest": 1252,
+        "ratio": 1.0
+      },
+      "2020": {
+        "paper3": 1293,
+        "this_harvest": 1293,
+        "ratio": 1.0
+      },
+      "2021": {
+        "paper3": 1183,
+        "this_harvest": 1183,
+        "ratio": 1.0
+      },
+      "2022": {
+        "paper3": 1343,
+        "this_harvest": 1343,
+        "ratio": 1.0
+      },
+      "2023": {
+        "paper3": 1421,
+        "this_harvest": 1421,
+        "ratio": 1.0
+      },
+      "2024": {
+        "paper3": 1596,
+        "this_harvest": 1596,
+        "ratio": 1.0
+      },
+      "2025": {
+        "paper3": 1918,
+        "this_harvest": 1918,
+        "ratio": 1.0
+      }
+    },
+    "cosmology_tensions": {
+      "2014": {
+        "paper3": 679,
+        "this_harvest": 681,
+        "ratio": 1.0029
+      },
+      "2015": {
+        "paper3": 685,
+        "this_harvest": 685,
+        "ratio": 1.0
+      },
+      "2016": {
+        "paper3": 705,
+        "this_harvest": 706,
+        "ratio": 1.0014
+      },
+      "2017": {
+        "paper3": 730,
+        "this_harvest": 730,
+        "ratio": 1.0
+      },
+      "2018": {
+        "paper3": 765,
+        "this_harvest": 765,
+        "ratio": 1.0
+      },
+      "2019": {
+        "paper3": 872,
+        "this_harvest": 872,
+        "ratio": 1.0
+      },
+      "2020": {
+        "paper3": 940,
+        "this_harvest": 941,
+        "ratio": 1.0011
+      },
+      "2021": {
+        "paper3": 910,
+        "this_harvest": 910,
+        "ratio": 1.0
+      },
+      "2022": {
+        "paper3": 974,
+        "this_harvest": 976,
+        "ratio": 1.0021
+      },
+      "2023": {
+        "paper3": 1071,
+        "this_harvest": 1071,
+        "ratio": 1.0
+      },
+      "2024": {
+        "paper3": 1237,
+        "this_harvest": 1239,
+        "ratio": 1.0016
+      },
+      "2025": {
+        "paper3": 1496,
+        "this_harvest": 1501,
+        "ratio": 1.0033
+      }
+    },
+    "compact_objects": {
+      "2014": {
+        "paper3": 1333,
+        "this_harvest": 1333,
+        "ratio": 1.0
+      },
+      "2015": {
+        "paper3": 1520,
+        "this_harvest": 1520,
+        "ratio": 1.0
+      },
+      "2016": {
+        "paper3": 1534,
+        "this_harvest": 1534,
+        "ratio": 1.0
+      },
+      "2017": {
+        "paper3": 1734,
+        "this_harvest": 1734,
+        "ratio": 1.0
+      },
+      "2018": {
+        "paper3": 1670,
+        "this_harvest": 1671,
+        "ratio": 1.0006
+      },
+      "2019": {
+        "paper3": 1926,
+        "this_harvest": 1926,
+        "ratio": 1.0
+      },
+      "2020": {
+        "paper3": 2091,
+        "this_harvest": 2091,
+        "ratio": 1.0
+      },
+      "2021": {
+        "paper3": 1992,
+        "this_harvest": 1992,
+        "ratio": 1.0
+      },
+      "2022": {
+        "paper3": 2067,
+        "this_harvest": 2067,
+        "ratio": 1.0
+      },
+      "2023": {
+        "paper3": 2347,
+        "this_harvest": 2347,
+        "ratio": 1.0
+      },
+      "2024": {
+        "paper3": 2517,
+        "this_harvest": 2517,
+        "ratio": 1.0
+      },
+      "2025": {
+        "paper3": 2767,
+        "this_harvest": 2767,
+        "ratio": 1.0
+      }
+    }
+  },
+  "scale_2026": {
+    "exoplanet_atmospheres": 1.2748,
+    "protoplanetary_disks": 1.2762,
+    "stellar_activity": 1.2762,
+    "fast_radio_bursts": 1.2762,
+    "gravitational_waves": 1.2762,
+    "galaxy_evolution": 1.2762,
+    "cosmology_tensions": 1.273,
+    "compact_objects": 1.2762
+  }
+}
