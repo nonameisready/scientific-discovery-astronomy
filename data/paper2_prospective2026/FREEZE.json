@@ -1,0 +1,39 @@
+{
+  "study": "paper2_prospective2026",
+  "frozen_at_utc": "2026-10-15T19:22:54Z",
+  "cutoff_date": "2026-08-17",
+  "past_window": [
+    "2018-08-18",
+    "2026-08-17"
+  ],
+  "outcome_window": [
+    "2027-01-01",
+    "2030-12-31"
+  ],
+  "primary_score": "m_logistic__all",
+  "training_cutoffs": {
+    "asof2021": [
+      2012,
+      2014,
+      2016
+    ],
+    "all": [
+      2012,
+      2014,
+      2016,
+      2018,
+      2020
+    ]
+  },
+  "sha256": {
+    "questions.jsonl": "bc3faf83b0bdca48794898b52a0d4aaa1c3152983b03b7f8090126ff94095770",
+    "features.jsonl": "52b00ea69dda6f4f7f6ded38e90d8010304a4a5258ae6508746d8ca14135bd73",
+    "structure_features.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "planner.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "predictions.jsonl": "04c678b971a23546c98984643836af5d6c8e9292d34b8be5d01da184cdde778c"
+  },
+  "combined_sha256": "9f53d4d354c71e49448022cc61df05c5dc253e1de687772413c85e393fe08ab5",
+  "corpus_sha256": "00747b52595560f2b5101ef9e77454f018ebb32251550902dc9ab10c0191df66",
+  "code_commit": "60f0f5db87a21014bed47f7093f712133b3fb3df",
+  "preregistration": "docs/PREREGISTRATION.md"
+}

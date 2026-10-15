@@ -18,6 +18,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import re
 import sys
 import time
 import urllib.error
@@ -35,7 +36,7 @@ from forecast.cohort import STUDIES
 from pipeline import corpus, labeling  # noqa: E402
 from pipeline.llm import SECOND_JUDGE_MODEL, chat_json  # noqa: E402
 
-S2_CACHE = ROOT / "data" / "cache" / "s2"
+CIT_CACHE = ROOT / "data" / "cache" / "s2_citations"
 S2_URL = "https://api.semanticscholar.org/graph/v1/paper/arXiv:{}/citations"
 
 
@@ -89,58 +90,61 @@ def source_arxiv_ids(q: dict) -> list[str]:
     return sorted({i for i in ids if i})
 
 
-def s2_citations(arxiv_id: str) -> list[dict]:
-    S2_CACHE.mkdir(parents=True, exist_ok=True)
-    cache = S2_CACHE / f"{arxiv_id.replace('/', '_')}.json"
+def _get_json(url: str, max_attempts: int = 30) -> dict | None:
+    """GET with patient backoff: the anonymous Semantic Scholar pool answers
+    HTTP 429 in bursts, then recovers."""
+    for attempt in range(max_attempts):
+        try:
+            with urllib.request.urlopen(url, timeout=60) as resp:
+                return json.loads(resp.read())
+        except urllib.error.HTTPError as err:
+            if err.code == 404:
+                return None
+            time.sleep(min(60, 3 * 2 ** min(attempt, 5)))
+        except Exception:  # noqa: BLE001
+            time.sleep(min(60, 3 * 2 ** min(attempt, 5)))
+    raise RuntimeError(f"request failed: {url}")
+
+
+def citing_papers(arxiv_id: str, lo: str, hi: str) -> list[dict]:
+    """Papers citing the arXiv paper (Semantic Scholar citation graph).
+
+    Dates: the window is applied afterwards on the arXiv v1 date when the
+    citing paper is on arXiv, else on Semantic Scholar's publication date.
+    """
+    CIT_CACHE.mkdir(parents=True, exist_ok=True)
+    cache = CIT_CACHE / f"{arxiv_id.replace('/', '_')}.json"
     if cache.exists():
         return json.loads(cache.read_text())
-    rows, offset = [], 0
-    while True:
+    rows: list[dict] = []
+    offset = 0
+    while offset is not None:
         params = urllib.parse.urlencode(
             {"fields": "externalIds,title,abstract,publicationDate,year", "limit": 1000, "offset": offset}
         )
-        url = S2_URL.format(arxiv_id) + "?" + params
-        payload = None
-        for attempt in range(8):
-            try:
-                with urllib.request.urlopen(url, timeout=60) as resp:
-                    payload = json.loads(resp.read())
-                break
-            except urllib.error.HTTPError as err:
-                if err.code == 404:
-                    payload = {"data": []}
-                    break
-                time.sleep(5 * (attempt + 1))
-            except Exception:  # noqa: BLE001
-                time.sleep(5 * (attempt + 1))
-        if payload is None:
-            raise RuntimeError(f"S2 failed for {arxiv_id}")
-        for item in payload.get("data", []):
+        page = _get_json(S2_URL.format(arxiv_id) + "?" + params) or {}
+        for item in page.get("data") or []:
             p = item.get("citingPaper") or {}
-            rows.append(
-                {
-                    "arxiv_id": (p.get("externalIds") or {}).get("ArXiv"),
-                    "title": p.get("title") or "",
-                    "abstract": p.get("abstract") or "",
-                    "date": p.get("publicationDate") or (f"{p['year']}-07-01" if p.get("year") else None),
-                }
-            )
-        if payload.get("next") is None or len(payload.get("data", [])) == 0:
-            break
-        offset = payload["next"]
-        time.sleep(1.2)
+            rows.append({
+                "arxiv_id": (p.get("externalIds") or {}).get("ArXiv"),
+                "title": p.get("title") or "",
+                "abstract": p.get("abstract") or "",
+                "date": p.get("publicationDate") or (f"{p['year']}-07-01" if p.get("year") else None),
+            })
+        offset = page.get("next") if page.get("data") else None
+        time.sleep(1.5)
     cache.write_text(json.dumps(rows))
-    time.sleep(1.2)
     return rows
 
 
 def label_citation(questions: list[dict], study: dict, ctxs: dict) -> list[dict]:
     lo, hi = study["future_window"]
-    # Prefer this study's arXiv records (true v1 date, full abstract).
-    arxiv_docs: dict[str, dict] = {}
-    for ctx in ctxs.values():
-        for d in ctx.future_docs:
-            arxiv_docs[d["id"]] = d
+    citing = {q["question_id"]: [c for aid in source_arxiv_ids(q) for c in citing_papers(aid, lo, hi)]
+              for q in questions}
+    # Resolve every citing arXiv id against the full corpus so the window is
+    # applied on the true v1 date, not the journal date.
+    wanted = {c["arxiv_id"] for cs in citing.values() for c in cs if c["arxiv_id"]}
+    arxiv_docs = {d["id"]: d for d in corpus.iter_processed() if d["id"] in wanted}
     out = []
     for q in questions:
         src = source_arxiv_ids(q)
@@ -149,17 +153,18 @@ def label_citation(questions: list[dict], study: dict, ctxs: dict) -> list[dict]
                         "addressed": None, "answer_status": None, "supporting_ids": []})
             continue
         cands: dict[str, dict] = {}
-        for aid in src:
-            for c in s2_citations(aid):
-                if c["arxiv_id"] and c["arxiv_id"] in arxiv_docs:
-                    d = arxiv_docs[c["arxiv_id"]]
-                elif c["date"] and lo <= c["date"] <= hi and (c["abstract"] or c["title"]):
-                    key = c["arxiv_id"] or f"s2:{c['title'][:80]}"
-                    d = {"id": key, "title": c["title"], "abstract": c["abstract"] or "", "published": c["date"]}
-                else:
-                    continue
-                if lo <= d["published"] <= hi:
-                    cands[d["id"]] = d
+        for c in citing[q["question_id"]]:
+            if c["arxiv_id"] and c["arxiv_id"] in arxiv_docs:
+                d = arxiv_docs[c["arxiv_id"]]
+            elif c["arxiv_id"]:
+                continue  # an arXiv paper outside astro-ph: no v1 date to check
+            elif c["date"] and (c["abstract"] or c["title"]):
+                d = {"id": f"s2:{c['title'][:80]}", "title": c["title"], "abstract": c["abstract"],
+                     "published": c["date"]}
+            else:
+                continue
+            if lo <= d["published"] <= hi:
+                cands[d["id"]] = d
         rec = {"question_id": q["question_id"], "n_source_papers": len(src), "n_candidates": len(cands)}
         if not cands:
             rec.update({"addressed": False, "answer_status": "not_addressed", "supporting_ids": [],
@@ -234,14 +239,13 @@ def main() -> None:
     # Action types for addressed tension questions, using every direct
     # supporting paper found by L1 or the citation judge.
     tension = {q["question_id"] for q in questions if q["source"] == "evidence_tension"}
-    docs: dict[str, dict] = {}
-    for ctx in ctxs.values():
-        docs.update({x["id"]: x for x in ctx.future_docs})
     sup: dict[str, list[str]] = {}
     for rec in l1 + [c for c in cit if c.get("addressed")]:
         if rec["question_id"] in tension and rec.get("addressed"):
             sup.setdefault(rec["question_id"], [])
             sup[rec["question_id"]] += [i for i in rec.get("supporting_ids", []) if i not in sup[rec["question_id"]]]
+    wanted = {i for ids in sup.values() for i in ids}
+    docs = {x["id"]: x for x in corpus.iter_processed() if x["id"] in wanted}
     write_jsonl(d / "action_types.jsonl", classify_actions(questions, sup, docs))
     print(f"[label] {name}: L1/L2/citation/action labels written")
 
