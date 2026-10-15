@@ -137,7 +137,7 @@ def citing_papers(arxiv_id: str, lo: str, hi: str) -> list[dict]:
     return rows
 
 
-def label_citation(questions: list[dict], study: dict, ctxs: dict) -> list[dict]:
+def label_citation(questions: list[dict], study: dict, ctxs: dict, model: str = labeling.JUDGE_MODEL) -> list[dict]:
     lo, hi = study["future_window"]
     citing = {q["question_id"]: [c for aid in source_arxiv_ids(q) for c in citing_papers(aid, lo, hi)]
               for q in questions}
@@ -177,7 +177,7 @@ def label_citation(questions: list[dict], study: dict, ctxs: dict) -> list[dict]
         dv = ctx.vectorizer.transform([f"{d['title']}. {d['abstract']}" for d in docs])
         sims = cosine_similarity(qv, dv)[0]
         top = [docs[i] for i in np.argsort(-sims)[: labeling.TOP_K_JUDGE]]
-        judged = labeling.judge_question(q["question"], q["cutoff_date"], top)
+        judged = labeling.judge_question(q["question"], q["cutoff_date"], top, model=model)
         rec.update({"top_ids": [d["id"] for d in top], **judged})
         out.append(rec)
     return out
@@ -233,14 +233,18 @@ def main() -> None:
     write_jsonl(d / "labels_L1.jsonl", l1)
     l2 = label_l2(questions, l1, ctxs)
     write_jsonl(d / "labels_L2.jsonl", l2)
+    # Citation candidates judged by both judges: gpt-4o-mini (the code
+    # default) and gpt-4o, the judge behind Paper 3's committed labels.
     cit = label_citation(questions, study, ctxs)
     write_jsonl(d / "labels_citation.jsonl", cit)
+    cit4o = label_citation(questions, study, ctxs, model=SECOND_JUDGE_MODEL)
+    write_jsonl(d / "labels_citation_gpt4o.jsonl", cit4o)
 
     # Action types for addressed tension questions, using every direct
     # supporting paper found by L1 or the citation judge.
     tension = {q["question_id"] for q in questions if q["source"] == "evidence_tension"}
     sup: dict[str, list[str]] = {}
-    for rec in l1 + [c for c in cit if c.get("addressed")]:
+    for rec in l2 + [c for c in cit4o if c.get("addressed")]:
         if rec["question_id"] in tension and rec.get("addressed"):
             sup.setdefault(rec["question_id"], [])
             sup[rec["question_id"]] += [i for i in rec.get("supporting_ids", []) if i not in sup[rec["question_id"]]]

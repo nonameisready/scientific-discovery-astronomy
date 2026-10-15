@@ -74,7 +74,8 @@ def main() -> None:
         "",
         f"Cutoff {study['cutoff_date']}; questions and scores frozen in `data/{name}/FREEZE.json`.",
         f"`p_attention` = probability (Paper 3 logistic, trained on all 980 labelled questions) that the "
-        f"question is *substantively addressed* by arXiv astro-ph papers in {lo} .. {hi}, under Paper 3's L1 label.",
+        f"question is *substantively addressed* by arXiv astro-ph papers in {lo} .. {hi}, as judged by Paper 3's "
+        f"label (top-8 retrieved papers, strict gpt-4o judge).",
         "",
         "Calibration warning: on the 2021 backtest the absolute probabilities are only roughly calibrated "
         "(see results/backtest2021); read them as a ranking first.",
@@ -100,6 +101,21 @@ def main() -> None:
     for r in pred.tail(15).itertuples():
         dag = " †" if r.n_ood >= 2 else ""
         lines.append(f"| {r.rank} | {r.p_attention:.2f}{dag} | {r.subfield} | {r.source} | {r.question} |")
+    tension = pred[pred.source == "evidence_tension"]
+    if len(tension):
+        lines += [
+            "", "## Evidence-tension questions ranked (the most informative slice)", "",
+            "In the 2021 backtest the model's ranking *within* a generation source was only real for "
+            "evidence-tension questions (within-source AUC 0.64) and controls; across sources it mostly "
+            "reproduces the source-type prior (broad direct-LLM questions are almost always taken up). "
+            "This table ranks only the Paper 1-style tension questions; `structure` is Paper 3's evidence-graph "
+            "structure prior (backtest AUC 0.63 within tension questions).", "",
+            "| # | p | structure | subfield | question | Paper 4 next steps |", "|---|---|---|---|---|---|",
+        ]
+        for i, r in enumerate(tension.itertuples(), 1):
+            dag = " †" if r.n_ood >= 2 else ""
+            st = f"{r.s_structure__all:.2f}" if pd.notna(r.s_structure__all) else "—"
+            lines.append(f"| {i} | {r.p_attention:.2f}{dag} | {st} | {r.subfield} | {r.question} | {r.next_action or '—'} |")
     lines += ["", f"Full ranked table: `results/{name}/forecast.csv`.", ""]
     (out / "FORECAST.md").write_text("\n".join(lines))
     print(f"[forecast] {name}: {len(pred)} questions -> {out / 'FORECAST.md'}")

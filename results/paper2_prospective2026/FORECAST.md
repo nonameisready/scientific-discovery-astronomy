@@ -1,7 +1,7 @@
 # Forecast: paper2_prospective2026
 
 Cutoff 2026-08-17; questions and scores frozen in `data/paper2_prospective2026/FREEZE.json`.
-`p_attention` = probability (Paper 3 logistic, trained on all 980 labelled questions) that the question is *substantively addressed* by arXiv astro-ph papers in 2027-01-01 .. 2030-12-31, under Paper 3's L1 label.
+`p_attention` = probability (Paper 3 logistic, trained on all 980 labelled questions) that the question is *substantively addressed* by arXiv astro-ph papers in 2027-01-01 .. 2030-12-31, as judged by Paper 3's label (top-8 retrieved papers, strict gpt-4o judge).
 
 Calibration warning: on the 2021 backtest the absolute probabilities are only roughly calibrated (see results/backtest2021); read them as a ranking first.
 

@@ -55,20 +55,24 @@ def boot_auc(y, s, ref=None, strata=None) -> dict:
 def within_source_auc(df: pd.DataFrame, score: str, y: str) -> dict:
     """Mean of per-source AUCs (sources with both outcome classes), with a
     bootstrap that resamples within each source."""
-    def stat(d):
-        aucs = [auc(g[y], g[score]) for _, g in d.groupby("source") if g[y].nunique() > 1]
+    groups = [(g[y].to_numpy(), g[score].to_numpy(float)) for _, g in df.groupby("source")]
+
+    def stat(gs):
+        aucs = [roc_auc_score(yy, ss) for yy, ss in gs if len(np.unique(yy)) > 1]
         return float(np.mean(aucs)) if aucs else float("nan")
 
     rng = np.random.default_rng(SEED)
-    groups = [g for _, g in df.groupby("source")]
     vals = []
     for _ in range(N_BOOT):
-        d = pd.concat([g.sample(len(g), replace=True, random_state=int(rng.integers(1 << 31))) for g in groups])
-        v = stat(d)
+        gs = []
+        for yy, ss in groups:
+            i = rng.integers(0, len(yy), len(yy))
+            gs.append((yy[i], ss[i]))
+        v = stat(gs)
         if not np.isnan(v):
             vals.append(v)
     per = {s: round(auc(g[y], g[score]), 4) for s, g in df.groupby("source") if g[y].nunique() > 1}
-    return {"mean_within_source_auc": round(stat(df), 4),
+    return {"mean_within_source_auc": round(stat(groups), 4),
             "ci95": [round(float(np.percentile(vals, q)), 4) for q in (2.5, 97.5)], "per_source": per}
 
 
@@ -77,7 +81,7 @@ def load(name: str) -> pd.DataFrame:
     pred = pd.DataFrame(read_jsonl(d / "predictions.jsonl"))
     l1 = pd.DataFrame(read_jsonl(d / "labels_L1.jsonl"))
     l2 = pd.DataFrame(read_jsonl(d / "labels_L2.jsonl"))
-    cit = pd.DataFrame(read_jsonl(d / "labels_citation.jsonl"))
+    cit_path = d / "labels_citation.jsonl"
     df = pred.merge(
         l1[["question_id", "addressed", "answer_status", "premise_status", "future_paper_count", "lead_time_months"]],
         on="question_id",
@@ -85,9 +89,17 @@ def load(name: str) -> pd.DataFrame:
     df["y_L1"] = df["addressed"].astype(int)
     df = df.merge(l2[["question_id", "addressed"]].rename(columns={"addressed": "addressed_L2"}), on="question_id")
     df["y_L2"] = df["addressed_L2"].astype(int)
-    df = df.merge(cit[["question_id", "addressed", "n_candidates"]].rename(
-        columns={"addressed": "addressed_cit", "n_candidates": "n_citing_candidates"}), on="question_id")
-    df["y_L3"] = (df["y_L1"].astype(bool) | df["addressed_cit"].fillna(False).astype(bool)).astype(int)
+    if cit_path.exists():  # L3 needs the citation crawl, which can lag the LLM labels
+        cit = pd.DataFrame(read_jsonl(cit_path))
+        df = df.merge(cit[["question_id", "addressed", "n_candidates"]].rename(
+            columns={"addressed": "addressed_cit", "n_candidates": "n_citing_candidates"}), on="question_id")
+        df["y_L3"] = (df["y_L1"].astype(bool) | df["addressed_cit"].fillna(False).astype(bool)).astype(int)
+    cit4o_path = d / "labels_citation_gpt4o.jsonl"
+    if cit4o_path.exists():
+        c4 = pd.DataFrame(read_jsonl(cit4o_path))[["question_id", "addressed"]].rename(
+            columns={"addressed": "addressed_cit_4o"})
+        df = df.merge(c4, on="question_id")
+        df["y_L3_4o"] = (df["y_L2"].astype(bool) | df["addressed_cit_4o"].fillna(False).astype(bool)).astype(int)
     return df
 
 
@@ -173,13 +185,16 @@ def figure(df: pd.DataFrame, name: str) -> None:
         ("b_source__asof2021", "baseline: source prior"),
         ("b_environment__asof2021", "baseline: subfield popularity"),
     ):
-        fpr, tpr, _ = roc_curve(df["y_L1"], df[col])
-        axes[0].plot(fpr, tpr, label=f"{lab}  AUC={auc(df['y_L1'], df[col]):.2f}")
+        fpr, tpr, _ = roc_curve(df["y_L2"], df[col])
+        axes[0].plot(fpr, tpr, label=f"{lab}  AUC={auc(df['y_L2'], df[col]):.2f}")
     axes[0].plot([0, 1], [0, 1], "k--", lw=0.8)
-    axes[0].set(xlabel="false positive rate", ylabel="true positive rate", title="2021 cohort, label L1")
+    axes[0].set(xlabel="false positive rate", ylabel="true positive rate", title="2021 cohort, Paper 3 label (gpt-4o judge)")
     axes[0].legend(fontsize=7, loc="lower right")
     q = pd.qcut(df["m_logistic__asof2021"].rank(method="first"), 5, labels=False)
-    for y, lab in (("y_L1", "L1"), ("y_L2", "L2"), ("y_L3", "L3")):
+    for y, lab in (("y_L2", "gpt-4o (Paper 3 label)"), ("y_L3_4o", "gpt-4o + citation graph"),
+                   ("y_L1", "gpt-4o-mini")):
+        if y not in df:
+            continue
         axes[1].plot(range(1, 6), [df[y][q == k].mean() for k in range(5)], marker="o", label=f"observed {lab}")
     axes[1].plot(range(1, 6), [df["m_logistic__asof2021"][q == k].mean() for k in range(5)], "k--", marker="x",
                  label="mean predicted")
@@ -194,12 +209,19 @@ def figure(df: pd.DataFrame, name: str) -> None:
 def main() -> None:
     name = sys.argv[1]
     df = load(name)
-    results = {y: hypotheses(df, y) for y in ("y_L1", "y_L2", "y_L3")}
-    results["H7_planner_action_match"] = h7_actions(name, df)
+    labels = [y for y in ("y_L2", "y_L3_4o", "y_L1", "y_L3") if y in df]
+    results = {y: hypotheses(df, y) for y in labels}
+    if (study_dir(name) / "action_types.jsonl").exists():
+        results["H7_planner_action_match"] = h7_actions(name, df)
     results["label_agreement"] = {
+        "note": "y_L2 = gpt-4o judge = Paper 3's committed label (results/judge_drift.json); "
+                "y_L1 = gpt-4o-mini, the judge the pre-registration named by mistake",
         "L1_vs_L2_agreement": round(float((df.y_L1 == df.y_L2).mean()), 4),
         "L1_vs_L2_kappa": round(float(_kappa(df.y_L1, df.y_L2)), 4),
-        "L3_minus_L1_rate": round(float(df.y_L3.mean() - df.y_L1.mean()), 4),
+        "L3_minus_L1_rate": round(float(df.y_L3.mean() - df.y_L1.mean()), 4) if "y_L3" in df else None,
+        "L3_4o_minus_L2_rate": round(float(df.y_L3_4o.mean() - df.y_L2.mean()), 4) if "y_L3_4o" in df else None,
+        "answer_status_L2": pd.DataFrame(read_jsonl(study_dir(name) / "labels_L2.jsonl"))["answer_status"]
+        .value_counts().to_dict(),
         "answer_status_L1": df["answer_status"].value_counts().to_dict(),
     }
     out = ROOT / "results" / name
@@ -208,7 +230,7 @@ def main() -> None:
     df.drop(columns=["main_positive_factors", "main_negative_factors"]).to_csv(out / "per_question.csv", index=False)
     figure(df, name)
     print(json.dumps({y: {k: results[y][k] for k in ("base_rate", "H1_primary_auc", "H2_vs_environment",
-                                                     "H2_vs_source", "H4_brier")} for y in ("y_L1", "y_L2", "y_L3")},
+                                                     "H2_vs_source", "H4_brier")} for y in labels},
                      indent=1))
 
 

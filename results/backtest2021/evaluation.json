@@ -1,0 +1,428 @@
+{
+  "y_L2": {
+    "label": "y_L2",
+    "n": 200,
+    "base_rate": 0.505,
+    "H1_primary_auc": {
+      "auc": 0.6562,
+      "ci95": [
+        0.583,
+        0.7333
+      ]
+    },
+    "H2_vs_environment": {
+      "auc": 0.6562,
+      "ci95": [
+        0.583,
+        0.7333
+      ],
+      "delta_vs_ref": 0.1024,
+      "delta_ci95": [
+        0.0385,
+        0.1672
+      ]
+    },
+    "H2_vs_source": {
+      "auc": 0.6562,
+      "ci95": [
+        0.583,
+        0.7333
+      ],
+      "delta_vs_ref": -0.0239,
+      "delta_ci95": [
+        -0.1085,
+        0.073
+      ]
+    },
+    "H3_within_source": {
+      "mean_within_source_auc": 0.569,
+      "ci95": [
+        0.4955,
+        0.6499
+      ],
+      "per_source": {
+        "control": 0.8423,
+        "direct_llm": 0.2696,
+        "evidence_tension": 0.6402,
+        "future_work": 0.5238
+      }
+    },
+    "H4_brier": {
+      "model": 0.2465,
+      "constant_training_base_rate": 0.2503,
+      "mean_predicted": 0.5652,
+      "observed_rate": 0.505
+    },
+    "H5_structure_prior_tension": {
+      "auc": 0.6294,
+      "ci95": [
+        0.5048,
+        0.7523
+      ]
+    },
+    "H6_planner_utility": {
+      "default": {
+        "auc": 0.4192,
+        "ci95": [
+          0.305,
+          0.5372
+        ]
+      },
+      "paper3_informed": {
+        "auc": 0.4192,
+        "ci95": [
+          0.305,
+          0.5372
+        ]
+      }
+    },
+    "all_scores": {
+      "b_environment__all": {
+        "auc": 0.5563,
+        "ci95": [
+          0.4775,
+          0.6358
+        ]
+      },
+      "b_environment__asof2021": {
+        "auc": 0.5538,
+        "ci95": [
+          0.4726,
+          0.6323
+        ]
+      },
+      "b_source__all": {
+        "auc": 0.68,
+        "ci95": [
+          0.6067,
+          0.7465
+        ]
+      },
+      "b_source__asof2021": {
+        "auc": 0.68,
+        "ci95": [
+          0.6067,
+          0.7465
+        ]
+      },
+      "b_text__all": {
+        "auc": 0.7424,
+        "ci95": [
+          0.674,
+          0.8099
+        ]
+      },
+      "b_text__asof2021": {
+        "auc": 0.714,
+        "ci95": [
+          0.6399,
+          0.7811
+        ]
+      },
+      "m_gbm__all": {
+        "auc": 0.7103,
+        "ci95": [
+          0.6386,
+          0.7822
+        ]
+      },
+      "m_gbm__asof2021": {
+        "auc": 0.6539,
+        "ci95": [
+          0.5739,
+          0.7296
+        ]
+      },
+      "m_logistic__all": {
+        "auc": 0.6737,
+        "ci95": [
+          0.603,
+          0.7505
+        ]
+      },
+      "m_logistic__asof2021": {
+        "auc": 0.6562,
+        "ci95": [
+          0.583,
+          0.7333
+        ]
+      }
+    },
+    "by_source": {
+      "control": {
+        "n": 40,
+        "rate": 0.3,
+        "mean_p": 0.519
+      },
+      "direct_llm": {
+        "n": 40,
+        "rate": 0.85,
+        "mean_p": 0.716
+      },
+      "evidence_tension": {
+        "n": 80,
+        "rate": 0.45,
+        "mean_p": 0.496
+      },
+      "future_work": {
+        "n": 40,
+        "rate": 0.475,
+        "mean_p": 0.6
+      }
+    },
+    "quintiles": [
+      {
+        "quintile": 1,
+        "n": 40,
+        "mean_p": 0.205,
+        "observed_rate": 0.25
+      },
+      {
+        "quintile": 2,
+        "n": 40,
+        "mean_p": 0.423,
+        "observed_rate": 0.425
+      },
+      {
+        "quintile": 3,
+        "n": 40,
+        "mean_p": 0.564,
+        "observed_rate": 0.575
+      },
+      {
+        "quintile": 4,
+        "n": 40,
+        "mean_p": 0.74,
+        "observed_rate": 0.7
+      },
+      {
+        "quintile": 5,
+        "n": 40,
+        "mean_p": 0.895,
+        "observed_rate": 0.575
+      }
+    ]
+  },
+  "y_L1": {
+    "label": "y_L1",
+    "n": 200,
+    "base_rate": 0.86,
+    "H1_primary_auc": {
+      "auc": 0.707,
+      "ci95": [
+        0.5903,
+        0.8178
+      ]
+    },
+    "H2_vs_environment": {
+      "auc": 0.707,
+      "ci95": [
+        0.5903,
+        0.8178
+      ],
+      "delta_vs_ref": 0.1084,
+      "delta_ci95": [
+        0.0111,
+        0.2003
+      ]
+    },
+    "H2_vs_source": {
+      "auc": 0.707,
+      "ci95": [
+        0.5903,
+        0.8178
+      ],
+      "delta_vs_ref": 0.1157,
+      "delta_ci95": [
+        -0.0215,
+        0.2531
+      ]
+    },
+    "H3_within_source": {
+      "mean_within_source_auc": 0.6824,
+      "ci95": [
+        0.5671,
+        0.798
+      ],
+      "per_source": {
+        "control": 0.6406,
+        "evidence_tension": 0.79,
+        "future_work": 0.6167
+      }
+    },
+    "H4_brier": {
+      "model": 0.2228,
+      "constant_training_base_rate": 0.2348,
+      "mean_predicted": 0.5652,
+      "observed_rate": 0.86
+    },
+    "H5_structure_prior_tension": {
+      "auc": 0.6071,
+      "ci95": [
+        0.3808,
+        0.7991
+      ]
+    },
+    "H6_planner_utility": {
+      "default": {
+        "auc": 0.5007,
+        "ci95": [
+          0.3121,
+          0.6936
+        ]
+      },
+      "paper3_informed": {
+        "auc": 0.5007,
+        "ci95": [
+          0.3121,
+          0.6936
+        ]
+      }
+    },
+    "all_scores": {
+      "b_environment__all": {
+        "auc": 0.6246,
+        "ci95": [
+          0.5135,
+          0.7371
+        ]
+      },
+      "b_environment__asof2021": {
+        "auc": 0.5986,
+        "ci95": [
+          0.4912,
+          0.7085
+        ]
+      },
+      "b_source__all": {
+        "auc": 0.5914,
+        "ci95": [
+          0.4868,
+          0.6879
+        ]
+      },
+      "b_source__asof2021": {
+        "auc": 0.5914,
+        "ci95": [
+          0.4868,
+          0.6879
+        ]
+      },
+      "b_text__all": {
+        "auc": 0.7354,
+        "ci95": [
+          0.6367,
+          0.8237
+        ]
+      },
+      "b_text__asof2021": {
+        "auc": 0.6614,
+        "ci95": [
+          0.5643,
+          0.7473
+        ]
+      },
+      "m_gbm__all": {
+        "auc": 0.744,
+        "ci95": [
+          0.6438,
+          0.8335
+        ]
+      },
+      "m_gbm__asof2021": {
+        "auc": 0.7205,
+        "ci95": [
+          0.6154,
+          0.8139
+        ]
+      },
+      "m_logistic__all": {
+        "auc": 0.7274,
+        "ci95": [
+          0.615,
+          0.8305
+        ]
+      },
+      "m_logistic__asof2021": {
+        "auc": 0.707,
+        "ci95": [
+          0.5903,
+          0.8178
+        ]
+      }
+    },
+    "by_source": {
+      "control": {
+        "n": 40,
+        "rate": 0.8,
+        "mean_p": 0.519
+      },
+      "direct_llm": {
+        "n": 40,
+        "rate": 1.0,
+        "mean_p": 0.716
+      },
+      "evidence_tension": {
+        "n": 80,
+        "rate": 0.875,
+        "mean_p": 0.496
+      },
+      "future_work": {
+        "n": 40,
+        "rate": 0.75,
+        "mean_p": 0.6
+      }
+    },
+    "quintiles": [
+      {
+        "quintile": 1,
+        "n": 40,
+        "mean_p": 0.205,
+        "observed_rate": 0.75
+      },
+      {
+        "quintile": 2,
+        "n": 40,
+        "mean_p": 0.423,
+        "observed_rate": 0.75
+      },
+      {
+        "quintile": 3,
+        "n": 40,
+        "mean_p": 0.564,
+        "observed_rate": 0.925
+      },
+      {
+        "quintile": 4,
+        "n": 40,
+        "mean_p": 0.74,
+        "observed_rate": 0.925
+      },
+      {
+        "quintile": 5,
+        "n": 40,
+        "mean_p": 0.895,
+        "observed_rate": 0.95
+      }
+    ]
+  },
+  "label_agreement": {
+    "note": "y_L2 = gpt-4o judge = Paper 3's committed label (results/judge_drift.json); y_L1 = gpt-4o-mini, the judge the pre-registration named by mistake",
+    "L1_vs_L2_agreement": 0.625,
+    "L1_vs_L2_kappa": 0.2446,
+    "L3_minus_L1_rate": null,
+    "L3_4o_minus_L2_rate": null,
+    "answer_status_L2": {
+      "not_addressed": 99,
+      "partially_addressed": 92,
+      "posed_but_open": 7,
+      "answered": 2
+    },
+    "answer_status_L1": {
+      "partially_addressed": 158,
+      "not_addressed": 28,
+      "posed_but_open": 13,
+      "answered": 1
+    }
+  }
+}

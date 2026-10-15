@@ -1,0 +1,1219 @@
+{
+  "report": {
+    "n": 120,
+    "candidates_recovered": 1.0,
+    "paper3_rate": 0.5083333333333333,
+    "gpt-4o": {
+      "rate_today": 0.5083333333333333,
+      "agreement_with_paper3": 0.9166666666666666,
+      "kappa_with_paper3": 0.8333
+    },
+    "gpt-4o-mini": {
+      "rate_today": 0.9333333333333333,
+      "agreement_with_paper3": 0.575,
+      "kappa_with_paper3": 0.1375
+    }
+  },
+  "rows": [
+    {
+      "question_id": "fast_radio_bursts-2018-009",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2020-002",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2018-000",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": false,
+      "gpt-4o-mini_status": "not_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2020-006",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2018-024",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-012",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2018-022",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-023",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2020-010",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "posed_but_open",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-021",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-004",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2018-007",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2018-009",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "answered",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "answered",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2018-019",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-019",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "posed_but_open",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "posed_but_open",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2018-020",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": false,
+      "gpt-4o-mini_status": "not_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2018-012",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-010",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2020-000",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": false,
+      "gpt-4o-mini_status": "not_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-021",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-005",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "galaxy_evolution-2018-015",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-005",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-012",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2018-013",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2018-014",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2018-020",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2018-019",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2020-015",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-006",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-018",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": false,
+      "gpt-4o-mini_status": "not_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-022",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2018-001",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-000",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2018-013",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2018-023",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-008",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "answered",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2018-018",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "paper1-q_001",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2020-008",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2018-023",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "gravitational_waves-2018-024",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2018-010",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-015",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2018-000",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-009",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2020-022",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2020-017",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "posed_but_open",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "posed_but_open",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "cosmology_tensions-2018-002",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-020",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "stellar_activity-2018-005",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": false,
+      "gpt-4o-mini_status": "not_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2020-000",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2020-021",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "fast_radio_bursts-2020-013",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-024",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "gravitational_waves-2020-003",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "compact_objects-2020-007",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-011",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2020-002",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2018-014",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2018-005",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": false,
+      "gpt-4o-mini_status": "not_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2018-002",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2018-020",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2018-016",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2018-003",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "premise_refuted",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "premise_refuted",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "galaxy_evolution-2020-011",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2018-018",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2020-005",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2020-008",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "paper1-q_005",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2020-004",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2018-000",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2020-001",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-016",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": false,
+      "gpt-4o-mini_status": "not_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-017",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2020-002",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2018-016",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2018-001",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2018-019",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2020-002",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "paper1-q_002",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2018-009",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "stellar_activity-2020-019",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2018-006",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2018-010",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2018-009",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2020-009",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2018-018",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2020-023",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2020-023",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2018-013",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2018-020",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-014",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2018-013",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-016",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "posed_but_open",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "posed_but_open",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2020-007",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2018-018",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2020-002",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2020-010",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2020-019",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2020-006",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2020-007",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "posed_but_open"
+    },
+    {
+      "question_id": "compact_objects-2020-022",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "posed_but_open",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2020-015",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2020-015",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2020-008",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "stellar_activity-2018-020",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": false,
+      "gpt-4o-mini_status": "not_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2018-001",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2020-001",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2020-023",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2020-020",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2020-000",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "compact_objects-2018-011",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "galaxy_evolution-2020-009",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "fast_radio_bursts-2020-004",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2020-011",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "cosmology_tensions-2018-009",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "gravitational_waves-2018-000",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "protoplanetary_disks-2020-013",
+      "n_candidates_found": 8,
+      "paper3_addressed": true,
+      "paper3_status": "partially_addressed",
+      "gpt-4o_addressed": true,
+      "gpt-4o_status": "partially_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    },
+    {
+      "question_id": "exoplanet_atmospheres-2018-011",
+      "n_candidates_found": 8,
+      "paper3_addressed": false,
+      "paper3_status": "not_addressed",
+      "gpt-4o_addressed": false,
+      "gpt-4o_status": "not_addressed",
+      "gpt-4o-mini_addressed": true,
+      "gpt-4o-mini_status": "partially_addressed"
+    }
+  ]
+}
