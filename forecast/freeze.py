@@ -20,7 +20,14 @@ from forecast.common import ROOT, sha256, study_dir
 from forecast.cohort import STUDIES
 from forecast.predict import PRIMARY_TRAIN, TRAIN_SETS
 
-FILES = ("questions.jsonl", "features.jsonl", "structure_features.jsonl", "planner.jsonl", "predictions.jsonl")
+FILES = (
+    "questions.jsonl",
+    "features.jsonl",
+    "structure_features.jsonl",
+    "planner.jsonl",
+    "predictions.jsonl",
+    "predictions_v2.jsonl",
+)
 
 
 def main() -> None:

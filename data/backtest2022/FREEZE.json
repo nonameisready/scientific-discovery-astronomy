@@ -1,0 +1,40 @@
+{
+  "study": "backtest2022",
+  "frozen_at_utc": "2026-10-16T00:46:36Z",
+  "cutoff_date": "2022-12-31",
+  "past_window": [
+    "2015-01-01",
+    "2022-12-31"
+  ],
+  "outcome_window": [
+    "2023-01-01",
+    "2026-10-14"
+  ],
+  "primary_score": "m_logistic__asof2021",
+  "training_cutoffs": {
+    "asof2021": [
+      2012,
+      2014,
+      2016
+    ],
+    "all": [
+      2012,
+      2014,
+      2016,
+      2018,
+      2020
+    ]
+  },
+  "sha256": {
+    "questions.jsonl": "d86d317e88d2e7bc23cfe24bf50c3461d568d1865628c248098319382f7efb18",
+    "features.jsonl": "abf7b57d60cd3a7b6b63e6eaab80486103353dfb7f16aa65748b23c6e5f186bb",
+    "structure_features.jsonl": "440d8f57e59857c0501ce3c73b1a81ef90fd8c0f34448736e81bb10910b92b6b",
+    "planner.jsonl": "bd175e3614075c84a73c1d68550264befe32fdacd689c46d970632da21850352",
+    "predictions.jsonl": "b2d479edcb76f34aa1167bba4509d987544c097fb2a8c8d980b2ea1465da3a73",
+    "predictions_v2.jsonl": "fe78ba6b4447737500ebf6045db9534076302b40c43b18dc2aaef8a4bd401b98"
+  },
+  "combined_sha256": "3c219c81cbeffde9f31fd8ed82a42ee9f6113b622ed4f54cc085ccf184acba06",
+  "corpus_sha256": "00747b52595560f2b5101ef9e77454f018ebb32251550902dc9ab10c0191df66",
+  "code_commit": "a4eea0f01b65748c3012c1bbabda25a0fa67a23f",
+  "preregistration": "docs/PREREGISTRATION.md"
+}
