@@ -29,8 +29,10 @@ _SYMBOLS = {
     r"\times": "×", r"\kappa": "κ", r"\Delta": "Δ", r"\sigma": "σ", r"\beta": "β", r"\alpha": "α",
     r"\Lambda": "Λ", r"\lambda": "λ", r"\mu": "μ", r"\sim": "~", r"\approx": "≈", r"\odot": "⊙",
     r"\textgreater": ">", r"\textless": "<", r"\geq": "≥", r"\leq": "≤", r"\pm": "±", r"\,": " ",
+    r"\rho": "ρ", r"\tau": "τ", r"\rightarrow": "→", r"\circ": "°", r"\%": "%",
 }
 _SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+_SUP = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")
 
 
 def plain_math(text: str) -> str:
@@ -38,23 +40,29 @@ def plain_math(text: str) -> str:
     # Some "\t" were decoded as a tab and then normalised to a space upstream
     # ("$ m ext{ extbf{EDE}}$", "z extgreater 10"): restore the backslash, then
     # unwrap text commands and map text symbols inside or outside math.
-    text = re.sub(r"(?<=[\s${(])ext(?=\{)|(?<=[\s${(])ext(?=(?:it|bf)\{|greater|less|odot)", r"\\text", text)
+    text = re.sub(r" ext(?=\{|(?:it|bf)\{|greater|less|odot)", r"\\text", text)
     for _ in range(3):
         text = re.sub(r"\\text(?:it|bf)?\{([^{}$]*)\}", r"\1", text)
     text = text.replace(r"\textgreater", ">").replace(r"\textless", "<").replace(r"\textodot", "⊙")
+    text = re.sub(r"\\?(?<![a-z])odot\b", "⊙", text)
     text = re.sub(r"M_\{?⊙\}?", "M⊙", text)
 
     def convert(m: re.Match) -> str:
-        expr = m.group(1)
+        expr = re.sub(r"s\s*i\s*g\s*m\s*a", "σ", m.group(1))  # "\text{s}\text{i}..." spelled out
+        # "\r"/"\t" that became a plain space: " m" (\rm), " ho" (\rho), " au" (\tau), " ightarrow".
+        expr = re.sub(r" (m|ho|ightarrow)(?![A-Za-z])", r"\\r\1", expr).replace(r"\rightarrow ", r"\rightarrow")
+        expr = re.sub(r" (au)(?![A-Za-z])", r"\\t\1", expr)
+        expr = re.sub(r"\\rm(?![A-Za-z])\s*|^ m(?![a-z])\s*", "", expr)
         for _ in range(4):  # unwrap nested \text{...}, \textbf{...}, \mathrm{...}
             expr = re.sub(r"\\(?:text|textit|textbf|mathrm|mathbf|rm)\s*\{([^{}]*)\}", r"\1", expr)
-        expr = re.sub(r"\\m\s+|^\s*m\s+", "", expr)  # stray "\m" left by a mangled "\mathrm"
+        expr = re.sub(r"\\m\s+", "", expr)  # stray "\m" left by a mangled "\mathrm"
         for k in sorted(_SYMBOLS, key=len, reverse=True):
             expr = expr.replace(k, _SYMBOLS[k])
         expr = re.sub(r"_\{?([0-9]+)\}?", lambda d: d.group(1).translate(_SUB), expr)
         expr = re.sub(r"_\{([^{}]*)\}", r"\1", expr)
+        expr = re.sub(r"\^\{?([0-9]+)\}?", lambda d: d.group(1).translate(_SUP), expr)
         expr = expr.replace("{", "").replace("}", "")
-        return expr.replace("\\", "").replace("_⊙", "⊙")
+        return expr.replace("\\", "").replace("^", "").replace("_", "")
 
     return re.sub(r"\$([^$\n]{1,200})\$", convert, text)
 
