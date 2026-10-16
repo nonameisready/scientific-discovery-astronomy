@@ -1,0 +1,232 @@
+{
+ "forecast": {
+  "desi_evolving_de": {
+   "S": -0.8160771715211368,
+   "n": 267,
+   "p_dissolved": 0.5849492923935967
+  },
+  "jwst_early_massive": {
+   "S": -2.5646363533578147,
+   "n": 147,
+   "p_dissolved": 0.6252438990696737
+  },
+  "k2_18b_dms": {
+   "S": -1.5439803689396974,
+   "n": 44,
+   "p_dissolved": 0.6018955717261286
+  },
+  "km3net_220pev": {
+   "S": -0.10799278168734894,
+   "n": 84,
+   "p_dissolved": 0.5682689297639751
+  },
+  "little_red_dots": {
+   "S": -2.819928971791198,
+   "n": 111,
+   "p_dissolved": 0.63099855316281
+  }
+ },
+ "loo": {
+  "arcade2_radio": 0.8110835238454911,
+  "auger_agn": 0.5246720502051238,
+  "bicep2": 0.4899288182537146,
+  "closed_universe": 0.5339962949504007,
+  "cosmic_birefringence": 0.5911584628997535,
+  "dampe_1p4tev": 0.5603676927859013,
+  "df2_no_dm": 0.5761849315630981,
+  "edges_21cm": 0.5551699379714484,
+  "fermi_130gev": 0.4584587856408857,
+  "fermi_bubbles": 0.7529134366608354,
+  "gbm_gw150914": 0.5595559671126374,
+  "gj581g": 0.5699046864599372,
+  "gw_echoes": 0.5840681354357192,
+  "h0_tension": 0.56343414004587,
+  "icecube_astro_nu": 0.6334380583622105,
+  "kepler1625_moon": 0.5857248565475703,
+  "line_3p5kev": 0.5448816562186296,
+  "pamela_positrons": 0.6013962418314202,
+  "planet_nine": 0.6192364474207402,
+  "pta_gwb": 0.6331907761720953,
+  "quasar_dipole": 0.6003931785849728,
+  "tabby_star": 0.5408623990379617,
+  "venus_phosphine": 0.5106602596859884
+ },
+ "loo_auc": 0.038461538461538464,
+ "model": {
+  "intercept": 0.26437023061243575,
+  "norms": {
+   "confirm": [
+    0.2223408671692658,
+    0.13805752232331753
+   ],
+   "growth": [
+    -0.5056849499086498,
+    0.8006285946790909
+   ],
+   "null": [
+    0.22279958269313513,
+    0.10012827737785546
+   ],
+   "systematics": [
+    0.14729676709300005,
+    0.12164942829199815
+   ]
+  },
+  "slope": -0.09650341434843145
+ },
+ "per_case": {
+  "arcade2_radio": {
+   "S": 7.023206825524634,
+   "outcome": "open",
+   "provisional": false
+  },
+  "auger_agn": {
+   "S": 0.6964675428993469,
+   "outcome": "dissolved",
+   "provisional": false
+  },
+  "bicep2": {
+   "S": 1.7257119892900226,
+   "outcome": "dissolved",
+   "provisional": false
+  },
+  "closed_universe": {
+   "S": 0.4111544793415012,
+   "outcome": "dissolved",
+   "provisional": true
+  },
+  "cosmic_birefringence": {
+   "S": 0.03814747535444857,
+   "outcome": "open",
+   "provisional": false
+  },
+  "dampe_1p4tev": {
+   "S": -0.6401403083789579,
+   "outcome": "dissolved",
+   "provisional": false
+  },
+  "df2_no_dm": {
+   "S": 0.7531373640402252,
+   "outcome": "open",
+   "provisional": true
+  },
+  "edges_21cm": {
+   "S": -0.4115582092902752,
+   "outcome": "dissolved",
+   "provisional": true
+  },
+  "fermi_130gev": {
+   "S": 2.376018638065379,
+   "outcome": "dissolved",
+   "provisional": false
+  },
+  "fermi_bubbles": {
+   "S": -3.4571388854880385,
+   "outcome": "confirmed",
+   "provisional": false
+  },
+  "gbm_gw150914": {
+   "S": -0.6165153099512843,
+   "outcome": "dissolved",
+   "provisional": false
+  },
+  "gj581g": {
+   "S": -0.5900045862687459,
+   "outcome": "dissolved",
+   "provisional": false
+  },
+  "gw_echoes": {
+   "S": -3.651034269253995,
+   "outcome": "dissolved",
+   "provisional": true
+  },
+  "h0_tension": {
+   "S": 2.2554715625437045,
+   "outcome": "open",
+   "provisional": false
+  },
+  "icecube_astro_nu": {
+   "S": -1.3061052590344022,
+   "outcome": "confirmed",
+   "provisional": false
+  },
+  "kepler1625_moon": {
+   "S": -3.232435967220968,
+   "outcome": "dissolved",
+   "provisional": true
+  },
+  "line_3p5kev": {
+   "S": 0.03166170265721224,
+   "outcome": "dissolved",
+   "provisional": false
+  },
+  "pamela_positrons": {
+   "S": -0.3426836306833525,
+   "outcome": "confirmed",
+   "provisional": false
+  },
+  "planet_nine": {
+   "S": -0.8622154513911546,
+   "outcome": "open",
+   "provisional": false
+  },
+  "pta_gwb": {
+   "S": -1.2877051147171037,
+   "outcome": "confirmed",
+   "provisional": false
+  },
+  "quasar_dipole": {
+   "S": -0.2890093916852463,
+   "outcome": "open",
+   "provisional": false
+  },
+  "tabby_star": {
+   "S": 0.18596261771494768,
+   "outcome": "dissolved",
+   "provisional": false
+  },
+  "venus_phosphine": {
+   "S": 1.1896061859320977,
+   "outcome": "dissolved",
+   "provisional": true
+  }
+ },
+ "primary": {
+  "auc_S": 0.5307692307692308,
+  "ci95": [
+   0.27692307692307694,
+   0.7769230769230769
+  ],
+  "feature_auc": {
+   "confirm": 0.24615384615384617,
+   "exotic": 0.4307692307692308,
+   "growth": 0.7076923076923077,
+   "log_n": 0.4807692307692308,
+   "null": 0.4846153846153846,
+   "systematics": 0.5307692307692308
+  },
+  "n": 23,
+  "n_dissolved": 13,
+  "perm_p_one_sided": 0.4187790610469477,
+  "subset": "all included historical cases"
+ },
+ "sensitivity": {
+  "auc_S": 0.625,
+  "ci95": [
+   0.3333333333333333,
+   0.8888888888888888
+  ],
+  "feature_auc": {
+   "confirm": 0.25,
+   "exotic": 0.5,
+   "growth": 0.8472222222222222,
+   "log_n": 0.3958333333333333,
+   "null": 0.5833333333333334,
+   "systematics": 0.4930555555555556
+  },
+  "n": 17,
+  "n_dissolved": 8,
+  "perm_p_one_sided": 0.21213939303034848,
+  "subset": "excluding provisional labels"
+ }
+}
