@@ -28,6 +28,18 @@ and tests it the only honest way available:
 - 判卷模型一换，结论就会大变：GPT-4o-mini 比 GPT-4o 宽松得多。
 - Paper 4 的规划器没有预测力。
 
+## Paper
+
+The draft is [`paper/main.pdf`](paper/main.pdf), 11 pages, built from
+[`paper/main.tex`](paper/main.tex):
+
+> *Topic Momentum Forecasts Which Astronomy Questions the Field Takes Up: Five
+> Pre-registered Out-of-Time Backtests and a Sealed 2026–2031 Forecast.*
+
+- Every number in it comes from the committed `results/` files.
+- Every reference was checked against Crossref or arXiv.
+- To rebuild, run `python paper/make_figures.py && cd paper && latexmk -pdf main.tex`.
+
 ## The stack
 
 | Paper | Repository | Role here |

@@ -203,6 +203,210 @@
       }
     ]
   },
+  "y_L3_4o": {
+    "label": "y_L3_4o",
+    "n": 200,
+    "base_rate": 0.605,
+    "H1_primary_auc": {
+      "auc": 0.6416,
+      "ci95": [
+        0.5625,
+        0.7218
+      ]
+    },
+    "H2_vs_environment": {
+      "auc": 0.6416,
+      "ci95": [
+        0.5625,
+        0.7218
+      ],
+      "delta_vs_ref": 0.0801,
+      "delta_ci95": [
+        0.0154,
+        0.1481
+      ]
+    },
+    "H2_vs_source": {
+      "auc": 0.6416,
+      "ci95": [
+        0.5625,
+        0.7218
+      ],
+      "delta_vs_ref": -0.0488,
+      "delta_ci95": [
+        -0.1391,
+        0.0433
+      ]
+    },
+    "H3_within_source": {
+      "mean_within_source_auc": 0.5531,
+      "ci95": [
+        0.4764,
+        0.637
+      ],
+      "per_source": {
+        "control": 0.8462,
+        "direct_llm": 0.2696,
+        "evidence_tension": 0.6493,
+        "future_work": 0.4473
+      }
+    },
+    "H4_brier": {
+      "model": 0.2433,
+      "constant_training_base_rate": 0.2459,
+      "mean_predicted": 0.5652,
+      "observed_rate": 0.605
+    },
+    "H5_structure_prior_tension": {
+      "auc": 0.6809,
+      "ci95": [
+        0.5638,
+        0.7955
+      ]
+    },
+    "H6_planner_utility": {
+      "default": {
+        "auc": 0.3804,
+        "ci95": [
+          0.2695,
+          0.4906
+        ]
+      },
+      "paper3_informed": {
+        "auc": 0.3804,
+        "ci95": [
+          0.2695,
+          0.4906
+        ]
+      }
+    },
+    "all_scores": {
+      "b_environment__all": {
+        "auc": 0.5562,
+        "ci95": [
+          0.477,
+          0.6384
+        ]
+      },
+      "b_environment__asof2021": {
+        "auc": 0.5615,
+        "ci95": [
+          0.4807,
+          0.6436
+        ]
+      },
+      "b_source__all": {
+        "auc": 0.6904,
+        "ci95": [
+          0.6205,
+          0.7571
+        ]
+      },
+      "b_source__asof2021": {
+        "auc": 0.6904,
+        "ci95": [
+          0.6205,
+          0.7571
+        ]
+      },
+      "b_text__all": {
+        "auc": 0.7115,
+        "ci95": [
+          0.6367,
+          0.7858
+        ]
+      },
+      "b_text__asof2021": {
+        "auc": 0.6762,
+        "ci95": [
+          0.6017,
+          0.7527
+        ]
+      },
+      "m_gbm__all": {
+        "auc": 0.6789,
+        "ci95": [
+          0.6057,
+          0.7548
+        ]
+      },
+      "m_gbm__asof2021": {
+        "auc": 0.6159,
+        "ci95": [
+          0.5358,
+          0.6959
+        ]
+      },
+      "m_logistic__all": {
+        "auc": 0.6578,
+        "ci95": [
+          0.5813,
+          0.7353
+        ]
+      },
+      "m_logistic__asof2021": {
+        "auc": 0.6416,
+        "ci95": [
+          0.5625,
+          0.7218
+        ]
+      }
+    },
+    "by_source": {
+      "control": {
+        "n": 40,
+        "rate": 0.325,
+        "mean_p": 0.519
+      },
+      "direct_llm": {
+        "n": 40,
+        "rate": 0.85,
+        "mean_p": 0.716
+      },
+      "evidence_tension": {
+        "n": 80,
+        "rate": 0.588,
+        "mean_p": 0.496
+      },
+      "future_work": {
+        "n": 40,
+        "rate": 0.675,
+        "mean_p": 0.6
+      }
+    },
+    "quintiles": [
+      {
+        "quintile": 1,
+        "n": 40,
+        "mean_p": 0.205,
+        "observed_rate": 0.4
+      },
+      {
+        "quintile": 2,
+        "n": 40,
+        "mean_p": 0.423,
+        "observed_rate": 0.525
+      },
+      {
+        "quintile": 3,
+        "n": 40,
+        "mean_p": 0.564,
+        "observed_rate": 0.675
+      },
+      {
+        "quintile": 4,
+        "n": 40,
+        "mean_p": 0.74,
+        "observed_rate": 0.75
+      },
+      {
+        "quintile": 5,
+        "n": 40,
+        "mean_p": 0.895,
+        "observed_rate": 0.675
+      }
+    ]
+  },
   "y_L1": {
     "label": "y_L1",
     "n": 200,
@@ -406,12 +610,260 @@
       }
     ]
   },
+  "y_L3": {
+    "label": "y_L3",
+    "n": 200,
+    "base_rate": 0.955,
+    "H1_primary_auc": {
+      "auc": 0.6754,
+      "ci95": [
+        0.4374,
+        0.872
+      ]
+    },
+    "H2_vs_environment": {
+      "auc": 0.6754,
+      "ci95": [
+        0.4374,
+        0.872
+      ],
+      "delta_vs_ref": 0.1536,
+      "delta_ci95": [
+        0.033,
+        0.302
+      ]
+    },
+    "H2_vs_source": {
+      "auc": 0.6754,
+      "ci95": [
+        0.4374,
+        0.872
+      ],
+      "delta_vs_ref": 0.0009,
+      "delta_ci95": [
+        -0.1523,
+        0.1645
+      ]
+    },
+    "H3_within_source": {
+      "mean_within_source_auc": 0.5986,
+      "ci95": [
+        0.4583,
+        0.8629
+      ],
+      "per_source": {
+        "control": 0.75,
+        "evidence_tension": 0.8485,
+        "future_work": 0.1974
+      }
+    },
+    "H4_brier": {
+      "model": 0.2422,
+      "constant_training_base_rate": 0.2306,
+      "mean_predicted": 0.5652,
+      "observed_rate": 0.955
+    },
+    "H5_structure_prior_tension": {
+      "auc": 0.7489,
+      "ci95": [
+        0.2602,
+        1.0
+      ]
+    },
+    "H6_planner_utility": {
+      "default": {
+        "auc": 0.4307,
+        "ci95": [
+          0.0256,
+          0.9293
+        ]
+      },
+      "paper3_informed": {
+        "auc": 0.4307,
+        "ci95": [
+          0.0256,
+          0.9293
+        ]
+      }
+    },
+    "all_scores": {
+      "b_environment__all": {
+        "auc": 0.5218,
+        "ci95": [
+          0.3004,
+          0.7369
+        ]
+      },
+      "b_environment__asof2021": {
+        "auc": 0.5218,
+        "ci95": [
+          0.3036,
+          0.7345
+        ]
+      },
+      "b_source__all": {
+        "auc": 0.6745,
+        "ci95": [
+          0.4976,
+          0.8308
+        ]
+      },
+      "b_source__asof2021": {
+        "auc": 0.6745,
+        "ci95": [
+          0.4976,
+          0.8308
+        ]
+      },
+      "b_text__all": {
+        "auc": 0.7266,
+        "ci95": [
+          0.5477,
+          0.8598
+        ]
+      },
+      "b_text__asof2021": {
+        "auc": 0.6108,
+        "ci95": [
+          0.4601,
+          0.7456
+        ]
+      },
+      "m_gbm__all": {
+        "auc": 0.7522,
+        "ci95": [
+          0.6225,
+          0.8652
+        ]
+      },
+      "m_gbm__asof2021": {
+        "auc": 0.7446,
+        "ci95": [
+          0.5465,
+          0.9046
+        ]
+      },
+      "m_logistic__all": {
+        "auc": 0.7039,
+        "ci95": [
+          0.4837,
+          0.8827
+        ]
+      },
+      "m_logistic__asof2021": {
+        "auc": 0.6754,
+        "ci95": [
+          0.4374,
+          0.872
+        ]
+      }
+    },
+    "by_source": {
+      "control": {
+        "n": 40,
+        "rate": 0.9,
+        "mean_p": 0.519
+      },
+      "direct_llm": {
+        "n": 40,
+        "rate": 1.0,
+        "mean_p": 0.716
+      },
+      "evidence_tension": {
+        "n": 80,
+        "rate": 0.963,
+        "mean_p": 0.496
+      },
+      "future_work": {
+        "n": 40,
+        "rate": 0.95,
+        "mean_p": 0.6
+      }
+    },
+    "quintiles": [
+      {
+        "quintile": 1,
+        "n": 40,
+        "mean_p": 0.205,
+        "observed_rate": 0.925
+      },
+      {
+        "quintile": 2,
+        "n": 40,
+        "mean_p": 0.423,
+        "observed_rate": 0.9
+      },
+      {
+        "quintile": 3,
+        "n": 40,
+        "mean_p": 0.564,
+        "observed_rate": 1.0
+      },
+      {
+        "quintile": 4,
+        "n": 40,
+        "mean_p": 0.74,
+        "observed_rate": 0.975
+      },
+      {
+        "quintile": 5,
+        "n": 40,
+        "mean_p": 0.895,
+        "observed_rate": 0.975
+      }
+    ]
+  },
+  "H7_planner_action_match": {
+    "default": {
+      "n_questions": 42,
+      "planner_top1_distribution": {
+        "run_simulation": 41,
+        "search_archive": 1
+      },
+      "observed_type_counts": {
+        "rerun_analysis": 7,
+        "run_simulation": 26,
+        "collect_observation": 19,
+        "search_archive": 3,
+        "compare_datasets": 8,
+        "search_review": 3
+      },
+      "top1_match_rate": 0.5952,
+      "permutation_null_mean": 0.6056,
+      "permutation_p_one_sided": 1.0,
+      "oracle_constant_guess": {
+        "type": "run_simulation",
+        "match_rate": 0.619
+      }
+    },
+    "paper3_informed": {
+      "n_questions": 42,
+      "planner_top1_distribution": {
+        "search_review": 42
+      },
+      "observed_type_counts": {
+        "rerun_analysis": 7,
+        "run_simulation": 26,
+        "collect_observation": 19,
+        "search_archive": 3,
+        "compare_datasets": 8,
+        "search_review": 3
+      },
+      "top1_match_rate": 0.0714,
+      "permutation_null_mean": 0.0714,
+      "permutation_p_one_sided": 1.0,
+      "oracle_constant_guess": {
+        "type": "run_simulation",
+        "match_rate": 0.619
+      }
+    }
+  },
   "label_agreement": {
     "note": "y_L2 = gpt-4o judge = Paper 3's committed label (results/judge_drift.json); y_L1 = gpt-4o-mini, the judge the pre-registration named by mistake",
     "L1_vs_L2_agreement": 0.625,
     "L1_vs_L2_kappa": 0.2446,
-    "L3_minus_L1_rate": null,
-    "L3_4o_minus_L2_rate": null,
+    "L3_minus_L1_rate": 0.095,
+    "L3_4o_minus_L2_rate": 0.1,
     "answer_status_L2": {
       "not_addressed": 99,
       "partially_addressed": 92,
