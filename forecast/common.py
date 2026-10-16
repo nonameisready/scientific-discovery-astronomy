@@ -56,6 +56,24 @@ BACKTEST_2022 = {
     "future_window": ("2023-01-01", SNAPSHOT_END),
 }
 
+# Round-3 fresh cohorts (docs/PREREGISTRATION_v3.md). 2017 is the earliest
+# cutoff with any leak-free Paper 3 training labels (cutoff 2012, window to
+# 2017); 2023's window is limited by the snapshot (2.79 years).
+BACKTEST_2017 = {
+    "name": "backtest2017",
+    "cutoff_year": 2017,
+    "cutoff_date": "2017-12-31",
+    "past_window": ("2010-01-01", "2017-12-31"),
+    "future_window": ("2018-01-01", "2022-12-31"),
+}
+BACKTEST_2023 = {
+    "name": "backtest2023",
+    "cutoff_year": 2023,
+    "cutoff_date": "2023-12-31",
+    "past_window": ("2016-01-01", "2023-12-31"),
+    "future_window": ("2024-01-01", SNAPSHOT_END),
+}
+
 # Study 2 - genuinely prospective forecast, scored no earlier than 2031-10-15.
 PROSPECTIVE = {
     "name": "prospective2026",

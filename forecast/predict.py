@@ -51,8 +51,10 @@ def _structure_columns() -> list[str]:
 
 TRAIN_SETS = {"asof2021": (2012, 2014, 2016), "all": (2012, 2014, 2016, 2018, 2020)}
 # Round 2: a 2019 forecaster only has labels whose windows closed by 2019.
-TRAIN_SETS_V2 = {"asof2019": (2012, 2014)}
+TRAIN_SETS_V2 = {"asof2019": (2012, 2014), "asof2017": (2012,), "asof2023": (2012, 2014, 2016, 2018)}
 PRIMARY_TRAIN = {
+    "backtest2017": "asof2017",  # cutoff-2012 labels end 2017-12-31
+    "backtest2023": "asof2023",  # cutoff-2018 labels end 2023-12-31
     "backtest2019": "asof2019",
     "backtest2021": "asof2021",
     "backtest2022": "asof2021",  # cutoff-2016 labels end 2021-12-31; cutoff-2018 labels run to 2023
@@ -153,7 +155,7 @@ def main() -> None:
     test = cohort_table(name)
     scores = test[["question_id", "question", "source", "subfield", "cutoff_date"]].copy()
     sets = dict(TRAIN_SETS)
-    if name in ("backtest2019", "backtest2022"):  # round-2 cohorts; 2021's frozen file stays as it was
+    if name in ("backtest2017", "backtest2019", "backtest2022", "backtest2023"):  # 2021's frozen file stays as it was
         sets.update(TRAIN_SETS_V2)
     for tag, cutoffs in sets.items():
         s = fit_and_score(train_all[train_all.cutoff_year.isin(cutoffs)], test, tag)

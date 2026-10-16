@@ -1,0 +1,422 @@
+{
+  "summary": [
+    {
+      "model": "v2_embed_src",
+      "dev_within": 0.646,
+      "dev_pooled": 0.74,
+      "loco_within": 0.689,
+      "loco_pooled": 0.773,
+      "w2019": 0.642,
+      "w2021": 0.646,
+      "w2022": 0.65
+    },
+    {
+      "model": "p3_src",
+      "dev_within": 0.571,
+      "dev_pooled": 0.697,
+      "loco_within": 0.664,
+      "loco_pooled": 0.756,
+      "w2019": 0.542,
+      "w2021": 0.558,
+      "w2022": 0.612
+    },
+    {
+      "model": "dm_src",
+      "dev_within": 0.676,
+      "dev_pooled": 0.753,
+      "loco_within": 0.667,
+      "loco_pooled": 0.774,
+      "w2019": 0.657,
+      "w2021": 0.694,
+      "w2022": 0.678
+    },
+    {
+      "model": "p3+dm_src",
+      "dev_within": 0.653,
+      "dev_pooled": 0.744,
+      "loco_within": 0.684,
+      "loco_pooled": 0.785,
+      "w2019": 0.657,
+      "w2021": 0.644,
+      "w2022": 0.657
+    },
+    {
+      "model": "cond_dm",
+      "dev_within": 0.675,
+      "dev_pooled": 0.743,
+      "loco_within": 0.667,
+      "loco_pooled": 0.767,
+      "w2019": 0.656,
+      "w2021": 0.694,
+      "w2022": 0.674
+    },
+    {
+      "model": "cond_p3+dm",
+      "dev_within": 0.656,
+      "dev_pooled": 0.748,
+      "loco_within": 0.686,
+      "loco_pooled": 0.786,
+      "w2019": 0.645,
+      "w2021": 0.648,
+      "w2022": 0.674
+    },
+    {
+      "model": "ens_embed+dm",
+      "dev_within": 0.701,
+      "dev_pooled": 0.777,
+      "loco_within": 0.728,
+      "loco_pooled": 0.803,
+      "w2019": 0.7,
+      "w2021": 0.713,
+      "w2022": 0.692
+    },
+    {
+      "model": "ens_embed+cond_dm",
+      "dev_within": 0.706,
+      "dev_pooled": 0.767,
+      "loco_within": 0.719,
+      "loco_pooled": 0.799,
+      "w2019": 0.702,
+      "w2021": 0.722,
+      "w2022": 0.696
+    },
+    {
+      "model": "ens_embed+p3dm",
+      "dev_within": 0.685,
+      "dev_pooled": 0.778,
+      "loco_within": 0.732,
+      "loco_pooled": 0.808,
+      "w2019": 0.694,
+      "w2021": 0.669,
+      "w2022": 0.693
+    }
+  ],
+  "dev_cohorts": {
+    "v2_embed_src": {
+      "backtest2019": {
+        "pooled": 0.7299,
+        "within": 0.6417
+      },
+      "backtest2021": {
+        "pooled": 0.7446,
+        "within": 0.6461
+      },
+      "backtest2022": {
+        "pooled": 0.7467,
+        "within": 0.6503
+      }
+    },
+    "p3_src": {
+      "backtest2019": {
+        "pooled": 0.6907,
+        "within": 0.5416
+      },
+      "backtest2021": {
+        "pooled": 0.7016,
+        "within": 0.5582
+      },
+      "backtest2022": {
+        "pooled": 0.6989,
+        "within": 0.612
+      }
+    },
+    "dm_src": {
+      "backtest2019": {
+        "pooled": 0.7251,
+        "within": 0.6569
+      },
+      "backtest2021": {
+        "pooled": 0.7703,
+        "within": 0.6939
+      },
+      "backtest2022": {
+        "pooled": 0.764,
+        "within": 0.6785
+      }
+    },
+    "p3+dm_src": {
+      "backtest2019": {
+        "pooled": 0.7418,
+        "within": 0.6572
+      },
+      "backtest2021": {
+        "pooled": 0.7519,
+        "within": 0.6436
+      },
+      "backtest2022": {
+        "pooled": 0.7377,
+        "within": 0.6573
+      }
+    },
+    "cond_dm": {
+      "backtest2019": {
+        "pooled": 0.7079,
+        "within": 0.6564
+      },
+      "backtest2021": {
+        "pooled": 0.7646,
+        "within": 0.6943
+      },
+      "backtest2022": {
+        "pooled": 0.7558,
+        "within": 0.6735
+      }
+    },
+    "cond_p3+dm": {
+      "backtest2019": {
+        "pooled": 0.739,
+        "within": 0.6454
+      },
+      "backtest2021": {
+        "pooled": 0.7516,
+        "within": 0.6481
+      },
+      "backtest2022": {
+        "pooled": 0.7519,
+        "within": 0.6744
+      }
+    },
+    "ens_embed+dm": {
+      "backtest2019": {
+        "pooled": 0.7658,
+        "within": 0.6997
+      },
+      "backtest2021": {
+        "pooled": 0.7882,
+        "within": 0.713
+      },
+      "backtest2022": {
+        "pooled": 0.7759,
+        "within": 0.6916
+      }
+    },
+    "ens_embed+cond_dm": {
+      "backtest2019": {
+        "pooled": 0.7522,
+        "within": 0.7021
+      },
+      "backtest2021": {
+        "pooled": 0.781,
+        "within": 0.7216
+      },
+      "backtest2022": {
+        "pooled": 0.7688,
+        "within": 0.6957
+      }
+    },
+    "ens_embed+p3dm": {
+      "backtest2019": {
+        "pooled": 0.7733,
+        "within": 0.6938
+      },
+      "backtest2021": {
+        "pooled": 0.7849,
+        "within": 0.6687
+      },
+      "backtest2022": {
+        "pooled": 0.7762,
+        "within": 0.6927
+      }
+    }
+  },
+  "paper3_loco": {
+    "v2_embed_src": {
+      "2012": {
+        "pooled": 0.7374,
+        "within": 0.6545
+      },
+      "2014": {
+        "pooled": 0.7774,
+        "within": 0.7378
+      },
+      "2016": {
+        "pooled": 0.7698,
+        "within": 0.668
+      },
+      "2018": {
+        "pooled": 0.7819,
+        "within": 0.6485
+      },
+      "2020": {
+        "pooled": 0.8002,
+        "within": 0.7356
+      }
+    },
+    "p3_src": {
+      "2012": {
+        "pooled": 0.7293,
+        "within": 0.6278
+      },
+      "2014": {
+        "pooled": 0.7711,
+        "within": 0.7035
+      },
+      "2016": {
+        "pooled": 0.7491,
+        "within": 0.662
+      },
+      "2018": {
+        "pooled": 0.7696,
+        "within": 0.6908
+      },
+      "2020": {
+        "pooled": 0.7603,
+        "within": 0.6334
+      }
+    },
+    "dm_src": {
+      "2012": {
+        "pooled": 0.7234,
+        "within": 0.6602
+      },
+      "2014": {
+        "pooled": 0.7815,
+        "within": 0.555
+      },
+      "2016": {
+        "pooled": 0.7884,
+        "within": 0.7029
+      },
+      "2018": {
+        "pooled": 0.7532,
+        "within": 0.6712
+      },
+      "2020": {
+        "pooled": 0.8226,
+        "within": 0.7476
+      }
+    },
+    "p3+dm_src": {
+      "2012": {
+        "pooled": 0.7652,
+        "within": 0.7229
+      },
+      "2014": {
+        "pooled": 0.8057,
+        "within": 0.645
+      },
+      "2016": {
+        "pooled": 0.7806,
+        "within": 0.6981
+      },
+      "2018": {
+        "pooled": 0.7757,
+        "within": 0.6927
+      },
+      "2020": {
+        "pooled": 0.8,
+        "within": 0.6632
+      }
+    },
+    "cond_dm": {
+      "2012": {
+        "pooled": 0.7341,
+        "within": 0.6644
+      },
+      "2014": {
+        "pooled": 0.7561,
+        "within": 0.5526
+      },
+      "2016": {
+        "pooled": 0.7824,
+        "within": 0.7022
+      },
+      "2018": {
+        "pooled": 0.7299,
+        "within": 0.6716
+      },
+      "2020": {
+        "pooled": 0.8305,
+        "within": 0.7419
+      }
+    },
+    "cond_p3+dm": {
+      "2012": {
+        "pooled": 0.7663,
+        "within": 0.7186
+      },
+      "2014": {
+        "pooled": 0.804,
+        "within": 0.654
+      },
+      "2016": {
+        "pooled": 0.7887,
+        "within": 0.7013
+      },
+      "2018": {
+        "pooled": 0.7551,
+        "within": 0.6964
+      },
+      "2020": {
+        "pooled": 0.8167,
+        "within": 0.6602
+      }
+    },
+    "ens_embed+dm": {
+      "2012": {
+        "pooled": 0.7663,
+        "within": 0.7223
+      },
+      "2014": {
+        "pooled": 0.8052,
+        "within": 0.6824
+      },
+      "2016": {
+        "pooled": 0.8055,
+        "within": 0.7299
+      },
+      "2018": {
+        "pooled": 0.7993,
+        "within": 0.7064
+      },
+      "2020": {
+        "pooled": 0.8401,
+        "within": 0.8001
+      }
+    },
+    "ens_embed+cond_dm": {
+      "2012": {
+        "pooled": 0.7715,
+        "within": 0.7225
+      },
+      "2014": {
+        "pooled": 0.7909,
+        "within": 0.6359
+      },
+      "2016": {
+        "pooled": 0.8021,
+        "within": 0.7256
+      },
+      "2018": {
+        "pooled": 0.7881,
+        "within": 0.7055
+      },
+      "2020": {
+        "pooled": 0.8435,
+        "within": 0.8057
+      }
+    },
+    "ens_embed+p3dm": {
+      "2012": {
+        "pooled": 0.7799,
+        "within": 0.7335
+      },
+      "2014": {
+        "pooled": 0.8227,
+        "within": 0.7196
+      },
+      "2016": {
+        "pooled": 0.8043,
+        "within": 0.729
+      },
+      "2018": {
+        "pooled": 0.802,
+        "within": 0.7104
+      },
+      "2020": {
+        "pooled": 0.8325,
+        "within": 0.77
+      }
+    }
+  }
+}

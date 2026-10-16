@@ -27,8 +27,10 @@ import sys
 
 from forecast.common import (
     BACKTEST,
+    BACKTEST_2017,
     BACKTEST_2019,
     BACKTEST_2022,
+    BACKTEST_2023,
     PAPER2,
     PAPER2_PROSPECTIVE,
     PAPER3,
@@ -41,7 +43,8 @@ from forecast.common import (
 from pipeline import corpus, features, generate, mine, subfields  # noqa: E402
 from pipeline.structure import structure_features  # noqa: E402
 
-STUDIES = {s["name"]: s for s in (BACKTEST, BACKTEST_2019, BACKTEST_2022, PROSPECTIVE, PAPER2_PROSPECTIVE)}
+STUDIES = {s["name"]: s for s in (
+    BACKTEST, BACKTEST_2017, BACKTEST_2019, BACKTEST_2022, BACKTEST_2023, PROSPECTIVE, PAPER2_PROSPECTIVE)}
 
 
 # ------------------------------------------------------------- generation
