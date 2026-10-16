@@ -1,0 +1,1166 @@
+{
+  "gpt-4o": {
+    "fresh_2019_2022": {
+      "n": 400,
+      "base_rate": 0.5675,
+      "base_rate_by_cohort": {
+        "backtest2019": 0.605,
+        "backtest2022": 0.53
+      },
+      "R1_v1_pooled_auc": {
+        "value": 0.659,
+        "ci95": [
+          0.6028,
+          0.709
+        ]
+      },
+      "R1_v1_auc_by_cohort": {
+        "backtest2019": 0.6539,
+        "backtest2022": 0.6765
+      },
+      "R2_v2_within_source": {
+        "value": 0.646,
+        "ci95": [
+          0.5825,
+          0.7096
+        ]
+      },
+      "R3_v2_vs_v1_within_source": {
+        "value": 0.646,
+        "ci95": [
+          0.5825,
+          0.7096
+        ],
+        "ref": "v1",
+        "delta": 0.0482,
+        "delta_ci95": [
+          -0.0464,
+          0.1416
+        ]
+      },
+      "R4_v2_vs_source_prior_pooled": {
+        "value": 0.7369,
+        "ci95": [
+          0.6871,
+          0.7822
+        ],
+        "ref": "source_prior",
+        "delta": 0.0683,
+        "delta_ci95": [
+          0.0189,
+          0.1167
+        ]
+      },
+      "R5_brier": {
+        "v2_ens_cal": 0.2069,
+        "v1": 0.2395,
+        "constant": 0.2483,
+        "source_prior": 0.2236,
+        "v2_embed_src": 0.2113
+      },
+      "R6_v2_tension_auc": {
+        "value": 0.6059,
+        "ci95": [
+          0.5152,
+          0.6939
+        ]
+      },
+      "all_models": {
+        "v1": {
+          "pooled": {
+            "value": 0.659,
+            "ci95": [
+              0.6028,
+              0.709
+            ]
+          },
+          "within_source": {
+            "value": 0.5978,
+            "ci95": [
+              0.5314,
+              0.6666
+            ]
+          },
+          "tension": 0.5987,
+          "brier": 0.2395
+        },
+        "source_prior": {
+          "pooled": {
+            "value": 0.6686,
+            "ci95": [
+              0.6185,
+              0.7166
+            ]
+          },
+          "within_source": {
+            "value": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ]
+          },
+          "tension": 0.5188,
+          "brier": 0.2236
+        },
+        "text_tfidf": {
+          "pooled": {
+            "value": 0.6876,
+            "ci95": [
+              0.6329,
+              0.7382
+            ]
+          },
+          "within_source": {
+            "value": 0.6241,
+            "ci95": [
+              0.5504,
+              0.6907
+            ]
+          },
+          "tension": 0.6379,
+          "brier": 0.2244
+        },
+        "v1_gbm": {
+          "pooled": {
+            "value": 0.6585,
+            "ci95": [
+              0.6031,
+              0.7096
+            ]
+          },
+          "within_source": {
+            "value": 0.5912,
+            "ci95": [
+              0.5062,
+              0.6712
+            ]
+          },
+          "tension": 0.5632,
+          "brier": 0.2437
+        },
+        "v2_struct_src": {
+          "pooled": {
+            "value": 0.691,
+            "ci95": [
+              0.638,
+              0.7413
+            ]
+          },
+          "within_source": {
+            "value": 0.576,
+            "ci95": [
+              0.5075,
+              0.6466
+            ]
+          },
+          "tension": 0.6035,
+          "brier": 0.2325
+        },
+        "v2_embed_src": {
+          "pooled": {
+            "value": 0.7369,
+            "ci95": [
+              0.6871,
+              0.7822
+            ]
+          },
+          "within_source": {
+            "value": 0.646,
+            "ci95": [
+              0.5825,
+              0.7096
+            ]
+          },
+          "tension": 0.6059,
+          "brier": 0.2113
+        },
+        "v2_ens": {
+          "pooled": {
+            "value": 0.7453,
+            "ci95": [
+              0.6951,
+              0.7904
+            ]
+          },
+          "within_source": {
+            "value": 0.6403,
+            "ci95": [
+              0.578,
+              0.7006
+            ]
+          },
+          "tension": 0.6306,
+          "brier": 0.203
+        },
+        "v2_ens_cal": {
+          "pooled": {
+            "value": 0.7407,
+            "ci95": [
+              0.6908,
+              0.7859
+            ]
+          },
+          "within_source": {
+            "value": 0.6403,
+            "ci95": [
+              0.578,
+              0.7006
+            ]
+          },
+          "tension": 0.619,
+          "brier": 0.2069
+        }
+      },
+      "per_source_auc": {
+        "v1": {
+          "control": 0.6868,
+          "direct_llm": 0.5152,
+          "evidence_tension": 0.5987,
+          "future_work": 0.5809
+        },
+        "v2_embed_src": {
+          "control": 0.7806,
+          "direct_llm": 0.5428,
+          "evidence_tension": 0.6059,
+          "future_work": 0.6879
+        },
+        "v2_ens_cal": {
+          "control": 0.7936,
+          "direct_llm": 0.4519,
+          "evidence_tension": 0.619,
+          "future_work": 0.6312
+        }
+      },
+      "by_cohort": {
+        "backtest2019": {
+          "v1": {
+            "pooled": 0.6539,
+            "within_source": 0.548
+          },
+          "source_prior": {
+            "pooled": 0.6674,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.6969,
+            "within_source": 0.6465
+          },
+          "v2_embed_src": {
+            "pooled": 0.7299,
+            "within_source": 0.6417
+          },
+          "v2_ens_cal": {
+            "pooled": 0.7382,
+            "within_source": 0.6167
+          }
+        },
+        "backtest2022": {
+          "v1": {
+            "pooled": 0.6765,
+            "within_source": 0.6476
+          },
+          "source_prior": {
+            "pooled": 0.6666,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.6828,
+            "within_source": 0.6018
+          },
+          "v2_embed_src": {
+            "pooled": 0.7467,
+            "within_source": 0.6503
+          },
+          "v2_ens_cal": {
+            "pooled": 0.7583,
+            "within_source": 0.664
+          }
+        }
+      }
+    },
+    "all_three_descriptive": {
+      "n": 600,
+      "base_rate": 0.5467,
+      "base_rate_by_cohort": {
+        "backtest2019": 0.605,
+        "backtest2021": 0.505,
+        "backtest2022": 0.53
+      },
+      "R1_v1_pooled_auc": {
+        "value": 0.6559,
+        "ci95": [
+          0.6119,
+          0.7001
+        ]
+      },
+      "R1_v1_auc_by_cohort": {
+        "backtest2019": 0.6539,
+        "backtest2021": 0.6562,
+        "backtest2022": 0.6765
+      },
+      "R2_v2_within_source": {
+        "value": 0.646,
+        "ci95": [
+          0.5926,
+          0.6983
+        ]
+      },
+      "R3_v2_vs_v1_within_source": {
+        "value": 0.646,
+        "ci95": [
+          0.5926,
+          0.6983
+        ],
+        "ref": "v1",
+        "delta": 0.0578,
+        "delta_ci95": [
+          -0.018,
+          0.1309
+        ]
+      },
+      "R4_v2_vs_source_prior_pooled": {
+        "value": 0.7376,
+        "ci95": [
+          0.6963,
+          0.7738
+        ],
+        "ref": "source_prior",
+        "delta": 0.0673,
+        "delta_ci95": [
+          0.0266,
+          0.1066
+        ]
+      },
+      "R5_brier": {
+        "v2_ens_cal": 0.2049,
+        "v1": 0.2418,
+        "constant": 0.2489,
+        "source_prior": 0.2214,
+        "v2_embed_src": 0.2112
+      },
+      "R6_v2_tension_auc": {
+        "value": 0.6172,
+        "ci95": [
+          0.5441,
+          0.6885
+        ]
+      },
+      "all_models": {
+        "v1": {
+          "pooled": {
+            "value": 0.6559,
+            "ci95": [
+              0.6119,
+              0.7001
+            ]
+          },
+          "within_source": {
+            "value": 0.5882,
+            "ci95": [
+              0.5356,
+              0.6417
+            ]
+          },
+          "tension": 0.6097,
+          "brier": 0.2418
+        },
+        "source_prior": {
+          "pooled": {
+            "value": 0.6704,
+            "ci95": [
+              0.6324,
+              0.7083
+            ]
+          },
+          "within_source": {
+            "value": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ]
+          },
+          "tension": 0.5028,
+          "brier": 0.2214
+        },
+        "text_tfidf": {
+          "pooled": {
+            "value": 0.6939,
+            "ci95": [
+              0.6521,
+              0.7365
+            ]
+          },
+          "within_source": {
+            "value": 0.6152,
+            "ci95": [
+              0.56,
+              0.673
+            ]
+          },
+          "tension": 0.6653,
+          "brier": 0.2239
+        },
+        "v1_gbm": {
+          "pooled": {
+            "value": 0.6569,
+            "ci95": [
+              0.6129,
+              0.6991
+            ]
+          },
+          "within_source": {
+            "value": 0.5818,
+            "ci95": [
+              0.5183,
+              0.646
+            ]
+          },
+          "tension": 0.5781,
+          "brier": 0.2462
+        },
+        "v2_struct_src": {
+          "pooled": {
+            "value": 0.6915,
+            "ci95": [
+              0.6477,
+              0.7314
+            ]
+          },
+          "within_source": {
+            "value": 0.5699,
+            "ci95": [
+              0.5169,
+              0.6252
+            ]
+          },
+          "tension": 0.6084,
+          "brier": 0.2316
+        },
+        "v2_embed_src": {
+          "pooled": {
+            "value": 0.7376,
+            "ci95": [
+              0.6963,
+              0.7738
+            ]
+          },
+          "within_source": {
+            "value": 0.646,
+            "ci95": [
+              0.5926,
+              0.6983
+            ]
+          },
+          "tension": 0.6172,
+          "brier": 0.2112
+        },
+        "v2_ens": {
+          "pooled": {
+            "value": 0.7495,
+            "ci95": [
+              0.7088,
+              0.7867
+            ]
+          },
+          "within_source": {
+            "value": 0.6283,
+            "ci95": [
+              0.5766,
+              0.6791
+            ]
+          },
+          "tension": 0.6514,
+          "brier": 0.2024
+        },
+        "v2_ens_cal": {
+          "pooled": {
+            "value": 0.7462,
+            "ci95": [
+              0.707,
+              0.7831
+            ]
+          },
+          "within_source": {
+            "value": 0.6283,
+            "ci95": [
+              0.5766,
+              0.6791
+            ]
+          },
+          "tension": 0.6477,
+          "brier": 0.2049
+        }
+      },
+      "per_source_auc": {
+        "v1": {
+          "control": 0.7288,
+          "direct_llm": 0.4289,
+          "evidence_tension": 0.6097,
+          "future_work": 0.56
+        },
+        "v2_embed_src": {
+          "control": 0.8056,
+          "direct_llm": 0.5603,
+          "evidence_tension": 0.6172,
+          "future_work": 0.6226
+        },
+        "v2_ens_cal": {
+          "control": 0.8328,
+          "direct_llm": 0.422,
+          "evidence_tension": 0.6477,
+          "future_work": 0.594
+        }
+      },
+      "by_cohort": {
+        "backtest2019": {
+          "v1": {
+            "pooled": 0.6539,
+            "within_source": 0.548
+          },
+          "source_prior": {
+            "pooled": 0.6674,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.6969,
+            "within_source": 0.6465
+          },
+          "v2_embed_src": {
+            "pooled": 0.7299,
+            "within_source": 0.6417
+          },
+          "v2_ens_cal": {
+            "pooled": 0.7382,
+            "within_source": 0.6167
+          }
+        },
+        "backtest2021": {
+          "v1": {
+            "pooled": 0.6562,
+            "within_source": 0.569
+          },
+          "source_prior": {
+            "pooled": 0.68,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.714,
+            "within_source": 0.5974
+          },
+          "v2_embed_src": {
+            "pooled": 0.7446,
+            "within_source": 0.6461
+          },
+          "v2_ens_cal": {
+            "pooled": 0.7585,
+            "within_source": 0.6042
+          }
+        },
+        "backtest2022": {
+          "v1": {
+            "pooled": 0.6765,
+            "within_source": 0.6476
+          },
+          "source_prior": {
+            "pooled": 0.6666,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.6828,
+            "within_source": 0.6018
+          },
+          "v2_embed_src": {
+            "pooled": 0.7467,
+            "within_source": 0.6503
+          },
+          "v2_ens_cal": {
+            "pooled": 0.7583,
+            "within_source": 0.664
+          }
+        }
+      }
+    }
+  },
+  "gpt-4o-mini": {
+    "fresh_2019_2022": {
+      "n": 400,
+      "base_rate": 0.905,
+      "base_rate_by_cohort": {
+        "backtest2019": 0.91,
+        "backtest2022": 0.9
+      },
+      "R1_v1_pooled_auc": {
+        "value": 0.6506,
+        "ci95": [
+          0.5606,
+          0.7358
+        ]
+      },
+      "R1_v1_auc_by_cohort": {
+        "backtest2019": 0.6416,
+        "backtest2022": 0.6639
+      },
+      "R2_v2_within_source": {
+        "value": 0.618,
+        "ci95": [
+          0.5275,
+          0.7048
+        ]
+      },
+      "R3_v2_vs_v1_within_source": {
+        "value": 0.618,
+        "ci95": [
+          0.5275,
+          0.7048
+        ],
+        "ref": "v1",
+        "delta": 0.0128,
+        "delta_ci95": [
+          -0.1304,
+          0.16
+        ]
+      },
+      "R4_v2_vs_source_prior_pooled": {
+        "value": 0.7342,
+        "ci95": [
+          0.6564,
+          0.8094
+        ],
+        "ref": "source_prior",
+        "delta": 0.0743,
+        "delta_ci95": [
+          0.0086,
+          0.1403
+        ]
+      },
+      "R5_brier": {
+        "v2_ens_cal": 0.23,
+        "v1": 0.2478,
+        "constant": 0.2362,
+        "source_prior": 0.2507,
+        "v2_embed_src": 0.2643
+      },
+      "R6_v2_tension_auc": {
+        "value": 0.5964,
+        "ci95": [
+          0.4298,
+          0.7558
+        ]
+      },
+      "all_models": {
+        "v1": {
+          "pooled": {
+            "value": 0.6506,
+            "ci95": [
+              0.5606,
+              0.7358
+            ]
+          },
+          "within_source": {
+            "value": 0.6052,
+            "ci95": [
+              0.4919,
+              0.7089
+            ]
+          },
+          "tension": 0.5739,
+          "brier": 0.2478
+        },
+        "source_prior": {
+          "pooled": {
+            "value": 0.6599,
+            "ci95": [
+              0.5804,
+              0.7383
+            ]
+          },
+          "within_source": {
+            "value": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ]
+          },
+          "tension": 0.4609,
+          "brier": 0.2507
+        },
+        "text_tfidf": {
+          "pooled": {
+            "value": 0.6878,
+            "ci95": [
+              0.6171,
+              0.7572
+            ]
+          },
+          "within_source": {
+            "value": 0.5958,
+            "ci95": [
+              0.5132,
+              0.6786
+            ]
+          },
+          "tension": 0.7158,
+          "brier": 0.226
+        },
+        "v1_gbm": {
+          "pooled": {
+            "value": 0.7117,
+            "ci95": [
+              0.6233,
+              0.7914
+            ]
+          },
+          "within_source": {
+            "value": 0.6565,
+            "ci95": [
+              0.554,
+              0.7608
+            ]
+          },
+          "tension": 0.6301,
+          "brier": 0.2574
+        },
+        "v2_struct_src": {
+          "pooled": {
+            "value": 0.6687,
+            "ci95": [
+              0.5866,
+              0.7441
+            ]
+          },
+          "within_source": {
+            "value": 0.5716,
+            "ci95": [
+              0.462,
+              0.668
+            ]
+          },
+          "tension": 0.5773,
+          "brier": 0.2521
+        },
+        "v2_embed_src": {
+          "pooled": {
+            "value": 0.7342,
+            "ci95": [
+              0.6564,
+              0.8094
+            ]
+          },
+          "within_source": {
+            "value": 0.618,
+            "ci95": [
+              0.5275,
+              0.7048
+            ]
+          },
+          "tension": 0.5964,
+          "brier": 0.2643
+        },
+        "v2_ens": {
+          "pooled": {
+            "value": 0.7358,
+            "ci95": [
+              0.6637,
+              0.8081
+            ]
+          },
+          "within_source": {
+            "value": 0.6247,
+            "ci95": [
+              0.531,
+              0.7121
+            ]
+          },
+          "tension": 0.6267,
+          "brier": 0.2421
+        },
+        "v2_ens_cal": {
+          "pooled": {
+            "value": 0.7262,
+            "ci95": [
+              0.6444,
+              0.8016
+            ]
+          },
+          "within_source": {
+            "value": 0.6247,
+            "ci95": [
+              0.531,
+              0.7121
+            ]
+          },
+          "tension": 0.6003,
+          "brier": 0.23
+        }
+      },
+      "per_source_auc": {
+        "v1": {
+          "control": 0.6215,
+          "direct_llm": NaN,
+          "evidence_tension": 0.5739,
+          "future_work": 0.626
+        },
+        "v2_embed_src": {
+          "control": 0.7785,
+          "direct_llm": NaN,
+          "evidence_tension": 0.5964,
+          "future_work": 0.5086
+        },
+        "v2_ens_cal": {
+          "control": 0.6974,
+          "direct_llm": NaN,
+          "evidence_tension": 0.6003,
+          "future_work": 0.5258
+        }
+      },
+      "by_cohort": {
+        "backtest2019": {
+          "v1": {
+            "pooled": 0.6416,
+            "within_source": 0.5894
+          },
+          "source_prior": {
+            "pooled": 0.6832,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.6322,
+            "within_source": 0.5212
+          },
+          "v2_embed_src": {
+            "pooled": 0.7207,
+            "within_source": 0.5918
+          },
+          "v2_ens_cal": {
+            "pooled": 0.7439,
+            "within_source": 0.6309
+          }
+        },
+        "backtest2022": {
+          "v1": {
+            "pooled": 0.6639,
+            "within_source": 0.621
+          },
+          "source_prior": {
+            "pooled": 0.6444,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.7356,
+            "within_source": 0.6703
+          },
+          "v2_embed_src": {
+            "pooled": 0.7456,
+            "within_source": 0.6442
+          },
+          "v2_ens_cal": {
+            "pooled": 0.7319,
+            "within_source": 0.6185
+          }
+        }
+      }
+    },
+    "all_three_descriptive": {
+      "n": 600,
+      "base_rate": 0.89,
+      "base_rate_by_cohort": {
+        "backtest2019": 0.91,
+        "backtest2021": 0.86,
+        "backtest2022": 0.9
+      },
+      "R1_v1_pooled_auc": {
+        "value": 0.6715,
+        "ci95": [
+          0.6025,
+          0.7368
+        ]
+      },
+      "R1_v1_auc_by_cohort": {
+        "backtest2019": 0.6416,
+        "backtest2021": 0.707,
+        "backtest2022": 0.6639
+      },
+      "R2_v2_within_source": {
+        "value": 0.5799,
+        "ci95": [
+          0.5083,
+          0.6468
+        ]
+      },
+      "R3_v2_vs_v1_within_source": {
+        "value": 0.5799,
+        "ci95": [
+          0.5083,
+          0.6468
+        ],
+        "ref": "v1",
+        "delta": -0.051,
+        "delta_ci95": [
+          -0.1556,
+          0.0574
+        ]
+      },
+      "R4_v2_vs_source_prior_pooled": {
+        "value": 0.6756,
+        "ci95": [
+          0.6145,
+          0.7337
+        ],
+        "ref": "source_prior",
+        "delta": 0.0451,
+        "delta_ci95": [
+          -0.01,
+          0.099
+        ]
+      },
+      "R5_brier": {
+        "v2_ens_cal": 0.2275,
+        "v1": 0.2394,
+        "constant": 0.2357,
+        "source_prior": 0.2483,
+        "v2_embed_src": 0.2682
+      },
+      "R6_v2_tension_auc": {
+        "value": 0.5178,
+        "ci95": [
+          0.3929,
+          0.6394
+        ]
+      },
+      "all_models": {
+        "v1": {
+          "pooled": {
+            "value": 0.6715,
+            "ci95": [
+              0.6025,
+              0.7368
+            ]
+          },
+          "within_source": {
+            "value": 0.6309,
+            "ci95": [
+              0.5454,
+              0.7071
+            ]
+          },
+          "tension": 0.6545,
+          "brier": 0.2394
+        },
+        "source_prior": {
+          "pooled": {
+            "value": 0.6305,
+            "ci95": [
+              0.5688,
+              0.6893
+            ]
+          },
+          "within_source": {
+            "value": 0.5,
+            "ci95": [
+              0.5,
+              0.5
+            ]
+          },
+          "tension": 0.4537,
+          "brier": 0.2483
+        },
+        "text_tfidf": {
+          "pooled": {
+            "value": 0.6705,
+            "ci95": [
+              0.6146,
+              0.7285
+            ]
+          },
+          "within_source": {
+            "value": 0.5906,
+            "ci95": [
+              0.5255,
+              0.6578
+            ]
+          },
+          "tension": 0.6569,
+          "brier": 0.2238
+        },
+        "v1_gbm": {
+          "pooled": {
+            "value": 0.7157,
+            "ci95": [
+              0.651,
+              0.779
+            ]
+          },
+          "within_source": {
+            "value": 0.6665,
+            "ci95": [
+              0.5862,
+              0.7454
+            ]
+          },
+          "tension": 0.637,
+          "brier": 0.253
+        },
+        "v2_struct_src": {
+          "pooled": {
+            "value": 0.6929,
+            "ci95": [
+              0.6308,
+              0.7497
+            ]
+          },
+          "within_source": {
+            "value": 0.6056,
+            "ci95": [
+              0.5229,
+              0.6817
+            ]
+          },
+          "tension": 0.6481,
+          "brier": 0.2397
+        },
+        "v2_embed_src": {
+          "pooled": {
+            "value": 0.6756,
+            "ci95": [
+              0.6145,
+              0.7337
+            ]
+          },
+          "within_source": {
+            "value": 0.5799,
+            "ci95": [
+              0.5083,
+              0.6468
+            ]
+          },
+          "tension": 0.5178,
+          "brier": 0.2682
+        },
+        "v2_ens": {
+          "pooled": {
+            "value": 0.7162,
+            "ci95": [
+              0.6587,
+              0.7711
+            ]
+          },
+          "within_source": {
+            "value": 0.6214,
+            "ci95": [
+              0.5488,
+              0.693
+            ]
+          },
+          "tension": 0.6375,
+          "brier": 0.237
+        },
+        "v2_ens_cal": {
+          "pooled": {
+            "value": 0.71,
+            "ci95": [
+              0.6483,
+              0.7684
+            ]
+          },
+          "within_source": {
+            "value": 0.6214,
+            "ci95": [
+              0.5488,
+              0.693
+            ]
+          },
+          "tension": 0.6283,
+          "brier": 0.2275
+        }
+      },
+      "per_source_auc": {
+        "v1": {
+          "control": 0.6275,
+          "direct_llm": NaN,
+          "evidence_tension": 0.6545,
+          "future_work": 0.6175
+        },
+        "v2_embed_src": {
+          "control": 0.7526,
+          "direct_llm": NaN,
+          "evidence_tension": 0.5178,
+          "future_work": 0.4656
+        },
+        "v2_ens_cal": {
+          "control": 0.6876,
+          "direct_llm": NaN,
+          "evidence_tension": 0.6283,
+          "future_work": 0.5211
+        }
+      },
+      "by_cohort": {
+        "backtest2019": {
+          "v1": {
+            "pooled": 0.6416,
+            "within_source": 0.5894
+          },
+          "source_prior": {
+            "pooled": 0.6832,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.6322,
+            "within_source": 0.5212
+          },
+          "v2_embed_src": {
+            "pooled": 0.7207,
+            "within_source": 0.5918
+          },
+          "v2_ens_cal": {
+            "pooled": 0.7439,
+            "within_source": 0.6309
+          }
+        },
+        "backtest2021": {
+          "v1": {
+            "pooled": 0.707,
+            "within_source": 0.6824
+          },
+          "source_prior": {
+            "pooled": 0.5914,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.6614,
+            "within_source": 0.5802
+          },
+          "v2_embed_src": {
+            "pooled": 0.5991,
+            "within_source": 0.5038
+          },
+          "v2_ens_cal": {
+            "pooled": 0.696,
+            "within_source": 0.6148
+          }
+        },
+        "backtest2022": {
+          "v1": {
+            "pooled": 0.6639,
+            "within_source": 0.621
+          },
+          "source_prior": {
+            "pooled": 0.6444,
+            "within_source": 0.5
+          },
+          "text_tfidf": {
+            "pooled": 0.7356,
+            "within_source": 0.6703
+          },
+          "v2_embed_src": {
+            "pooled": 0.7456,
+            "within_source": 0.6442
+          },
+          "v2_ens_cal": {
+            "pooled": 0.7319,
+            "within_source": 0.6185
+          }
+        }
+      }
+    }
+  }
+}

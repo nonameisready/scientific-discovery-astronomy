@@ -11,24 +11,19 @@ and tests it the only honest way available:
 
 ## 中文摘要
 
-**结论：有效果，但有限。**
+**结论：有效果，而且第二版比第一版明显好；但它主要还是在判断"哪类问题会火"，对同一类问题内部的排序只是中等水平。**
 
-在从未见过的 2021 年截止点上，Paper 3 的预测器确实能区分哪些天文问题会在之后约 5 年里被学界实质性跟进。
+一共考了三次，截止点分别是 2019、2021、2022，共 600 道题。每次只用当时就能拿到的数据训练，预测先冻结、推送，然后才对答案。
 
-- 区分度明显高于随机：AUC 0.66，95% 置信区间 0.58–0.73。Paper 3 原文报告的是 0.71。
-- 它比"子领域热度"基线强。
-- 它**没有**超过一个最简单的基线：只看问题是由哪种方法生成的。直接让 LLM 写的问题 85% 被跟进，对照问题只有 30%。
-- 在同一来源内部，它的区分力不显著：AUC 0.57，置信区间 0.50–0.65。
-  - 真正有效的部分是：给 Paper 1 式的"证据张力"问题排序（AUC 0.64），以及识别对照问题（AUC 0.84）。
-  - 对直接 LLM 问题，它的排序甚至是反的（AUC 0.27）。
-- 概率偏自信：最高五分位预测 0.90，实际只有 0.58。
-- Paper 3 的证据图结构先验在张力问题内勉强有效：AUC 0.63，置信区间 0.50–0.75。
-- Paper 4 的效用分数不能预测关注度：AUC 0.42，置信区间 0.31–0.54。这与 Paper 4 自己撤回的结论一致。
-- Paper 4 对几乎所有问题给出同一个"下一步"，没有区分度。
-
-基于这些结果，本仓库给出了 2026→2031 的前瞻预测：200 个新问题，外加 Paper 2 冻结的 200 个问题。这些预测已用 SHA-256 冻结，2031 年才能评分。
-
-另有一处方法上的发现：预注册时写错了评审模型。Paper 3 的标签实际是用 GPT-4o 判的，GPT-4o-mini 宽松得多（93% 判为"已跟进"，κ=0.14）。这一点已作为偏差如实报告，见下文。
+- **Paper 3 原始模型（v1）三次都稳定有效**：AUC 分别是 0.65、0.66、0.68，明显强于随机（0.5）。
+- **第二版模型（v2）**：问题的语义向量，加上"问题来源"作为已知项，再加概率校准。
+  - 两个新考场（2019 和 2022）是预注册后才生成的，v2 在这两组上的总体 AUC 是 **0.74**（0.69–0.78）。
+  - v2 **显著超过了**"只看问题来源"的基线（+0.07）。v1 做不到这一点。
+  - 同一类问题内部的排序：AUC 0.65（0.58–0.71），显著强于随机。不过比 v1（0.60）的提升没有达到显著。
+  - 概率更可信：Brier 分数从 0.240 降到 0.207，越低越好。
+  - 在 Paper 1 式的"证据张力"问题里，排序能力勉强显著：AUC 0.61。
+- Paper 4 的规划器仍然没有预测力，它几乎给每个问题推荐同一个下一步。
+- 2026→2031 的前瞻预测已加入 v2 分数，并单独冻结在 `FREEZE_v2.json`。v1 原版不动。
 
 ## The stack
 
@@ -54,7 +49,10 @@ The git history on GitHub timestamps each step.
 | `bcf8469` | code + [pre-registration](docs/PREREGISTRATION.md) (H1–H7) | no questions yet |
 | `60f0f5d` | 2021 cohort + all predictions frozen ([FREEZE.json](data/backtest2021/FREEZE.json)) | **no** |
 | `2a896d8` | 2026 forecasts frozen | 2021 labels being computed, not yet seen |
-| later | labels, evaluation, this README | yes |
+| `5292d2c` | 2021 labels, evaluation, README | yes |
+| `a4eea0f` | round-2 [pre-registration](docs/PREREGISTRATION_v2.md) + v2 models | no 2019/2022 questions yet |
+| `bd84ebc`, `58fe4b7` | 2022 and 2019 cohorts + v1/v2 predictions frozen | **no** |
+| `cc7892b` | 2019/2022 labels | yes |
 
 ## Data
 
@@ -145,7 +143,77 @@ and per question in [`per_question.csv`](results/backtest2021/per_question.csv).
    and `search_review` for all 78 under the Paper-3-informed config. So in its
    current form its recommendations carry little question-specific information.
 
+## Round 2: two more cutoffs and a within-source model
+
+[Pre-registered](docs/PREREGISTRATION_v2.md) after round 1. The v2 models
+were designed on the 2021 cohort, which therefore serves as their
+development set. Both test cohorts were generated, scored and frozen
+before any of their labels existed:
+
+- 2019: frozen at commit `58fe4b7`, outcome window 2020–2024, trained on
+  cutoffs 2012 and 2014 only.
+- 2022: frozen at commit `bd84ebc`, outcome window 2023 to 2026-10, trained
+  on cutoffs 2012–2016.
+
+**v2 models** ([`forecast/models_v2.py`](forecast/models_v2.py)):
+- `v2_embed_src`: the question's embedding (`text-embedding-3-small`) plus a
+  source fixed effect, so the rest of the model must explain variation
+  *within* a source.
+- `v2_ens_cal`: averages `v2_embed_src` with Paper 3's features (also with a
+  source fixed effect), then applies Platt calibration on out-of-fold
+  training predictions.
+
+### Results on the fresh 2019 + 2022 cohorts
+
+Paper 3 label (gpt-4o judge), n = 400, base rate 0.57.
+
+| Hypothesis | Result | Verdict |
+| --- | --- | --- |
+| R1 v1 discriminates out of time | pooled AUC 0.659 [0.603, 0.709]; 2019: 0.654, 2022: 0.677 | ✅ replicated |
+| R2 v2 ranks within a source | within-source AUC **0.646** [0.583, 0.710] | ✅ |
+| R3 v2 beats v1 within a source | Δ +0.048 [−0.046, +0.142] | ❌ not significant |
+| R4 v2 beats the source prior | pooled AUC **0.737** vs 0.669; Δ +0.068 [+0.019, +0.117] | ✅ |
+| R5 calibrated v2 has the best Brier | v2 0.207 < source prior 0.224 < v1 0.240 < constant 0.248 | ✅ |
+| R6 v2 ranks evidence-tension questions | AUC 0.606 [0.515, 0.694] | ✅ (barely) |
+
+### All three cutoffs
+
+This view is descriptive, because 2021 was the v2 development set.
+
+| Model | 2019 pooled / within | 2021 (dev) pooled / within | 2022 pooled / within |
+| --- | --- | --- | --- |
+| v1 (Paper 3 logistic) | 0.654 / 0.548 | 0.656 / 0.569 | 0.677 / 0.648 |
+| source prior | 0.667 / 0.500 | 0.680 / 0.500 | 0.667 / 0.500 |
+| TF-IDF text | 0.697 / 0.647 | 0.714 / 0.597 | 0.683 / 0.602 |
+| **v2 embed + source** | **0.730 / 0.642** | 0.745 / 0.646 | **0.747 / 0.650** |
+| v2 ensemble, calibrated | 0.738 / 0.617 | 0.759 / 0.604 | 0.758 / 0.664 |
+
+![AUC by cohort](results/round2/auc_by_cohort.png)
+
+### What round 2 changes
+
+- **Round 1's main result replicates.** Paper 3's model scores 0.65–0.68 at
+  every new cutoff.
+- **Round 1's H3 failure was partly noise in the 2021 cohort.** On the fresh
+  cohorts v1's within-source AUC is 0.598 [0.531, 0.667]. Its inverted
+  ranking of direct-LLM questions in 2021 (0.27) was 0.52 on the fresh
+  cohorts.
+- **v2 is the better forecaster.** It is the first model in this study to
+  clearly beat the source-type prior. Its probabilities are also the
+  best calibrated.
+- **The within-source gain is real but modest.** v2 ranks questions inside a
+  source at about 0.65, and inside tension questions at about 0.61. It is
+  not yet significantly better than v1 *within* a source.
+- **Under the lenient gpt-4o-mini label**, where 90% of questions count as
+  addressed, the same picture holds more weakly: R1 0.651; R4 Δ +0.074
+  [+0.009, +0.140].
+
+Full numbers: [`results/round2/evaluation.json`](results/round2/evaluation.json).
+
 ## Study 2: the prospective forecast (cutoff 2026-10-14 → scored ≥ 2031-10-15)
+
+Both tables are now ranked by the v2 model, frozen separately in
+`FREEZE_v2.json`. The original v1 scores stay alongside, unchanged.
 
 - **[`results/prospective2026/FORECAST.md`](results/prospective2026/FORECAST.md)**
   covers 200 new questions across the 8 subfields. It includes a ranking of the
@@ -197,8 +265,8 @@ quintile is addressed more often than the bottom quintile.
 - **The label is retrieval-bounded.** Paper 4 showed abstract retrieval misses
   engagement with narrow questions. The citation-graph label (L3) addresses
   this when the crawl finishes.
-- **Single run.** One cohort of 200 questions and one judge; the confidence
-  intervals are wide.
+- **Sample size.** Three cohorts of 200 questions each, with one primary judge.
+  The intervals are still about ±0.05 AUC.
 
 ## Reproduce
 
@@ -210,6 +278,10 @@ python -m forecast.cohort backtest2021 && python -m forecast.predict backtest202
 python -m forecast.label backtest2021 && python -m forecast.evaluate backtest2021
 python -m forecast.judge_drift
 python -m forecast.cohort prospective2026 && python -m forecast.predict prospective2026 && python -m forecast.forecast_table prospective2026
+# round 2
+python -m forecast.cohort backtest2019 && python -m forecast.predict backtest2019 && python -m forecast.predict_v2 backtest2019 && python -m forecast.freeze backtest2019
+python -m forecast.label backtest2019 --no-citation    # same for backtest2022
+python -m forecast.evaluate_v2
 ```
 
 Every LLM response is cached under `data/cache/llm/` and committed, so all

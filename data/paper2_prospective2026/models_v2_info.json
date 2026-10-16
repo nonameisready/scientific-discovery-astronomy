@@ -1,0 +1,14 @@
+{
+  "train_tag": "all",
+  "train_cutoffs": [
+    2012,
+    2014,
+    2016,
+    2018,
+    2020
+  ],
+  "n_train": 980,
+  "embed_C": 3.0,
+  "platt_coef": 0.9955414585214352,
+  "platt_intercept": -0.021479149694546028
+}

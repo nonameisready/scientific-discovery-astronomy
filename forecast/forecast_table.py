@@ -60,62 +60,81 @@ def main() -> None:
 
     pred["ood_features"] = [", ".join(c for c in cols if ood(q, c)) for q in pred["question_id"]]
     pred["n_ood"] = [len([x for x in s.split(", ") if x]) for s in pred["ood_features"]]
-    pred = pred.sort_values("p_attention", ascending=False).reset_index(drop=True)
+    v2p = d / "predictions_v2.jsonl"
+    has_v2 = v2p.exists()
+    if has_v2:  # round-2 model (docs/PREREGISTRATION_v2.md), frozen in FREEZE_v2.json
+        v2 = pd.DataFrame(read_jsonl(v2p))[["question_id", "v2_ens_cal__all"]].rename(columns={"v2_ens_cal__all": "p_v2"})
+        pred = pred.merge(v2, on="question_id")
+    key = "p_v2" if has_v2 else "p_attention"
+    pred = pred.sort_values(key, ascending=False).reset_index(drop=True)
     pred["rank"] = pred.index + 1
+    lo, hi = study["future_window"]
     out = ROOT / "results" / name
     out.mkdir(parents=True, exist_ok=True)
-    cols = ["rank", "question_id", "subfield", "source", "p_attention", "s_structure__all", "question",
+    cols = ["rank", "question_id", "subfield", "source"] + (["p_v2"] if has_v2 else []) + [
+            "p_attention", "s_structure__all", "question",
             "next_action", "why_up", "why_down", "n_ood", "ood_features"]
     pred[cols].to_csv(out / "forecast.csv", index=False)
 
     lo, hi = study["future_window"]
+    def pcell(r) -> str:
+        dag = " †" if r.n_ood >= 2 else ""
+        return (f"{r.p_v2:.2f} | {r.p_attention:.2f}{dag}" if has_v2 else f"{r.p_attention:.2f}{dag}")
+
+    phead = "p (v2) | p (v1)" if has_v2 else "p"
+    pdash = "---|---" if has_v2 else "---"
     lines = [
         f"# Forecast: {name}",
         "",
-        f"Cutoff {study['cutoff_date']}; questions and scores frozen in `data/{name}/FREEZE.json`.",
-        f"`p_attention` = probability (Paper 3 logistic, trained on all 980 labelled questions) that the "
-        f"question is *substantively addressed* by arXiv astro-ph papers in {lo} .. {hi}, as judged by Paper 3's "
-        f"label (top-8 retrieved papers, strict gpt-4o judge).",
+        f"Cutoff {study['cutoff_date']}. The question is whether each question will be *substantively addressed* "
+        f"by arXiv astro-ph papers in {lo} .. {hi}, as judged by Paper 3's label (top-8 retrieved papers, "
+        "strict gpt-4o judge).",
         "",
-        "Calibration warning: on the 2021 backtest the absolute probabilities are only roughly calibrated "
-        "(see results/backtest2021); read them as a ranking first.",
-        "",
-        f"Out-of-distribution: {int((pred.n_ood > 0).sum())} of {len(pred)} questions have at least one feature "
-        "outside the training 1st-99th percentile (column `ood_features` in the CSV); questions marked † below "
-        "have 2+ such features and their probability should not be trusted.",
+    ]
+    if has_v2:
+        lines += [
+            "- **p (v2)**: the round-2 model `v2_ens_cal` (question embedding + source fixed effect + Paper 3 "
+            "features, calibrated), frozen in `FREEZE_v2.json`. On the fresh 2019 + 2022 backtests it scored "
+            "pooled AUC 0.74 and Brier 0.207 (results/round2). **Ranked by this column.**",
+            "- **p (v1)**: Paper 3's logistic model, the original frozen forecast (`FREEZE.json`): pooled AUC 0.66, "
+            "Brier 0.240, over-confident at the top.",
+            "",
+        ]
+    else:
+        lines += ["`p` = Paper 3 logistic trained on all 980 labelled questions (frozen in `FREEZE.json`).", ""]
+    lines += [
+        f"Out-of-distribution: {int((pred.n_ood > 0).sum())} of {len(pred)} questions have at least one Paper 3 "
+        "feature outside the training 1st-99th percentile (column `ood_features` in the CSV); † marks 2+ such "
+        "features, where the v1 probability should not be trusted.",
         "",
         "## Mean forecast by subfield and source",
         "",
-        pred.pivot_table(index="subfield", columns="source", values="p_attention", aggfunc="mean")
-        .round(2).to_markdown(),
+        pred.pivot_table(index="subfield", columns="source", values=key, aggfunc="mean").round(2).to_markdown(),
         "",
         "## Top 25 — most likely to be taken up",
         "",
-        "| # | p | subfield | source | question | Paper 4 next step |",
-        "|---|---|---|---|---|---|",
+        f"| # | {phead} | subfield | source | question | Paper 4 next step |",
+        f"|---|{pdash}|---|---|---|---|",
     ]
     for r in pred.head(25).itertuples():
-        dag = " †" if r.n_ood >= 2 else ""
-        lines.append(f"| {r.rank} | {r.p_attention:.2f}{dag} | {r.subfield} | {r.source} | {r.question} | {r.next_action or '—'} |")
-    lines += ["", "## Bottom 15 — least likely", "", "| # | p | subfield | source | question |", "|---|---|---|---|---|"]
+        lines.append(f"| {r.rank} | {pcell(r)} | {r.subfield} | {r.source} | {r.question} | {r.next_action or '—'} |")
+    lines += ["", "## Bottom 15 — least likely", "", f"| # | {phead} | subfield | source | question |",
+              f"|---|{pdash}|---|---|---|"]
     for r in pred.tail(15).itertuples():
-        dag = " †" if r.n_ood >= 2 else ""
-        lines.append(f"| {r.rank} | {r.p_attention:.2f}{dag} | {r.subfield} | {r.source} | {r.question} |")
+        lines.append(f"| {r.rank} | {pcell(r)} | {r.subfield} | {r.source} | {r.question} |")
     tension = pred[pred.source == "evidence_tension"]
     if len(tension):
         lines += [
-            "", "## Evidence-tension questions ranked (the most informative slice)", "",
-            "In the 2021 backtest the model's ranking *within* a generation source was only real for "
-            "evidence-tension questions (within-source AUC 0.64) and controls; across sources it mostly "
-            "reproduces the source-type prior (broad direct-LLM questions are almost always taken up). "
-            "This table ranks only the Paper 1-style tension questions; `structure` is Paper 3's evidence-graph "
-            "structure prior (backtest AUC 0.63 within tension questions).", "",
-            "| # | p | structure | subfield | question | Paper 4 next steps |", "|---|---|---|---|---|---|",
+            "", "## Evidence-tension questions ranked", "",
+            "Across three backtests (2019, 2021, 2022) the models mostly separate *kinds* of question; within the "
+            "Paper 1-style tension questions the v2 model's ranking is weaker but real (AUC 0.61 on the fresh "
+            "cohorts, CI 0.52-0.69). `structure` is Paper 3's evidence-graph structure prior. Paper 4's next steps "
+            "are nearly identical for every question (see README).", "",
+            f"| # | {phead} | structure | subfield | question | Paper 4 next steps |", f"|---|{pdash}|---|---|---|---|",
         ]
         for i, r in enumerate(tension.itertuples(), 1):
-            dag = " †" if r.n_ood >= 2 else ""
             st = f"{r.s_structure__all:.2f}" if pd.notna(r.s_structure__all) else "—"
-            lines.append(f"| {i} | {r.p_attention:.2f}{dag} | {st} | {r.subfield} | {r.question} | {r.next_action or '—'} |")
+            lines.append(f"| {i} | {pcell(r)} | {st} | {r.subfield} | {r.question} | {r.next_action or '—'} |")
     lines += ["", f"Full ranked table: `results/{name}/forecast.csv`.", ""]
     (out / "FORECAST.md").write_text("\n".join(lines))
     print(f"[forecast] {name}: {len(pred)} questions -> {out / 'FORECAST.md'}")

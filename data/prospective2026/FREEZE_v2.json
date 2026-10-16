@@ -1,0 +1,11 @@
+{
+  "study": "prospective2026",
+  "frozen_at_utc": "2026-10-16T01:25:51Z",
+  "addendum_to": "FREEZE.json (v1 forecast, unchanged)",
+  "model": "v2_ens_cal__all (docs/PREREGISTRATION_v2.md)",
+  "sha256": {
+    "predictions_v2.jsonl": "50b6a1a1972878dba74276e7f65066d5290fddb58789bfcea2397c1314b0d7af",
+    "models_v2_info.json": "a21e0aaa82409d2f1cc12082e6ab5c41f1d62909c1c3515b4cb125f188cb957a"
+  },
+  "code_commit": "cc7892b1ebcccb7be58bc72edf423254af7c8664"
+}
