@@ -280,8 +280,10 @@ v3 is the best model at every cutoff, on both measures.
 2. ~~Momentum may partly predict the retriever.~~ **Checked.** Against a
    citation-graph label that does not use text retrieval, v3 still scores
    AUC 0.68 and momentum alone 0.69. See below.
-3. **The question generator (gpt-4o-mini) has seen post-cutoff literature.**
-   This matters for every cutoff before late 2023.
+3. ~~The question generator has seen post-cutoff literature.~~ **Checked.**
+   On 595 LLM-free template questions, v3 scores AUC 0.69. LLM phrasing
+   inflates outcome *rates* by 16 points but not the ranking. See round 4
+   below.
 
 Full numbers: [`results/round3/evaluation.json`](results/round3/evaluation.json).
 
@@ -368,10 +370,45 @@ So the momentum signal is mostly about where the field actually went, not
 about the retriever. Full numbers are in
 [`results/citation_label.json`](results/citation_label.json).
 
+## Round 4: generator leakage (LLM-free questions)
+
+The round was [pre-registered](docs/PREREGISTRATION_v4.md) at commit
+`566b4d9`, and the questions and scores were frozen at commit `7327dc8`.
+
+**The threat.** Every backtest question was phrased by gpt-4o-mini, which has
+read literature from after every backtest cutoff.
+
+**The test.** We built **595 questions with no language model at all**
+([`forecast/templates.py`](forecast/templates.py)):
+- Paper 3's deterministic tension clusters and author future-work sentences
+  were inserted verbatim into fixed templates.
+- The questions span the same five cutoffs and eight subfields.
+- Each of the 395 tension templates shares its evidence cluster with exactly
+  one LLM-phrased question, so the two can be compared in pairs.
+- They were scored by v3 and labelled with Paper 3's gpt-4o judge.
+
+| Hypothesis | Result | Verdict |
+| --- | --- | --- |
+| G1 v3 predicts outcomes of questions no LLM wrote | pooled AUC **0.693** [0.648, 0.739] | ✅ |
+| G2 …within a template type | **0.704** [0.657, 0.750] | ✅ |
+| G3 LLM phrasing inflates the outcome rate (same 395 clusters) | addressed 44.6% (LLM-phrased) vs 28.6% (template): **+16.0 pts** [+10.9, +21.0] | inflation confirmed |
+| G4 v3's skill does not depend on LLM phrasing | AUC 0.726 (templates) vs 0.679 (LLM-phrased), Δ +0.047 [−0.032, +0.121] | ✅ not dependent |
+
+**What this means.**
+- LLM phrasing, through hindsight and/or framing, makes questions look more
+  "addressed". So **absolute outcome rates in this repository are inflated**
+  and should not be quoted.
+- The forecaster's **ranking skill does not come from that**. It is as good
+  on questions no model wrote, and if anything slightly better.
+
+Full numbers are in
+[`results/templates_leakage.json`](results/templates_leakage.json).
+
 ## Study 2: the prospective forecast (cutoff 2026-10-14 → scored ≥ 2031-10-15)
 
-Both tables are now ranked by the v2 model, frozen separately in
-`FREEZE_v2.json`. The original v1 scores stay alongside, unchanged.
+Both tables are now ranked by **v3**, frozen in `FREEZE_v3.json`. The v2
+(`FREEZE_v2.json`) and v1 (`FREEZE.json`) scores stay alongside, unchanged.
+All three will be scored in 2031.
 
 - **[`results/prospective2026/FORECAST.md`](results/prospective2026/FORECAST.md)**
   covers 200 new questions across the 8 subfields. It includes a ranking of the

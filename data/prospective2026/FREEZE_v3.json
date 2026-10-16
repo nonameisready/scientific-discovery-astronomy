@@ -1,0 +1,12 @@
+{
+  "study": "prospective2026",
+  "frozen_at_utc": "2026-10-16T17:01:25Z",
+  "addendum_to": "FREEZE.json (v1) and FREEZE_v2.json (v2), both unchanged",
+  "model": "v3_ens_cal__all (docs/PREREGISTRATION_v3.md)",
+  "sha256": {
+    "predictions_v3.jsonl": "801565c80a0ce004c16776b5d0318e459d059f778d7d17d3a75af264ba9e05d0",
+    "models_v3_info.json": "6d8f212aa65ae71b5cc98496830e1e82225adede4465c1f75e8ef5d03d87ac7c",
+    "momentum.jsonl": "de879f8525b768801f1727a334921a09bc74b452edf5251971d3928d61367aa5"
+  },
+  "code_commit": "7327dc8a0bd09d51a33fb9abaee595d2a975faab"
+}

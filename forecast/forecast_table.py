@@ -65,13 +65,18 @@ def main() -> None:
     if has_v2:  # round-2 model (docs/PREREGISTRATION_v2.md), frozen in FREEZE_v2.json
         v2 = pd.DataFrame(read_jsonl(v2p))[["question_id", "v2_ens_cal__all"]].rename(columns={"v2_ens_cal__all": "p_v2"})
         pred = pred.merge(v2, on="question_id")
-    key = "p_v2" if has_v2 else "p_attention"
+    v3p = d / "predictions_v3.jsonl"
+    has_v3 = has_v2 and v3p.exists()
+    if has_v3:  # round-3 model (docs/PREREGISTRATION_v3.md), frozen in FREEZE_v3.json
+        v3 = pd.DataFrame(read_jsonl(v3p))[["question_id", "v3_ens_cal__all"]].rename(columns={"v3_ens_cal__all": "p_v3"})
+        pred = pred.merge(v3, on="question_id")
+    key = "p_v3" if has_v3 else ("p_v2" if has_v2 else "p_attention")
     pred = pred.sort_values(key, ascending=False).reset_index(drop=True)
     pred["rank"] = pred.index + 1
     lo, hi = study["future_window"]
     out = ROOT / "results" / name
     out.mkdir(parents=True, exist_ok=True)
-    cols = ["rank", "question_id", "subfield", "source"] + (["p_v2"] if has_v2 else []) + [
+    cols = ["rank", "question_id", "subfield", "source"] + (["p_v3"] if has_v3 else []) + (["p_v2"] if has_v2 else []) + [
             "p_attention", "s_structure__all", "question",
             "next_action", "why_up", "why_down", "n_ood", "ood_features"]
     pred[cols].to_csv(out / "forecast.csv", index=False)
@@ -79,10 +84,12 @@ def main() -> None:
     lo, hi = study["future_window"]
     def pcell(r) -> str:
         dag = " †" if r.n_ood >= 2 else ""
-        return (f"{r.p_v2:.2f} | {r.p_attention:.2f}{dag}" if has_v2 else f"{r.p_attention:.2f}{dag}")
+        if has_v3:
+            return f"{r.p_v3:.2f} | {r.p_v2:.2f} | {r.p_attention:.2f}{dag}"
+        return f"{r.p_v2:.2f} | {r.p_attention:.2f}{dag}" if has_v2 else f"{r.p_attention:.2f}{dag}"
 
-    phead = "p (v2) | p (v1)" if has_v2 else "p"
-    pdash = "---|---" if has_v2 else "---"
+    phead = "p (v3) | p (v2) | p (v1)" if has_v3 else ("p (v2) | p (v1)" if has_v2 else "p")
+    pdash = "---|---|---" if has_v3 else ("---|---" if has_v2 else "---")
     lines = [
         f"# Forecast: {name}",
         "",
@@ -91,11 +98,18 @@ def main() -> None:
         "strict gpt-4o judge).",
         "",
     ]
+    if has_v3:
+        lines += [
+            "- **p (v3)**: the round-3 model `v3_ens_cal` (question embedding + topic momentum + source fixed "
+            "effect, calibrated), frozen in `FREEZE_v3.json`. On the fresh 2017 + 2023 backtests: pooled AUC 0.77, "
+            "within-source 0.69, Brier 0.191; it also predicts human annotators' judgments (AUC 0.66-0.70), "
+            "citation-graph outcomes (0.68) and LLM-free questions (0.69). **Ranked by this column.**",
+        ]
     if has_v2:
         lines += [
             "- **p (v2)**: the round-2 model `v2_ens_cal` (question embedding + source fixed effect + Paper 3 "
             "features, calibrated), frozen in `FREEZE_v2.json`. On the fresh 2019 + 2022 backtests it scored "
-            "pooled AUC 0.74 and Brier 0.207 (results/round2). **Ranked by this column.**",
+            "pooled AUC 0.74 and Brier 0.207 (results/round2)." + ("" if has_v3 else " **Ranked by this column.**"),
             "- **p (v1)**: Paper 3's logistic model, the original frozen forecast (`FREEZE.json`): pooled AUC 0.66, "
             "Brier 0.240, over-confident at the top.",
             "",
@@ -126,10 +140,10 @@ def main() -> None:
     if len(tension):
         lines += [
             "", "## Evidence-tension questions ranked", "",
-            "Across three backtests (2019, 2021, 2022) the models mostly separate *kinds* of question; within the "
-            "Paper 1-style tension questions the v2 model's ranking is weaker but real (AUC 0.61 on the fresh "
-            "cohorts, CI 0.52-0.69). `structure` is Paper 3's evidence-graph structure prior. Paper 4's next steps "
-            "are nearly identical for every question (see README).", "",
+            "Paper 1-style tension questions, ranked by the forecast. Within this type v3's ranking held up on the "
+            "fresh 2017 + 2023 backtests (AUC 0.69, CI 0.60-0.77) and on LLM-free template versions of the same "
+            "evidence (0.73). `structure` is Paper 3's evidence-graph structure prior. Paper 4's next steps are "
+            "nearly identical for every question (see README).", "",
             f"| # | {phead} | structure | subfield | question | Paper 4 next steps |", f"|---|{pdash}|---|---|---|---|",
         ]
         for i, r in enumerate(tension.itertuples(), 1):

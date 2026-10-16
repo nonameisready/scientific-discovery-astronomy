@@ -1,0 +1,53 @@
+{
+  "n_template_questions": 595,
+  "base_rate": 0.3378,
+  "base_rate_by_type": {
+    "template_future_work": 0.44,
+    "template_tension": 0.286
+  },
+  "G1_v3_pooled_auc": {
+    "value": 0.6932,
+    "ci95": [
+      0.6478,
+      0.7393
+    ]
+  },
+  "G2_v3_within_type_auc": {
+    "value": 0.7044,
+    "ci95": [
+      0.6572,
+      0.75
+    ]
+  },
+  "per_type_auc": {
+    "template_future_work": 0.6515,
+    "template_tension": 0.7257
+  },
+  "by_cohort": {
+    "backtest2017": 0.7415,
+    "backtest2019": 0.72,
+    "backtest2021": 0.6249,
+    "backtest2022": 0.6519,
+    "backtest2023": 0.7692
+  },
+  "G3_paired_rate": {
+    "n_clusters": 395,
+    "addressed_llm_phrased": 0.4456,
+    "addressed_template": 0.2861,
+    "difference_llm_minus_template": 0.1595,
+    "ci95": [
+      0.1088,
+      0.2101
+    ],
+    "agreement_same_cluster": 0.6886
+  },
+  "G4_auc_template_vs_llm_same_clusters": {
+    "auc_template": 0.7257,
+    "auc_llm_phrased": 0.679,
+    "delta_template_minus_llm": 0.0468,
+    "ci95": [
+      -0.0323,
+      0.1206
+    ]
+  }
+}
