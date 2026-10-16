@@ -116,6 +116,9 @@ def citing_papers(arxiv_id: str, lo: str, hi: str) -> list[dict]:
 
     Dates: the window is applied afterwards on the arXiv v1 date when the
     citing paper is on arXiv, else on Semantic Scholar's publication date.
+    The endpoint serves at most ~10,000 citations per paper (offset + limit
+    <= 9,999); beyond that the list is truncated, which affects only a few
+    survey papers with tens of thousands of citations.
     """
     CIT_CACHE.mkdir(parents=True, exist_ok=True)
     cache = CIT_CACHE / f"{arxiv_id.replace('/', '_')}.json"
@@ -123,9 +126,10 @@ def citing_papers(arxiv_id: str, lo: str, hi: str) -> list[dict]:
         return json.loads(cache.read_text())
     rows: list[dict] = []
     offset = 0
-    while offset is not None:
+    while offset is not None and offset < 9999:
         params = urllib.parse.urlencode(
-            {"fields": "externalIds,title,abstract,publicationDate,year", "limit": 1000, "offset": offset}
+            {"fields": "externalIds,title,abstract,publicationDate,year",
+             "limit": min(1000, 9999 - offset), "offset": offset}
         )
         page = _get_json(S2_URL.format(arxiv_id) + "?" + params) or {}
         for item in page.get("data") or []:

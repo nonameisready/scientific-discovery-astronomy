@@ -1,0 +1,1 @@
+{"per_candidate": [{"id": "2305.09687", "relation": "adjacent"}, {"id": "2207.08636", "relation": "unrelated"}], "addressed": false, "answer_status": "not_addressed", "premise_status": "not_applicable", "supporting_ids": [], "rationale": "Both candidate papers do not investigate the question directly; one is adjacent and the other is unrelated.", "confidence": 0.9}
