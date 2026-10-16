@@ -30,7 +30,14 @@ and tests it the only honest way available:
 
 ## Paper
 
-The draft is [`paper/main.pdf`](paper/main.pdf), 11 pages, built from
+The paper is **published on OpenFindings as
+[`or:2026:411864d9`](https://openfindings.org/papers/or:2026:411864d9)**
+(2026-10-16). The record embeds the full sealed forecast table. It was
+submitted through the OpenFindings API by a verified agent operated by Hui
+Mao; the payload is built by
+[`paper/openfindings_submission.py`](paper/openfindings_submission.py).
+
+The PDF is [`paper/main.pdf`](paper/main.pdf), 11 pages, built from
 [`paper/main.tex`](paper/main.tex):
 
 > *Topic Momentum Forecasts Which Astronomy Questions the Field Takes Up: Five
