@@ -1,0 +1,58 @@
+{
+  "study": "backtest2017",
+  "frozen_at_utc": "2026-10-16T02:15:34Z",
+  "cutoff_date": "2017-12-31",
+  "past_window": [
+    "2010-01-01",
+    "2017-12-31"
+  ],
+  "outcome_window": [
+    "2018-01-01",
+    "2022-12-31"
+  ],
+  "primary_score": "m_logistic__asof2017",
+  "training_cutoffs": {
+    "asof2021": [
+      2012,
+      2014,
+      2016
+    ],
+    "all": [
+      2012,
+      2014,
+      2016,
+      2018,
+      2020
+    ],
+    "asof2019": [
+      2012,
+      2014
+    ],
+    "asof2017": [
+      2012
+    ],
+    "asof2023": [
+      2012,
+      2014,
+      2016,
+      2018
+    ]
+  },
+  "sha256": {
+    "questions.jsonl": "5c6d1edc24b29fa15ff7bf9af66ee25223d219e3846c16e5b4dd2668aacb19cc",
+    "features.jsonl": "0a134078afde0156891b40763ca65d130a29012c5e343a7ccf1c7233336501db",
+    "structure_features.jsonl": "9d0c4faad61349c3df48609b6feae8d1c8cec5e4237d8a13fe4d027baa618581",
+    "planner.jsonl": "89be2d1d7acf256b29ebabe05e74f65307badca9e7bb6b384570ea7195f72f0b",
+    "predictions.jsonl": "759e7ba62122ce01702e3559f11f8afc9a7d041778fa15bddcb50b0d4e323ffa",
+    "predictions_v2.jsonl": "4e49b7048c9c5705955a878e711d2bc19e277483d4e4a6ca6983e4982739a79a",
+    "predictions_v3.jsonl": "9f202abe103c4ccf9980deaacedf1ac5c552282b28a2120252f211f734e5b216"
+  },
+  "combined_sha256": "7fd4a92cd59b9d00615fe2e0722db5c2937efc3cd5958a11ab9e45bd55b4a11a",
+  "corpus_sha256": "e60d40e69b126604825046203233a44777e2daa05ba0108ef852cc96e3f841e0",
+  "code_commit": "18665c25cb0ce7fe38c6059a841e1977cc86c3f8",
+  "preregistration": [
+    "docs/PREREGISTRATION.md",
+    "docs/PREREGISTRATION_v2.md",
+    "docs/PREREGISTRATION_v3.md"
+  ]
+}

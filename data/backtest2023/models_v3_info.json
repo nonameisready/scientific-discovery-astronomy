@@ -1,0 +1,13 @@
+{
+  "train_tag": "asof2023",
+  "train_cutoffs": [
+    2012,
+    2014,
+    2016,
+    2018
+  ],
+  "n_train": 770,
+  "embed_C": 3.0,
+  "platt_coef": 1.140674273001047,
+  "platt_intercept": 0.0019006933863187614
+}

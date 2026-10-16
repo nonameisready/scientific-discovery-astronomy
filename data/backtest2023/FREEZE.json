@@ -1,0 +1,58 @@
+{
+  "study": "backtest2023",
+  "frozen_at_utc": "2026-10-16T02:15:16Z",
+  "cutoff_date": "2023-12-31",
+  "past_window": [
+    "2016-01-01",
+    "2023-12-31"
+  ],
+  "outcome_window": [
+    "2024-01-01",
+    "2026-10-14"
+  ],
+  "primary_score": "m_logistic__asof2023",
+  "training_cutoffs": {
+    "asof2021": [
+      2012,
+      2014,
+      2016
+    ],
+    "all": [
+      2012,
+      2014,
+      2016,
+      2018,
+      2020
+    ],
+    "asof2019": [
+      2012,
+      2014
+    ],
+    "asof2017": [
+      2012
+    ],
+    "asof2023": [
+      2012,
+      2014,
+      2016,
+      2018
+    ]
+  },
+  "sha256": {
+    "questions.jsonl": "505e2b43b6ad798a4e8fbb240ff983151fec4d816c703a02b6b8e076f935e667",
+    "features.jsonl": "c5c06f1d6297a0db8cc8221edb2a3876804d4f0c5bae090843f6bd4d13651eb3",
+    "structure_features.jsonl": "0877075b26200939965ddd7e2040578f3b518b7745b52688535f0dc52a9429e7",
+    "planner.jsonl": "75ac3c047ee377e79d44ae98de8ae6a909c984e48d72c6a3f3cccc86fb56b42a",
+    "predictions.jsonl": "4bfb1e5643068e4c612faa8ec32c59c8420759318c7b1c8ecd4fc1db568618df",
+    "predictions_v2.jsonl": "3d59c191846bcccc68deba6e2e3dcf2a4a6560698cef9028d4674415add21e1c",
+    "predictions_v3.jsonl": "dc2f2d4ccfe5c713f95eafe7d7678f6d9620d5dc8255bc9065745a93bed594c5"
+  },
+  "combined_sha256": "22fe4b536a5074285b3865e4d9272efd225d25faa3a71a3d930bd469b4a824d3",
+  "corpus_sha256": "e60d40e69b126604825046203233a44777e2daa05ba0108ef852cc96e3f841e0",
+  "code_commit": "18665c25cb0ce7fe38c6059a841e1977cc86c3f8",
+  "preregistration": [
+    "docs/PREREGISTRATION.md",
+    "docs/PREREGISTRATION_v2.md",
+    "docs/PREREGISTRATION_v3.md"
+  ]
+}

@@ -27,6 +27,7 @@ FILES = (
     "planner.jsonl",
     "predictions.jsonl",
     "predictions_v2.jsonl",
+    "predictions_v3.jsonl",
 )
 
 
@@ -49,7 +50,7 @@ def main() -> None:
         "corpus_sha256": json.loads(corpus_manifest.read_text())["corpus_sha256"] if corpus_manifest.exists() else None,
         "code_commit": subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True, cwd=ROOT).stdout.strip()
         or None,
-        "preregistration": "docs/PREREGISTRATION.md",
+        "preregistration": ["docs/PREREGISTRATION.md", "docs/PREREGISTRATION_v2.md", "docs/PREREGISTRATION_v3.md"],
     }
     (d / "FREEZE.json").write_text(json.dumps(freeze, indent=2))
     print(json.dumps(freeze, indent=2))

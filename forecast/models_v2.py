@@ -113,13 +113,28 @@ def choose_C(train: pd.DataFrame) -> float:
     return max(scores, key=scores.get)
 
 
-def fit_predict_v2(train: pd.DataFrame, test: pd.DataFrame, tag: str) -> tuple[pd.DataFrame, dict]:
+def _oof(train: pd.DataFrame, make) -> np.ndarray:
+    """Out-of-fold log-odds: leave-one-cutoff-out, or 5-fold CV when the
+    training set has a single cutoff (round 3's 2017 cohort)."""
+    if train["cutoff_year"].nunique() >= 2:
+        return _loco(train, make)
+    from sklearn.model_selection import StratifiedKFold
+
+    out = np.zeros(len(train))
     y = train["y_addressed"].values
-    C = choose_C(train)
+    for a, b in StratifiedKFold(n_splits=5, shuffle=True, random_state=7).split(train, y):
+        out[b] = make().fit(train.iloc[a], y[a]).logit(train.iloc[b])
+    return out
+
+
+def fit_predict_v2(train: pd.DataFrame, test: pd.DataFrame, tag: str) -> tuple[pd.DataFrame, dict]:
+    train = train.reset_index(drop=True)
+    y = train["y_addressed"].values
+    C = choose_C(train) if train["cutoff_year"].nunique() >= 2 else 10.0
     st, em = _Struct().fit(train, y), _Embed(C).fit(train, y)
     ens_test = (st.logit(test) + em.logit(test)) / 2
     # Platt calibration on out-of-fold ensemble log-odds of the training set.
-    oof = (_loco(train, _Struct) + _loco(train, lambda: _Embed(C))) / 2
+    oof = (_oof(train, _Struct) + _oof(train, lambda: _Embed(C))) / 2
     platt = LogisticRegression(max_iter=5000, C=1e6).fit(oof.reshape(-1, 1), y)
     sig = lambda z: 1 / (1 + np.exp(-z))  # noqa: E731
     out = pd.DataFrame({

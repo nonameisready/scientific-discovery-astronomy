@@ -1,0 +1,17 @@
+[cohort] exoplanet_atmospheres: past=2373 questions=25 {'evidence_tension': 10, 'direct_llm': 5, 'future_work': 5, 'control': 5}
+[cohort] protoplanetary_disks: past=4883 questions=25 {'evidence_tension': 10, 'direct_llm': 5, 'future_work': 5, 'control': 5}
+[cohort] stellar_activity: past=2139 questions=25 {'evidence_tension': 10, 'direct_llm': 5, 'future_work': 5, 'control': 5}
+[cohort] fast_radio_bursts: past=1356 questions=25 {'evidence_tension': 10, 'direct_llm': 5, 'future_work': 5, 'control': 5}
+[cohort] gravitational_waves: past=10410 questions=25 {'evidence_tension': 10, 'direct_llm': 5, 'future_work': 5, 'control': 5}
+[cohort] galaxy_evolution: past=10044 questions=25 {'evidence_tension': 10, 'direct_llm': 5, 'future_work': 5, 'control': 5}
+[cohort] cosmology_tensions: past=6971 questions=25 {'evidence_tension': 10, 'direct_llm': 5, 'future_work': 5, 'control': 5}
+[cohort] compact_objects: past=15362 questions=25 {'evidence_tension': 10, 'direct_llm': 5, 'future_work': 5, 'control': 5}
+[features] exoplanet_atmospheres: 25 questions, past corpus 2373
+[features] protoplanetary_disks: 25 questions, past corpus 4883
+[features] stellar_activity: 25 questions, past corpus 2139
+[features] fast_radio_bursts: 25 questions, past corpus 1356
+[features] gravitational_waves: 25 questions, past corpus 10410
+[features] galaxy_evolution: 25 questions, past corpus 10044
+[features] cosmology_tensions: 25 questions, past corpus 6971
+[features] compact_objects: 25 questions, past corpus 15362
+[cohort] backtest2023: 200 questions, 80 tension, 160 plans
