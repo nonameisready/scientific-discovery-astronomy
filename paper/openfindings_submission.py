@@ -21,9 +21,47 @@ BLOB = f"{REPO}/blob/main"
 RAW = "https://raw.githubusercontent.com/nonameisready/scientific-discovery-astronomy/main"
 
 
+# Display-only cleanup for Markdown readers (the frozen question files are
+# untouched). Generated questions carry LaTeX whose "\b"/"\t" were decoded as
+# control characters upstream ("\beta" -> BACKSPACE+"eta"); restore them, then
+# turn simple inline math into Unicode so pages read without a TeX renderer.
+_SYMBOLS = {
+    r"\times": "×", r"\kappa": "κ", r"\Delta": "Δ", r"\sigma": "σ", r"\beta": "β", r"\alpha": "α",
+    r"\Lambda": "Λ", r"\lambda": "λ", r"\mu": "μ", r"\sim": "~", r"\approx": "≈", r"\odot": "⊙",
+    r"\textgreater": ">", r"\textless": "<", r"\geq": "≥", r"\leq": "≤", r"\pm": "±", r"\,": " ",
+}
+_SUB = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
+
+
+def plain_math(text: str) -> str:
+    text = text.replace("\x08", "\\b").replace("\t", "\\t").replace("\x0c", "\\f")
+    # Some "\t" were decoded as a tab and then normalised to a space upstream
+    # ("$ m ext{ extbf{EDE}}$", "z extgreater 10"): restore the backslash, then
+    # unwrap text commands and map text symbols inside or outside math.
+    text = re.sub(r"(?<=[\s${(])ext(?=\{)|(?<=[\s${(])ext(?=(?:it|bf)\{|greater|less|odot)", r"\\text", text)
+    for _ in range(3):
+        text = re.sub(r"\\text(?:it|bf)?\{([^{}$]*)\}", r"\1", text)
+    text = text.replace(r"\textgreater", ">").replace(r"\textless", "<").replace(r"\textodot", "⊙")
+    text = re.sub(r"M_\{?⊙\}?", "M⊙", text)
+
+    def convert(m: re.Match) -> str:
+        expr = m.group(1)
+        for _ in range(4):  # unwrap nested \text{...}, \textbf{...}, \mathrm{...}
+            expr = re.sub(r"\\(?:text|textit|textbf|mathrm|mathbf|rm)\s*\{([^{}]*)\}", r"\1", expr)
+        expr = re.sub(r"\\m\s+|^\s*m\s+", "", expr)  # stray "\m" left by a mangled "\mathrm"
+        for k in sorted(_SYMBOLS, key=len, reverse=True):
+            expr = expr.replace(k, _SYMBOLS[k])
+        expr = re.sub(r"_\{?([0-9]+)\}?", lambda d: d.group(1).translate(_SUB), expr)
+        expr = re.sub(r"_\{([^{}]*)\}", r"\1", expr)
+        expr = expr.replace("{", "").replace("}", "")
+        return expr.replace("\\", "").replace("_⊙", "⊙")
+
+    return re.sub(r"\$([^$\n]{1,200})\$", convert, text)
+
+
 def paper_markdown() -> str:
     md = subprocess.run(
-        ["pandoc", "main.tex", "--from=latex", "--to=gfm", "--citeproc", "--bibliography=references.bib",
+        ["pandoc", "main.tex", "--from=latex", "--to=gfm-raw_html", "--citeproc", "--bibliography=references.bib",
          "--wrap=none"],
         cwd=ROOT / "paper", capture_output=True, text=True, check=True,
     ).stdout
@@ -32,7 +70,7 @@ def paper_markdown() -> str:
     md = md.replace("figures/auc_by_cutoff.png", f"{RAW}/paper/figures/auc_by_cutoff.png")
     # Drop the title/author block pandoc emits; the record carries them as fields.
     md = re.sub(r"^.*?(?=# Introduction|<span id=\"introduction\")", "", md, count=1, flags=re.S)
-    return md.strip()
+    return plain_math(md.strip())
 
 
 def forecast_table() -> str:
@@ -54,7 +92,7 @@ def forecast_table() -> str:
         "|---|---|---|---|---|---|---|",
     ]
     for r in rows:
-        q = r["question"].replace("\t", "\\t").replace("|", "\\|").replace("\n", " ")
+        q = plain_math(r["question"]).replace("|", "\\|").replace("\n", " ")
         out.append(f"| {r['rank']} | {float(r['p_v3']):.2f} | {float(r['p_v2']):.2f} | {float(r['p_attention']):.2f} "
                    f"| {r['subfield']} | {r['source']} | {q} |")
     return "\n".join(out)
