@@ -1,0 +1,268 @@
+[
+ {
+  "key": "bicep2",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 320,
+  "included": true
+ },
+ {
+  "key": "line_3p5kev",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 74,
+  "included": true
+ },
+ {
+  "key": "fermi_130gev",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 66,
+  "included": true
+ },
+ {
+  "key": "dark_flow",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 4,
+  "included": false
+ },
+ {
+  "key": "alpha_dipole",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 8,
+  "included": false
+ },
+ {
+  "key": "perytons",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 1,
+  "included": false
+ },
+ {
+  "key": "alpha_cen_bb",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 4,
+  "included": false
+ },
+ {
+  "key": "gj581g",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 15,
+  "included": true
+ },
+ {
+  "key": "gbm_gw150914",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 23,
+  "included": true
+ },
+ {
+  "key": "tabby_star",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 28,
+  "included": true
+ },
+ {
+  "key": "kepler1625_moon",
+  "outcome": "dissolved",
+  "provisional": true,
+  "n_window": 13,
+  "included": true
+ },
+ {
+  "key": "barnard_b",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 8,
+  "included": false
+ },
+ {
+  "key": "venus_phosphine",
+  "outcome": "dissolved",
+  "provisional": true,
+  "n_window": 20,
+  "included": true
+ },
+ {
+  "key": "closed_universe",
+  "outcome": "dissolved",
+  "provisional": true,
+  "n_window": 32,
+  "included": true
+ },
+ {
+  "key": "edges_21cm",
+  "outcome": "dissolved",
+  "provisional": true,
+  "n_window": 105,
+  "included": true
+ },
+ {
+  "key": "auger_agn",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 55,
+  "included": true
+ },
+ {
+  "key": "dampe_1p4tev",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 49,
+  "included": true
+ },
+ {
+  "key": "fomalhaut_b",
+  "outcome": "dissolved",
+  "provisional": false,
+  "n_window": 6,
+  "included": false
+ },
+ {
+  "key": "gw_echoes",
+  "outcome": "dissolved",
+  "provisional": true,
+  "n_window": 22,
+  "included": true
+ },
+ {
+  "key": "frb",
+  "outcome": "confirmed",
+  "provisional": false,
+  "n_window": 5,
+  "included": false
+ },
+ {
+  "key": "fermi_bubbles",
+  "outcome": "confirmed",
+  "provisional": false,
+  "n_window": 19,
+  "included": true
+ },
+ {
+  "key": "pta_gwb",
+  "outcome": "confirmed",
+  "provisional": false,
+  "n_window": 65,
+  "included": true
+ },
+ {
+  "key": "odd_radio_circles",
+  "outcome": "confirmed",
+  "provisional": false,
+  "n_window": 7,
+  "included": false
+ },
+ {
+  "key": "icecube_astro_nu",
+  "outcome": "confirmed",
+  "provisional": false,
+  "n_window": 86,
+  "included": true
+ },
+ {
+  "key": "pamela_positrons",
+  "outcome": "confirmed",
+  "provisional": false,
+  "n_window": 245,
+  "included": true
+ },
+ {
+  "key": "h0_tension",
+  "outcome": "open",
+  "provisional": false,
+  "n_window": 20,
+  "included": true
+ },
+ {
+  "key": "gc_gev_excess",
+  "outcome": "open",
+  "provisional": false,
+  "n_window": 3,
+  "included": false
+ },
+ {
+  "key": "arcade2_radio",
+  "outcome": "open",
+  "provisional": false,
+  "n_window": 13,
+  "included": true
+ },
+ {
+  "key": "cosmic_birefringence",
+  "outcome": "open",
+  "provisional": false,
+  "n_window": 48,
+  "included": true
+ },
+ {
+  "key": "quasar_dipole",
+  "outcome": "open",
+  "provisional": false,
+  "n_window": 23,
+  "included": true
+ },
+ {
+  "key": "planet_nine",
+  "outcome": "open",
+  "provisional": false,
+  "n_window": 45,
+  "included": true
+ },
+ {
+  "key": "df2_no_dm",
+  "outcome": "open",
+  "provisional": true,
+  "n_window": 44,
+  "included": true
+ },
+ {
+  "key": "s8_tension",
+  "outcome": "open",
+  "provisional": true,
+  "n_window": 7,
+  "included": false
+ },
+ {
+  "key": "jwst_early_massive",
+  "outcome": "prospective",
+  "provisional": null,
+  "n_window": 147,
+  "included": true
+ },
+ {
+  "key": "little_red_dots",
+  "outcome": "prospective",
+  "provisional": null,
+  "n_window": 111,
+  "included": true
+ },
+ {
+  "key": "desi_evolving_de",
+  "outcome": "prospective",
+  "provisional": null,
+  "n_window": 267,
+  "included": true
+ },
+ {
+  "key": "k2_18b_dms",
+  "outcome": "prospective",
+  "provisional": null,
+  "n_window": 44,
+  "included": true
+ },
+ {
+  "key": "km3net_220pev",
+  "outcome": "prospective",
+  "provisional": null,
+  "n_window": 84,
+  "included": true
+ }
+]
