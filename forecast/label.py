@@ -19,6 +19,7 @@ Usage:
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
@@ -93,10 +94,13 @@ def source_arxiv_ids(q: dict) -> list[str]:
 
 def _get_json(url: str, max_attempts: int = 30) -> dict | None:
     """GET with patient backoff: the anonymous Semantic Scholar pool answers
-    HTTP 429 in bursts, then recovers."""
+    HTTP 429 in bursts, then recovers. Set ``S2_API_KEY`` in the environment
+    to use a key (never committed); keyed requests are paced at ~1/s."""
+    key = os.environ.get("S2_API_KEY")
+    req = urllib.request.Request(url, headers={"x-api-key": key} if key else {})
     for attempt in range(max_attempts):
         try:
-            with urllib.request.urlopen(url, timeout=60) as resp:
+            with urllib.request.urlopen(req, timeout=60) as resp:
                 return json.loads(resp.read())
         except urllib.error.HTTPError as err:
             if err.code == 404:
