@@ -1,0 +1,67 @@
+{
+ "base_rate": 0.5139,
+ "base_rate_by_cohort": {
+  "backtest2017": 0.533,
+  "backtest2023": 0.495
+ },
+ "T1_v3_within_source": {
+  "value": 0.6935,
+  "ci95": [
+   0.6124,
+   0.7706
+  ]
+ },
+ "T2_v3_vs_v2_within_source": {
+  "value": 0.6935,
+  "ci95": [
+   0.6124,
+   0.7706
+  ],
+  "ref": "v2_embed_src",
+  "delta": 0.0279,
+  "delta_ci95": [
+   -0.0082,
+   0.0623
+  ]
+ },
+ "T3_v3_vs_v1_within_source": {
+  "value": 0.6935,
+  "ci95": [
+   0.6124,
+   0.7706
+  ],
+  "ref": "v1",
+  "delta": 0.1008,
+  "delta_ci95": [
+   0.0266,
+   0.1761
+  ]
+ },
+ "T4_v3_vs_source_prior_pooled": {
+  "value": 0.7692,
+  "ci95": [
+   0.7256,
+   0.8119
+  ],
+  "ref": "source_prior",
+  "delta": 0.0813,
+  "delta_ci95": [
+   0.0418,
+   0.1234
+  ]
+ },
+ "T5_brier": {
+  "v3_ens_cal": 0.1912,
+  "v2_ens_cal": 0.2055,
+  "v1": 0.253,
+  "source_prior": 0.214,
+  "constant": 0.2532
+ },
+ "T6_v3_tension_auc": {
+  "value": 0.692,
+  "ci95": [
+   0.6043,
+   0.7726
+  ]
+ }
+}

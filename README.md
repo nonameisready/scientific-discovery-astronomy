@@ -11,19 +11,22 @@ and tests it the only honest way available:
 
 ## 中文摘要
 
-**结论：有效果，而且第二版比第一版明显好；但它主要还是在判断"哪类问题会火"，对同一类问题内部的排序只是中等水平。**
+**结论：这套方法确实能预测哪些天文问题会被研究，而且经过三轮改进，第三版（v3）明显好于 Paper 3 原版。**
 
-一共考了三次，截止点分别是 2019、2021、2022，共 600 道题。每次只用当时就能拿到的数据训练，预测先冻结、推送，然后才对答案。
+一共在 5 个历史年份（2017、2019、2021、2022、2023）各出约 200 题，约 1000 题。每轮都是先预注册、冻结预测并推送，之后才对答案。
 
-- **Paper 3 原始模型（v1）三次都稳定有效**：AUC 分别是 0.65、0.66、0.68，明显强于随机（0.5）。
-- **第二版模型（v2）**：问题的语义向量，加上"问题来源"作为已知项，再加概率校准。
-  - 两个新考场（2019 和 2022）是预注册后才生成的，v2 在这两组上的总体 AUC 是 **0.74**（0.69–0.78）。
-  - v2 **显著超过了**"只看问题来源"的基线（+0.07）。v1 做不到这一点。
-  - 同一类问题内部的排序：AUC 0.65（0.58–0.71），显著强于随机。不过比 v1（0.60）的提升没有达到显著。
-  - 概率更可信：Brier 分数从 0.240 降到 0.207，越低越好。
-  - 在 Paper 1 式的"证据张力"问题里，排序能力勉强显著：AUC 0.61。
-- Paper 4 的规划器仍然没有预测力，它几乎给每个问题推荐同一个下一步。
-- 2026→2031 的前瞻预测已加入 v2 分数，并单独冻结在 `FREEZE_v2.json`。v1 原版不动。
+| | v1（Paper 3 原版） | v2（语义+来源） | **v3（+话题热度）** |
+|---|---|---|---|
+| 整体 AUC（全新考场 2017+2023） | 0.65 | 0.74 | **0.77** |
+| 同类问题内排序 | 0.59 | 0.67 | **0.69** |
+| "证据矛盾"类问题内排序 | — | — | **0.69** |
+| Brier（越低越好） | 0.253 | 0.206 | **0.191** |
+
+- 原方法五个年份都稳定有效，AUC 在 0.63–0.69 之间。
+- 关键新信号是"话题热度"：截止前相关论文越多、越在升温，问题之后越可能被研究。
+- v3 在同类排序上显著好于 v1（+0.10）。比 v2 多出的 +0.03 没有达到显著。
+- 判卷模型一换，结论就会大变：GPT-4o-mini 比 GPT-4o 宽松得多。
+- Paper 4 的规划器没有预测力。
 
 ## The stack
 
@@ -53,6 +56,9 @@ The git history on GitHub timestamps each step.
 | `a4eea0f` | round-2 [pre-registration](docs/PREREGISTRATION_v2.md) + v2 models | no 2019/2022 questions yet |
 | `bd84ebc`, `58fe4b7` | 2022 and 2019 cohorts + v1/v2 predictions frozen | **no** |
 | `cc7892b` | 2019/2022 labels | yes |
+| `18665c2` | round-3 [pre-registration](docs/PREREGISTRATION_v3.md) + v3 model + momentum features | no 2017/2023 questions yet |
+| `d17b821` | 2017 and 2023 cohorts + v1/v2/v3 predictions frozen | **no** |
+| `2f4f8cb` | 2017/2023 labels | yes |
 
 ## Data
 
@@ -209,6 +215,73 @@ This view is descriptive, because 2021 was the v2 development set.
   [+0.009, +0.140].
 
 Full numbers: [`results/round2/evaluation.json`](results/round2/evaluation.json).
+
+## Round 3: topic momentum (fresh cutoffs 2017 and 2023)
+
+The round-3 analysis was [pre-registered](docs/PREREGISTRATION_v3.md) and
+committed as `18665c2`.
+
+**What was added.**
+- The corpus was extended to 2005–2026. It has 332k papers, and the per-year
+  counts match Paper 3's harvest.
+- Every subfield paper was embedded (`forecast/corpus_embed.py`).
+- Each question gets **topic-momentum** features (`forecast/momentum.py`).
+  They measure how many pre-cutoff papers sit close to the question, how
+  recent those papers are, and whether that neighbourhood is growing.
+- The v3 model averages v2's embedding model with a momentum + source model
+  and is then Platt-calibrated (`forecast/models_v3.py`).
+
+**How it was chosen.** v3 was chosen on development data only: the
+2019/2021/2022 cohorts and Paper 3 leave-one-cutoff-out. On that data it
+raised within-source AUC from 0.646 to 0.701 (`results/round3/dev_v3.json`).
+
+**How it was tested.** It was then tested on two cohorts generated afterwards
+(frozen at `d17b821`):
+- 2017: trained on Paper 3's 2012 cutoff only.
+- 2023: trained on cutoffs 2012–2018. Its outcome window is 2.79 years.
+
+### Results on the fresh 2017 + 2023 cohorts
+
+Paper 3 label (gpt-4o judge), n = 395, base rate 0.51.
+
+| Hypothesis | Result | Verdict |
+| --- | --- | --- |
+| T1 v3 ranks within a source | within-source AUC **0.694** [0.612, 0.771] | ✅ |
+| T2 v3 beats v2 within a source | Δ +0.028 [−0.008, +0.062] | ❌ not significant (just) |
+| T3 v3 beats v1 within a source | Δ **+0.101** [+0.027, +0.176] | ✅ |
+| T4 v3 beats the source prior | pooled AUC **0.769** vs 0.688; Δ +0.081 [+0.042, +0.123] | ✅ |
+| T5 v3 probabilities beat v2's | Brier 0.191 vs 0.206 (v1 0.253) | ✅ |
+| T6 v3 ranks evidence-tension questions | AUC **0.692** [0.604, 0.773] | ✅ |
+
+Under the lenient gpt-4o-mini label, where 90% of questions count as
+addressed, T2 *is* significant (Δ +0.094 [+0.038, +0.151]). We do not
+substitute it, because it is not the pre-registered label.
+
+### All five cutoffs
+
+| Cutoff | v1 pooled / within | v2 pooled / within | v3 pooled / within |
+| --- | --- | --- | --- |
+| 2017 (test) | 0.630 / 0.577 | 0.674 / 0.594 | **0.728 / 0.634** |
+| 2019 (v3 dev) | 0.654 / 0.548 | 0.730 / 0.642 | 0.765 / 0.703 |
+| 2021 (v2+v3 dev) | 0.656 / 0.569 | 0.745 / 0.646 | 0.784 / 0.704 |
+| 2022 (v3 dev) | 0.677 / 0.648 | 0.747 / 0.650 | 0.776 / 0.687 |
+| 2023 (test) | 0.693 / 0.609 | 0.827 / 0.738 | **0.845 / 0.753** |
+
+v3 is the best model at every cutoff, on both measures.
+
+![AUC by cutoff](results/round3/auc_by_cohort.png)
+
+### Open threats before a paper
+
+1. **No human audit of the labels.** Paper 2 found that human annotators agree
+   with each other at only κ = 0.17.
+2. **Momentum may partly predict the retriever.** The outcome label is found
+   by text similarity to future papers, and dense topics are easier to match.
+   A citation-graph label would break this link.
+3. **The question generator (gpt-4o-mini) has seen post-cutoff literature.**
+   This matters for every cutoff before late 2023.
+
+Full numbers: [`results/round3/evaluation.json`](results/round3/evaluation.json).
 
 ## Study 2: the prospective forecast (cutoff 2026-10-14 → scored ≥ 2031-10-15)
 
