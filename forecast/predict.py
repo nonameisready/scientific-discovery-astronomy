@@ -50,7 +50,15 @@ def _structure_columns() -> list[str]:
 
 
 TRAIN_SETS = {"asof2021": (2012, 2014, 2016), "all": (2012, 2014, 2016, 2018, 2020)}
-PRIMARY_TRAIN = {"backtest2021": "asof2021", "prospective2026": "all", "paper2_prospective2026": "all"}
+# Round 2: a 2019 forecaster only has labels whose windows closed by 2019.
+TRAIN_SETS_V2 = {"asof2019": (2012, 2014)}
+PRIMARY_TRAIN = {
+    "backtest2019": "asof2019",
+    "backtest2021": "asof2021",
+    "backtest2022": "asof2021",  # cutoff-2016 labels end 2021-12-31; cutoff-2018 labels run to 2023
+    "prospective2026": "all",
+    "paper2_prospective2026": "all",
+}
 
 
 def paper3_table() -> pd.DataFrame:
@@ -144,14 +152,17 @@ def main() -> None:
     train_all = paper3_table()
     test = cohort_table(name)
     scores = test[["question_id", "question", "source", "subfield", "cutoff_date"]].copy()
-    for tag, cutoffs in TRAIN_SETS.items():
+    sets = dict(TRAIN_SETS)
+    if name in ("backtest2019", "backtest2022"):  # round-2 cohorts; 2021's frozen file stays as it was
+        sets.update(TRAIN_SETS_V2)
+    for tag, cutoffs in sets.items():
         s = fit_and_score(train_all[train_all.cutoff_year.isin(cutoffs)], test, tag)
         scores = scores.merge(s, on="question_id")
     primary = PRIMARY_TRAIN[name]
     scores["p_attention"] = scores[f"m_logistic__{primary}"]
     scores["primary_training_set"] = primary
 
-    cards = explain(train_all[train_all.cutoff_year.isin(TRAIN_SETS[primary])], test)
+    cards = explain(train_all[train_all.cutoff_year.isin({**TRAIN_SETS, **TRAIN_SETS_V2}[primary])], test)
     plans = {}
     pp = study_dir(name) / "planner.jsonl"
     if pp.exists():

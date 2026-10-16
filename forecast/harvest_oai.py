@@ -107,6 +107,7 @@ def main() -> None:
     ap.add_argument("--until", dest="date_until", default=None)
     ap.add_argument("--tag", default="all", help="shard/state prefix for parallel windows")
     ap.add_argument("--min-year", type=int, default=2013)
+    ap.add_argument("--max-year", type=int, default=9999, help="keep v1 years <= this (backfills)")
     args = ap.parse_args()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     STATE = OUT_DIR / f"_oai_state_{args.tag}.json"
@@ -134,7 +135,7 @@ def main() -> None:
             records, token = parse_records(_fetch(params))
             for r in records:
                 year = int(r["published"][:4])
-                if year < args.min_year:
+                if year < args.min_year or year > args.max_year:
                     continue
                 if year not in files:
                     files[year] = (OUT_DIR / f"oai_{args.tag}_{year}.jsonl").open("a", encoding="utf-8")

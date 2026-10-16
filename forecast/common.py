@@ -38,6 +38,24 @@ BACKTEST = {
     "future_window": ("2022-01-01", SNAPSHOT_END),
 }
 
+# Extra out-of-time cohorts added in round 2 (pre-registered in
+# docs/PREREGISTRATION_v2.md before generation). 2019 keeps Paper 3's full
+# 5-year window; 2022's window is limited by the snapshot (3.79 years).
+BACKTEST_2019 = {
+    "name": "backtest2019",
+    "cutoff_year": 2019,
+    "cutoff_date": "2019-12-31",
+    "past_window": ("2012-01-01", "2019-12-31"),
+    "future_window": ("2020-01-01", "2024-12-31"),
+}
+BACKTEST_2022 = {
+    "name": "backtest2022",
+    "cutoff_year": 2022,
+    "cutoff_date": "2022-12-31",
+    "past_window": ("2015-01-01", "2022-12-31"),
+    "future_window": ("2023-01-01", SNAPSHOT_END),
+}
+
 # Study 2 - genuinely prospective forecast, scored no earlier than 2031-10-15.
 PROSPECTIVE = {
     "name": "prospective2026",
