@@ -1,0 +1,11 @@
+{
+  "train_tag": "asof2019",
+  "train_cutoffs": [
+    2012,
+    2014
+  ],
+  "n_train": 378,
+  "embed_C": 10.0,
+  "platt_coef": 0.3345479579332207,
+  "platt_intercept": 0.00877166489075614
+}

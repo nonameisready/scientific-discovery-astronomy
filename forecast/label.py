@@ -13,6 +13,7 @@
 
 Usage:
     python -m forecast.label backtest2021
+    python -m forecast.label backtest2022 --no-citation
 """
 
 from __future__ import annotations
@@ -233,6 +234,9 @@ def main() -> None:
     write_jsonl(d / "labels_L1.jsonl", l1)
     l2 = label_l2(questions, l1, ctxs)
     write_jsonl(d / "labels_L2.jsonl", l2)
+    if "--no-citation" in sys.argv:  # round-2 cohorts (docs/PREREGISTRATION_v2.md)
+        print(f"[label] {name}: L1/L2 labels written (citation graph skipped)")
+        return
     # Citation candidates judged by both judges: gpt-4o-mini (the code
     # default) and gpt-4o, the judge behind Paper 3's committed labels.
     cit = label_citation(questions, study, ctxs)

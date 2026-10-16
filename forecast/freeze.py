@@ -18,7 +18,7 @@ import time
 
 from forecast.common import ROOT, sha256, study_dir
 from forecast.cohort import STUDIES
-from forecast.predict import PRIMARY_TRAIN, TRAIN_SETS
+from forecast.predict import PRIMARY_TRAIN, TRAIN_SETS, TRAIN_SETS_V2
 
 FILES = (
     "questions.jsonl",
@@ -43,7 +43,7 @@ def main() -> None:
         "past_window": STUDIES[name]["past_window"],
         "outcome_window": STUDIES[name]["future_window"],
         "primary_score": f"m_logistic__{PRIMARY_TRAIN[name]}",
-        "training_cutoffs": {k: list(v) for k, v in TRAIN_SETS.items()},
+        "training_cutoffs": {k: list(v) for k, v in {**TRAIN_SETS, **TRAIN_SETS_V2}.items()},
         "sha256": digests,
         "combined_sha256": combined,
         "corpus_sha256": json.loads(corpus_manifest.read_text())["corpus_sha256"] if corpus_manifest.exists() else None,

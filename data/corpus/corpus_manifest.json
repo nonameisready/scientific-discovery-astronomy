@@ -1,23 +1,29 @@
 {
-  "built_on": "2026-10-15",
+  "built_on": "2026-10-16",
   "source": "arXiv OAI-PMH (oaipmh.arxiv.org), set physics:astro-ph (incl. cross-lists), metadataPrefix arXivRaw; published = v1 date",
   "harvest_years": [
-    2013,
+    2012,
     2026
   ],
   "snapshot_end": "2026-10-14",
-  "n_papers_total": 236290,
-  "corpus_sha256": "00747b52595560f2b5101ef9e77454f018ebb32251550902dc9ab10c0191df66",
+  "n_papers_total": 250097,
+  "corpus_sha256": "534650b39115e0c111f8ac2a195a43bc4cabe363d50f45f19981ca7e40a38464",
   "subfield_paper_totals": {
-    "exoplanet_atmospheres": 4224,
-    "protoplanetary_disks": 8649,
-    "stellar_activity": 3796,
-    "fast_radio_bursts": 2205,
-    "gravitational_waves": 17636,
-    "galaxy_evolution": 18109,
-    "cosmology_tensions": 12909,
-    "compact_objects": 27397
+    "exoplanet_atmospheres": 4340,
+    "protoplanetary_disks": 9078,
+    "stellar_activity": 3961,
+    "fast_radio_bursts": 2211,
+    "gravitational_waves": 17993,
+    "galaxy_evolution": 18871,
+    "cosmology_tensions": 13646,
+    "compact_objects": 28842
   },
-  "agreement_with_paper3": "per-year totals identical 2014-2021, within 0.02% 2022-2025; per-subfield ratios 1.000-1.003 (data/corpus/harvest_comparison.json)",
-  "rebuild": "python -m forecast.harvest_oai (4 datestamp windows) && python -m forecast.corpus_build"
+  "agreement_with_paper3": "per-year totals identical 2012-2021, within 0.02% 2022-2025; per-subfield ratios 1.000-1.012 (data/corpus/harvest_comparison.json)",
+  "rebuild": "python -m forecast.harvest_oai (windows w1-w4, plus backfill b1-b5 with --min-year 2012 --max-year 2012) && python -m forecast.corpus_build",
+  "previous": {
+    "built_on": "2026-10-15",
+    "n_papers_total": 236290,
+    "corpus_sha256": "00747b52595560f2b5101ef9e77454f018ebb32251550902dc9ab10c0191df66",
+    "note": "2013-2026 corpus used for the round-1 freezes"
+  }
 }
