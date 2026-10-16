@@ -1,0 +1,9 @@
+[L1] compact_objects: 25 questions, future corpus 11014
+[L1] cosmology_tensions: 25 questions, future corpus 5137
+[L1] exoplanet_atmospheres: 25 questions, future corpus 1800
+[L1] fast_radio_bursts: 25 questions, future corpus 1091
+[L1] galaxy_evolution: 25 questions, future corpus 6836
+[L1] gravitational_waves: 25 questions, future corpus 8242
+[L1] protoplanetary_disks: 25 questions, future corpus 3305
+[L1] stellar_activity: 25 questions, future corpus 1498
+[label] backtest2019: L1/L2 labels written (citation graph skipped)
