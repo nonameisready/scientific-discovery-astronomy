@@ -277,9 +277,9 @@ v3 is the best model at every cutoff, on both measures.
    human-labelled items show the gpt-4o judge is much stricter than humans
    (κ ≈ 0 to 0.14). v3 still predicts the humans' labels (AUC 0.66–0.70), but
    n = 90 and the two humans agree with each other at only κ = 0.11.
-2. **Momentum may partly predict the retriever.** The outcome label is found
-   by text similarity to future papers, and dense topics are easier to match.
-   A citation-graph label would break this link.
+2. ~~Momentum may partly predict the retriever.~~ **Checked.** Against a
+   citation-graph label that does not use text retrieval, v3 still scores
+   AUC 0.68 and momentum alone 0.69. See below.
 3. **The question generator (gpt-4o-mini) has seen post-cutoff literature.**
    This matters for every cutoff before late 2023.
 
@@ -334,6 +334,39 @@ binary outcome, addressed vs not
   rubric.
 - The evidence is limited: only 90 items, intervals that sit just above 0.5,
   and the analysis was not pre-registered.
+
+## Retrieval-independent check: the citation-graph label (exploratory)
+
+**The threat.** The outcome label finds future papers by TF-IDF similarity to
+the question. Topic momentum counts past papers close to the question. So
+momentum could be predicting the *retriever* rather than the field.
+
+**The citation label breaks that link.** Its candidates are post-cutoff
+papers that **cite the question's source papers**, taken from the Semantic
+Scholar citation graph (1,213 of 1,214 source papers). They are judged by the
+same gpt-4o rubric (`labels_citation_gpt4o.jsonl` per cohort,
+[`forecast/evaluate_citation.py`](forecast/evaluate_citation.py)).
+
+**Scope.** The label is defined only for questions that have source papers:
+755 across the five cutoffs. It is undefined for direct-LLM questions and
+vague controls. The TF-IDF and citation labels agree on 73% of questions.
+
+| Model | TF-IDF label AUC | **Citation label AUC** [95% CI] | Citation label, within-source |
+| --- | --- | --- | --- |
+| v1 (Paper 3) | 0.614 | 0.569 [0.525, 0.612] | 0.572 |
+| source prior | 0.627 | 0.584 | 0.500 |
+| v2 embed + source | 0.653 | 0.627 | 0.587 |
+| momentum only (`v3_dm_src`) | 0.699 | **0.689** [0.650, 0.730] | 0.668 |
+| **v3** | 0.703 | **0.680** [0.639, 0.718] | 0.662 |
+
+**Result.** Momentum keeps nearly all of its skill when the future papers are
+found through citations instead of text similarity: 0.70 → 0.69. The older
+models lose more (v1 0.61 → 0.57). On the fresh 2017 + 2023 cohorts the
+picture is the same: v3 0.663 and momentum 0.692 on the citation label.
+
+So the momentum signal is mostly about where the field actually went, not
+about the retriever. Full numbers are in
+[`results/citation_label.json`](results/citation_label.json).
 
 ## Study 2: the prospective forecast (cutoff 2026-10-14 → scored ≥ 2031-10-15)
 

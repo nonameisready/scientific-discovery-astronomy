@@ -1,0 +1,45 @@
+{"action_types": ["run_simulation", "run_simulation", "run_simulation", "run_simulation"], "paper_ids": ["2406.03513", "2603.01582", "2311.05586", "2602.06615"], "question_id": "compact_objects-2022-001"}
+{"action_types": ["compare_datasets", "search_review", "collect_observation", "run_simulation", "run_simulation"], "paper_ids": ["2309.12644", "2310.07133", "2311.13805", "2403.03399", "2605.30369"], "question_id": "compact_objects-2022-004"}
+{"action_types": ["collect_observation"], "paper_ids": ["2508.15161"], "question_id": "compact_objects-2022-005"}
+{"action_types": ["run_simulation", "run_simulation", "rerun_analysis", "run_simulation"], "paper_ids": ["2404.04827", "2406.19044", "2302.07284", "2306.08441"], "question_id": "compact_objects-2022-006"}
+{"action_types": ["run_simulation", "run_simulation", "search_archive", "rerun_analysis", "run_simulation"], "paper_ids": ["2606.17496", "2308.08312", "2412.12017", "2603.00390", "2311.12109"], "question_id": "compact_objects-2022-007"}
+{"action_types": ["compare_datasets", "compare_datasets", "rerun_analysis", "run_simulation", "compare_datasets", "run_simulation", "run_simulation"], "paper_ids": ["2606.05358", "2602.12822", "2601.00650", "2605.26050", "2606.19090", "2301.09382", "2511.16554"], "question_id": "cosmology_tensions-2022-002"}
+{"action_types": ["run_simulation", "run_simulation", "collect_observation", "collect_observation", "search_review"], "paper_ids": ["2309.02288", "2504.06831", "2401.04773", "2309.03263", "2311.08253"], "question_id": "cosmology_tensions-2022-003"}
+{"action_types": ["compare_datasets", "rerun_analysis", "run_simulation", "rerun_analysis", "search_review", "run_simulation"], "paper_ids": ["2503.21600", "2501.07538", "2504.15274", "2311.00524", "2308.16628", "2502.14608"], "question_id": "cosmology_tensions-2022-004"}
+{"action_types": ["run_simulation", "run_simulation", "run_simulation"], "paper_ids": ["2502.02864", "2301.09988", "2301.09382"], "question_id": "cosmology_tensions-2022-005"}
+{"action_types": ["run_simulation", "run_simulation", "rerun_analysis", "run_simulation"], "paper_ids": ["2405.03627", "2504.14609", "2310.07344", "2406.13479"], "question_id": "cosmology_tensions-2022-007"}
+{"action_types": ["run_simulation", "run_simulation", "collect_observation", "run_simulation", "run_simulation"], "paper_ids": ["2410.16171", "2301.05574", "2301.02656", "2609.11652", "2509.26382"], "question_id": "cosmology_tensions-2022-008"}
+{"action_types": ["rerun_analysis", "run_simulation", "compare_datasets", "run_simulation", "run_simulation", "compare_datasets"], "paper_ids": ["2609.31543", "2502.02864", "2604.05466", "2403.03484", "2301.09382", "2310.10017"], "question_id": "cosmology_tensions-2022-009"}
+{"action_types": ["run_simulation", "rerun_analysis", "run_simulation"], "paper_ids": ["2501.06395", "2608.16988", "2512.08932"], "question_id": "exoplanet_atmospheres-2022-001"}
+{"action_types": ["rerun_analysis", "search_archive"], "paper_ids": ["2410.04804", "2507.02797"], "question_id": "exoplanet_atmospheres-2022-003"}
+{"action_types": ["collect_observation", "run_simulation"], "paper_ids": ["2307.14399", "2509.23406"], "question_id": "exoplanet_atmospheres-2022-004"}
+{"action_types": ["run_simulation", "run_simulation"], "paper_ids": ["2501.06395", "2512.08932"], "question_id": "exoplanet_atmospheres-2022-005"}
+{"action_types": ["run_simulation", "run_simulation"], "paper_ids": ["2501.06395", "2512.08932"], "question_id": "exoplanet_atmospheres-2022-006"}
+{"action_types": ["run_simulation", "collect_observation"], "paper_ids": ["2511.21454", "2407.06163"], "question_id": "exoplanet_atmospheres-2022-007"}
+{"action_types": ["compare_datasets"], "paper_ids": ["2402.10486"], "question_id": "exoplanet_atmospheres-2022-008"}
+{"action_types": ["run_simulation"], "paper_ids": ["2404.17658"], "question_id": "exoplanet_atmospheres-2022-009"}
+{"action_types": ["run_simulation", "rerun_analysis"], "paper_ids": ["2303.16775", "2408.03163"], "question_id": "fast_radio_bursts-2022-000"}
+{"action_types": ["search_archive"], "paper_ids": ["2604.05093"], "question_id": "fast_radio_bursts-2022-001"}
+{"action_types": ["collect_observation", "run_simulation", "run_simulation", "rerun_analysis", "run_simulation", "rerun_analysis", "collect_observation", "run_simulation"], "paper_ids": ["2512.07140", "2607.01369", "2603.23144", "2603.17615", "2508.05840", "2609.35733", "2507.03113", "2405.07446"], "question_id": "fast_radio_bursts-2022-002"}
+{"action_types": ["collect_observation"], "paper_ids": ["2310.16932"], "question_id": "fast_radio_bursts-2022-003"}
+{"action_types": ["collect_observation", "compare_datasets", "search_archive", "collect_observation"], "paper_ids": ["2409.16964", "2609.24240", "2506.01238", "2312.01578"], "question_id": "fast_radio_bursts-2022-007"}
+{"action_types": ["rerun_analysis", "run_simulation", "rerun_analysis", "rerun_analysis", "rerun_analysis", "rerun_analysis"], "paper_ids": ["2410.01974", "2410.03994", "2507.18946", "2503.08441", "2506.14947", "2407.03532"], "question_id": "fast_radio_bursts-2022-009"}
+{"action_types": ["run_simulation", "run_simulation", "run_simulation"], "paper_ids": ["2407.09949", "2601.14395", "2504.18144"], "question_id": "galaxy_evolution-2022-001"}
+{"action_types": ["run_simulation"], "paper_ids": ["2501.16602"], "question_id": "galaxy_evolution-2022-002"}
+{"action_types": ["run_simulation", "run_simulation", "collect_observation", "collect_observation", "collect_observation", "search_archive", "run_simulation"], "paper_ids": ["2506.07662", "2604.14312", "2604.05024", "2606.02698", "2508.08577", "2302.10936", "2310.16089"], "question_id": "galaxy_evolution-2022-005"}
+{"action_types": ["collect_observation", "collect_observation", "collect_observation"], "paper_ids": ["2301.03241", "2510.00235", "2602.22035"], "question_id": "galaxy_evolution-2022-008"}
+{"action_types": ["run_simulation", "rerun_analysis", "search_archive", "search_archive", "run_simulation", "run_simulation"], "paper_ids": ["2306.08441", "2406.19044", "2509.04637", "2509.04151", "2504.20392", "2404.00720"], "question_id": "gravitational_waves-2022-000"}
+{"action_types": ["run_simulation", "run_simulation"], "paper_ids": ["2403.03399", "2605.30369"], "question_id": "gravitational_waves-2022-001"}
+{"action_types": ["rerun_analysis", "run_simulation", "run_simulation", "rerun_analysis"], "paper_ids": ["2406.19044", "2404.04827", "2510.05634", "2302.07284"], "question_id": "gravitational_waves-2022-003"}
+{"action_types": ["run_simulation", "run_simulation", "run_simulation", "rerun_analysis", "collect_observation", "run_simulation"], "paper_ids": ["2507.04318", "2304.04009", "2406.14366", "2305.12262", "2510.09744", "2304.00893"], "question_id": "gravitational_waves-2022-007"}
+{"action_types": ["run_simulation", "run_simulation", "run_simulation"], "paper_ids": ["2505.13952", "2501.12650", "2303.02766"], "question_id": "protoplanetary_disks-2022-000"}
+{"action_types": ["run_simulation"], "paper_ids": ["2604.25816"], "question_id": "protoplanetary_disks-2022-002"}
+{"action_types": ["collect_observation", "rerun_analysis"], "paper_ids": ["2504.11210", "2402.09067"], "question_id": "protoplanetary_disks-2022-006"}
+{"action_types": ["collect_observation", "collect_observation"], "paper_ids": ["2412.00520", "2412.05401"], "question_id": "stellar_activity-2022-001"}
+{"action_types": ["compare_datasets", "search_review", "run_simulation"], "paper_ids": ["2302.06496", "2304.07649", "2601.10675"], "question_id": "stellar_activity-2022-007"}
+{"action_types": ["collect_observation"], "paper_ids": ["2506.07383"], "question_id": "stellar_activity-2022-008"}
+{"action_types": ["search_archive", "collect_observation", "collect_observation"], "paper_ids": ["2504.18265", "2609.19653", "2310.16883"], "question_id": "stellar_activity-2022-009"}
+{"action_types": ["collect_observation"], "paper_ids": ["2301.08192"], "question_id": "exoplanet_atmospheres-2022-002"}
+{"action_types": ["collect_observation", "search_archive", "collect_observation"], "paper_ids": ["2308.10930", "2310.10328", "2310.00908"], "question_id": "fast_radio_bursts-2022-005"}
+{"action_types": ["collect_observation"], "paper_ids": ["2410.02315"], "question_id": "gravitational_waves-2022-006"}
+{"action_types": ["collect_observation"], "paper_ids": ["2412.05220"], "question_id": "compact_objects-2022-002"}

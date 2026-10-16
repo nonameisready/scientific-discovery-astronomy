@@ -1,0 +1,36 @@
+{"action_types": ["collect_observation", "run_simulation"], "paper_ids": ["2209.03874", "2105.00684"], "question_id": "compact_objects-2017-000"}
+{"action_types": ["run_simulation"], "paper_ids": ["2111.09173"], "question_id": "compact_objects-2017-001"}
+{"action_types": ["run_simulation", "run_simulation"], "paper_ids": ["1812.05294", "2004.01205"], "question_id": "compact_objects-2017-003"}
+{"action_types": ["rerun_analysis", "run_simulation", "run_simulation"], "paper_ids": ["1801.09915", "1909.13113", "1810.04398"], "question_id": "compact_objects-2017-004"}
+{"action_types": ["collect_observation", "search_archive"], "paper_ids": ["2011.06607", "1912.09158"], "question_id": "compact_objects-2017-005"}
+{"action_types": ["run_simulation", "run_simulation"], "paper_ids": ["2202.11119", "2008.07205"], "question_id": "compact_objects-2017-006"}
+{"action_types": ["search_archive", "collect_observation", "collect_observation", "collect_observation"], "paper_ids": ["1905.00897", "2008.04657", "1812.04483", "1904.09762"], "question_id": "compact_objects-2017-008"}
+{"action_types": ["run_simulation", "rerun_analysis", "run_simulation", "run_simulation", "run_simulation", "run_simulation", "run_simulation", "rerun_analysis", "run_simulation"], "paper_ids": ["1909.13252", "2212.00238", "2011.02858", "2006.03678", "1910.05860", "2004.06114", "2111.00014", "2103.09729", "2202.08291"], "question_id": "cosmology_tensions-2017-000"}
+{"action_types": ["run_simulation", "rerun_analysis"], "paper_ids": ["1804.05428", "1910.01608"], "question_id": "cosmology_tensions-2017-006"}
+{"action_types": ["run_simulation", "run_simulation"], "paper_ids": ["1804.07154", "1801.08501"], "question_id": "cosmology_tensions-2017-008"}
+{"action_types": ["compare_datasets", "compare_datasets"], "paper_ids": ["1809.00439", "2009.10216"], "question_id": "cosmology_tensions-2017-009"}
+{"action_types": ["run_simulation", "collect_observation"], "paper_ids": ["1811.11725", "2103.07185"], "question_id": "exoplanet_atmospheres-2017-000"}
+{"action_types": ["rerun_analysis", "collect_observation"], "paper_ids": ["2001.03126", "2002.10595"], "question_id": "exoplanet_atmospheres-2017-002"}
+{"action_types": ["search_archive", "run_simulation", "rerun_analysis"], "paper_ids": ["2101.05285", "2003.04877", "1804.03075"], "question_id": "exoplanet_atmospheres-2017-004"}
+{"action_types": ["run_simulation", "run_simulation"], "paper_ids": ["1901.05006", "1812.05618"], "question_id": "exoplanet_atmospheres-2017-007"}
+{"action_types": ["compare_datasets", "search_archive", "run_simulation", "collect_observation"], "paper_ids": ["2107.05759", "1802.05269", "2111.11110", "1901.02048"], "question_id": "exoplanet_atmospheres-2017-009"}
+{"action_types": ["compare_datasets", "run_simulation", "run_simulation", "run_simulation", "search_review"], "paper_ids": ["2001.06019", "2001.11105", "1911.12833", "2001.02100", "1804.01104"], "question_id": "fast_radio_bursts-2017-002"}
+{"action_types": ["search_archive"], "paper_ids": ["2106.04353"], "question_id": "fast_radio_bursts-2017-003"}
+{"action_types": ["collect_observation"], "paper_ids": ["2012.06258"], "question_id": "galaxy_evolution-2017-002"}
+{"action_types": ["run_simulation", "search_review", "run_simulation", "run_simulation", "search_review", "run_simulation", "search_review", "run_simulation"], "paper_ids": ["1807.04768", "2003.10533", "1901.07563", "1804.06477", "1810.12310", "2009.13505", "1807.06967", "1811.04953"], "question_id": "galaxy_evolution-2017-004"}
+{"action_types": ["search_archive", "run_simulation"], "paper_ids": ["1911.09116", "2203.16652"], "question_id": "galaxy_evolution-2017-005"}
+{"action_types": ["compare_datasets", "compare_datasets"], "paper_ids": ["2006.16317", "1808.03433"], "question_id": "galaxy_evolution-2017-007"}
+{"action_types": ["run_simulation", "search_review", "run_simulation"], "paper_ids": ["1812.04526", "2105.07425", "1910.13277"], "question_id": "gravitational_waves-2017-001"}
+{"action_types": ["run_simulation"], "paper_ids": ["2106.09630"], "question_id": "gravitational_waves-2017-007"}
+{"action_types": ["run_simulation"], "paper_ids": ["1903.01890"], "question_id": "protoplanetary_disks-2017-001"}
+{"action_types": ["run_simulation", "run_simulation"], "paper_ids": ["2107.06299", "1803.05305"], "question_id": "protoplanetary_disks-2017-002"}
+{"action_types": ["run_simulation", "run_simulation"], "paper_ids": ["1806.10572", "1812.10634"], "question_id": "protoplanetary_disks-2017-004"}
+{"action_types": ["run_simulation"], "paper_ids": ["2003.06522"], "question_id": "protoplanetary_disks-2017-007"}
+{"action_types": ["run_simulation"], "paper_ids": ["1910.12868"], "question_id": "protoplanetary_disks-2017-009"}
+{"action_types": ["run_simulation"], "paper_ids": ["2207.03168"], "question_id": "stellar_activity-2017-001"}
+{"action_types": ["collect_observation"], "paper_ids": ["1804.06479"], "question_id": "protoplanetary_disks-2017-008"}
+{"action_types": ["collect_observation"], "paper_ids": ["1812.01536"], "question_id": "stellar_activity-2017-004"}
+{"action_types": ["run_simulation"], "paper_ids": ["1801.01410"], "question_id": "gravitational_waves-2017-002"}
+{"action_types": ["collect_observation"], "paper_ids": ["1901.11321"], "question_id": "galaxy_evolution-2017-000"}
+{"action_types": ["search_archive"], "paper_ids": ["1807.11528"], "question_id": "galaxy_evolution-2017-001"}
+{"action_types": ["run_simulation"], "paper_ids": ["1912.09858"], "question_id": "cosmology_tensions-2017-004"}

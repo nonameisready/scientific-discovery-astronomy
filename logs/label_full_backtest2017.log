@@ -6,20 +6,4 @@
 [L1] gravitational_waves: 25 questions, future corpus 6947
 [L1] protoplanetary_disks: 25 questions, future corpus 3094
 [L1] stellar_activity: 25 questions, future corpus 1364
-Traceback (most recent call last):
-  File "<frozen runpy>", line 203, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/user/scientific-discovery-astronomy/forecast/label.py", line 266, in <module>
-    main()
-    ~~~~^^
-  File "/home/user/scientific-discovery-astronomy/forecast/label.py", line 246, in main
-    cit = label_citation(questions, study, ctxs)
-  File "/home/user/scientific-discovery-astronomy/forecast/label.py", line 147, in label_citation
-    citing = {q["question_id"]: [c for aid in source_arxiv_ids(q) for c in citing_papers(aid, lo, hi)]
-                                                                           ~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "/home/user/scientific-discovery-astronomy/forecast/label.py", line 130, in citing_papers
-    page = _get_json(S2_URL.format(arxiv_id) + "?" + params) or {}
-           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/user/scientific-discovery-astronomy/forecast/label.py", line 111, in _get_json
-    raise RuntimeError(f"request failed: {url}")
-RuntimeError: request failed: https://api.semanticscholar.org/graph/v1/paper/arXiv:1001.4538/citations?fields=externalIds%2Ctitle%2Cabstract%2CpublicationDate%2Cyear&limit=1000&offset=9000
+[label] backtest2017: L1/L2/citation/action labels written

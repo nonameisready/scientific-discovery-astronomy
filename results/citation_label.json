@@ -1,169 +1,338 @@
 {
   "cohorts_with_citation_labels": [
-    "backtest2021"
+    "backtest2017",
+    "backtest2019",
+    "backtest2021",
+    "backtest2022",
+    "backtest2023"
   ],
   "all": {
-    "n": 152,
+    "n": 755,
     "rates": {
-      "tfidf": 0.388,
-      "citation": 0.355,
-      "union": 0.52
+      "tfidf": 0.424,
+      "citation": 0.314,
+      "union": 0.503
     },
-    "tfidf_vs_citation_agreement": 0.704,
+    "tfidf_vs_citation_agreement": 0.731,
     "tfidf": {
       "v1": {
         "pooled": {
-          "value": 0.6319,
+          "value": 0.6141,
           "ci95": [
-            0.5387,
-            0.7203
+            0.575,
+            0.6559
           ]
         },
-        "within_source": 0.6737
+        "within_source": 0.6147
       },
       "source_prior": {
         "pooled": {
-          "value": 0.6239,
+          "value": 0.627,
           "ci95": [
-            0.5469,
-            0.6957
+            0.59,
+            0.6639
           ]
         },
         "within_source": 0.5
       },
       "v2_embed_src": {
         "pooled": {
-          "value": 0.6576,
+          "value": 0.653,
           "ci95": [
-            0.5685,
-            0.7415
+            0.6156,
+            0.691
           ]
         },
-        "within_source": 0.5897
+        "within_source": 0.6311
       },
       "v3_dm_src": {
         "pooled": {
-          "value": 0.7142,
+          "value": 0.6988,
           "ci95": [
-            0.62,
-            0.8008
+            0.6609,
+            0.7359
           ]
         },
-        "within_source": 0.6578
+        "within_source": 0.6778
       },
       "v3_ens": {
         "pooled": {
-          "value": 0.7168,
+          "value": 0.7025,
           "ci95": [
-            0.6298,
-            0.7958
+            0.6675,
+            0.7381
           ]
         },
-        "within_source": 0.6626
+        "within_source": 0.6942
       }
     },
     "citation": {
       "v1": {
         "pooled": {
-          "value": 0.6247,
+          "value": 0.5689,
           "ci95": [
-            0.5319,
-            0.7133
+            0.525,
+            0.6124
           ]
         },
-        "within_source": 0.6852
+        "within_source": 0.5724
       },
       "source_prior": {
         "pooled": {
-          "value": 0.6088,
+          "value": 0.5838,
           "ci95": [
-            0.5367,
-            0.6779
+            0.5438,
+            0.6223
           ]
         },
         "within_source": 0.5
       },
       "v2_embed_src": {
         "pooled": {
-          "value": 0.6435,
+          "value": 0.6271,
           "ci95": [
-            0.5567,
-            0.7282
+            0.5844,
+            0.6694
           ]
         },
-        "within_source": 0.6049
+        "within_source": 0.587
       },
       "v3_dm_src": {
         "pooled": {
-          "value": 0.6408,
+          "value": 0.6892,
           "ci95": [
-            0.553,
-            0.7296
+            0.65,
+            0.7295
           ]
         },
-        "within_source": 0.5392
+        "within_source": 0.6677
       },
       "v3_ens": {
         "pooled": {
-          "value": 0.6746,
+          "value": 0.6797,
           "ci95": [
-            0.5904,
-            0.7568
+            0.6389,
+            0.7184
           ]
         },
-        "within_source": 0.6091
+        "within_source": 0.6617
       }
     },
     "union": {
       "v1": {
         "pooled": {
-          "value": 0.6246,
+          "value": 0.6075,
           "ci95": [
-            0.5345,
-            0.7129
+            0.5695,
+            0.647
           ]
         },
-        "within_source": 0.6519
+        "within_source": 0.6022
       },
       "source_prior": {
         "pooled": {
-          "value": 0.6776,
+          "value": 0.635,
           "ci95": [
-            0.6061,
-            0.7474
+            0.5991,
+            0.6709
           ]
         },
         "within_source": 0.5
       },
       "v2_embed_src": {
         "pooled": {
-          "value": 0.6621,
+          "value": 0.6543,
           "ci95": [
-            0.5826,
-            0.7431
+            0.6189,
+            0.6901
           ]
         },
-        "within_source": 0.582
+        "within_source": 0.6097
       },
       "v3_dm_src": {
         "pooled": {
-          "value": 0.6688,
+          "value": 0.7019,
           "ci95": [
-            0.5781,
-            0.755
+            0.6655,
+            0.7378
           ]
         },
-        "within_source": 0.5809
+        "within_source": 0.6818
       },
       "v3_ens": {
         "pooled": {
-          "value": 0.7007,
+          "value": 0.7066,
           "ci95": [
-            0.6142,
-            0.7792
+            0.6717,
+            0.741
           ]
         },
-        "within_source": 0.6134
+        "within_source": 0.6829
+      }
+    }
+  },
+  "fresh_2017_2023": {
+    "n": 299,
+    "rates": {
+      "tfidf": 0.395,
+      "citation": 0.261,
+      "union": 0.462
+    },
+    "tfidf_vs_citation_agreement": 0.732,
+    "tfidf": {
+      "v1": {
+        "pooled": {
+          "value": 0.6193,
+          "ci95": [
+            0.5558,
+            0.6865
+          ]
+        },
+        "within_source": 0.6127
+      },
+      "source_prior": {
+        "pooled": {
+          "value": 0.6051,
+          "ci95": [
+            0.5485,
+            0.6638
+          ]
+        },
+        "within_source": 0.5
+      },
+      "v2_embed_src": {
+        "pooled": {
+          "value": 0.6321,
+          "ci95": [
+            0.5695,
+            0.6946
+          ]
+        },
+        "within_source": 0.657
+      },
+      "v3_dm_src": {
+        "pooled": {
+          "value": 0.7105,
+          "ci95": [
+            0.6466,
+            0.7724
+          ]
+        },
+        "within_source": 0.6897
+      },
+      "v3_ens": {
+        "pooled": {
+          "value": 0.6876,
+          "ci95": [
+            0.6281,
+            0.749
+          ]
+        },
+        "within_source": 0.7201
+      }
+    },
+    "citation": {
+      "v1": {
+        "pooled": {
+          "value": 0.547,
+          "ci95": [
+            0.4738,
+            0.6209
+          ]
+        },
+        "within_source": 0.5435
+      },
+      "source_prior": {
+        "pooled": {
+          "value": 0.5263,
+          "ci95": [
+            0.4557,
+            0.5945
+          ]
+        },
+        "within_source": 0.5
+      },
+      "v2_embed_src": {
+        "pooled": {
+          "value": 0.6044,
+          "ci95": [
+            0.5317,
+            0.6798
+          ]
+        },
+        "within_source": 0.5868
+      },
+      "v3_dm_src": {
+        "pooled": {
+          "value": 0.6916,
+          "ci95": [
+            0.624,
+            0.7575
+          ]
+        },
+        "within_source": 0.7052
+      },
+      "v3_ens": {
+        "pooled": {
+          "value": 0.6631,
+          "ci95": [
+            0.593,
+            0.7328
+          ]
+        },
+        "within_source": 0.6948
+      }
+    },
+    "union": {
+      "v1": {
+        "pooled": {
+          "value": 0.6258,
+          "ci95": [
+            0.5638,
+            0.6925
+          ]
+        },
+        "within_source": 0.6202
+      },
+      "source_prior": {
+        "pooled": {
+          "value": 0.6063,
+          "ci95": [
+            0.551,
+            0.6623
+          ]
+        },
+        "within_source": 0.5
+      },
+      "v2_embed_src": {
+        "pooled": {
+          "value": 0.6373,
+          "ci95": [
+            0.5784,
+            0.6976
+          ]
+        },
+        "within_source": 0.6202
+      },
+      "v3_dm_src": {
+        "pooled": {
+          "value": 0.7264,
+          "ci95": [
+            0.67,
+            0.7829
+          ]
+        },
+        "within_source": 0.7282
+      },
+      "v3_ens": {
+        "pooled": {
+          "value": 0.7015,
+          "ci95": [
+            0.645,
+            0.7575
+          ]
+        },
+        "within_source": 0.7199
       }
     }
   }
