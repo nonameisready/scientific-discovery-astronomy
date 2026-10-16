@@ -273,8 +273,10 @@ v3 is the best model at every cutoff, on both measures.
 
 ### Open threats before a paper
 
-1. **No human audit of the labels.** Paper 2 found that human annotators agree
-   with each other at only κ = 0.17.
+1. **Human audit is thin.** See "Human validation" below. Paper 2's 90
+   human-labelled items show the gpt-4o judge is much stricter than humans
+   (κ ≈ 0 to 0.14). v3 still predicts the humans' labels (AUC 0.66–0.70), but
+   n = 90 and the two humans agree with each other at only κ = 0.11.
 2. **Momentum may partly predict the retriever.** The outcome label is found
    by text similarity to future papers, and dense topics are easier to match.
    A citation-graph label would break this link.
@@ -282,6 +284,56 @@ v3 is the best model at every cutoff, on both measures.
    This matters for every cutoff before late 2023.
 
 Full numbers: [`results/round3/evaluation.json`](results/round3/evaluation.json).
+
+## Human validation (exploratory)
+
+**Where the human labels are.** The public dataset
+[dataclue-ai/scientific-question-outcomes](https://huggingface.co/datasets/dataclue-ai/scientific-question-outcomes)
+contains Paper 3's labels. All of them are model-judged: gpt-4o for 956
+questions, a similarity threshold for 24, and gpt-4o-mini as second judge.
+They are identical to `vendor/paper3`. The human labels come from Paper 2's
+blinded study instead: two independent annotators labelled 90 questions
+(cutoff 2020), each shown the same 8 later abstracts a judge sees. They are
+vendored verbatim in [`vendor/paper2/annotation/`](vendor/paper2/annotation/).
+
+**1. Does the judge agree with humans?** We ran Paper 3's judge on those 90
+items with [`forecast/human_check.py`](forecast/human_check.py) and scored the
+binary outcome, addressed vs not
+([`results/human_check.json`](results/human_check.json)).
+
+| Rater | Share "addressed" | κ vs human 1 | κ vs human 2 |
+| --- | --- | --- | --- |
+| human 1 | 0.90 | — | 0.11 [−0.08, 0.32] |
+| human 2 | 0.73 | 0.11 | — |
+| gpt-4o (Paper 3 judge, used throughout) | **0.43** | −0.00 | 0.14 |
+| gpt-4o-mini | 0.86 | −0.03 | 0.04 |
+
+- The two humans barely agree with each other.
+- The strict gpt-4o judge calls far fewer questions addressed than either
+  human, and it is not more aligned with humans than they are with each other.
+- So "addressed" in this repository means *addressed according to Paper 3's
+  strict gpt-4o rubric*, not according to human readers.
+
+**2. Do the forecasters predict human judgments anyway?** We scored the same
+90 questions with v3, trained only on cutoffs whose labels close by 2020
+(2012 and 2014), using
+[`forecast/human_predict.py`](forecast/human_predict.py)
+([`results/human_predict.json`](results/human_predict.json)).
+
+| Target | v3 AUC [95% CI] |
+| --- | --- |
+| human 1 | **0.70** [0.50, 0.87] |
+| human 2 | **0.66** [0.52, 0.79] |
+| both humans say addressed | **0.67** [0.54, 0.79] |
+| gpt-4o judge, same items | 0.55 [0.43, 0.67] |
+
+- The forecast signal carries over to human judgment.
+- On these items it predicts the humans better than it predicts the judge it
+  was trained on.
+- This is evidence that the signal is not just an artefact of the gpt-4o
+  rubric.
+- The evidence is limited: only 90 items, intervals that sit just above 0.5,
+  and the analysis was not pre-registered.
 
 ## Study 2: the prospective forecast (cutoff 2026-10-14 → scored ≥ 2031-10-15)
 

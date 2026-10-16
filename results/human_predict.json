@@ -1,0 +1,104 @@
+{
+  "n_items": 90,
+  "note": "exploratory, not pre-registered; training cutoffs 2012+2014",
+  "base_rates": {
+    "human_1": 0.9,
+    "human_2": 0.733,
+    "both_humans_say_addressed": 0.678,
+    "gpt-4o_judge": 0.433
+  },
+  "auc": {
+    "human_1": {
+      "v3_momentum": {
+        "auc": 0.652,
+        "ci95": [
+          0.402,
+          0.88
+        ]
+      },
+      "v3_embedding": {
+        "auc": 0.683,
+        "ci95": [
+          0.504,
+          0.829
+        ]
+      },
+      "v3_ens": {
+        "auc": 0.702,
+        "ci95": [
+          0.502,
+          0.874
+        ]
+      }
+    },
+    "human_2": {
+      "v3_momentum": {
+        "auc": 0.641,
+        "ci95": [
+          0.495,
+          0.772
+        ]
+      },
+      "v3_embedding": {
+        "auc": 0.639,
+        "ci95": [
+          0.5,
+          0.766
+        ]
+      },
+      "v3_ens": {
+        "auc": 0.657,
+        "ci95": [
+          0.518,
+          0.787
+        ]
+      }
+    },
+    "both_humans_say_addressed": {
+      "v3_momentum": {
+        "auc": 0.628,
+        "ci95": [
+          0.494,
+          0.757
+        ]
+      },
+      "v3_embedding": {
+        "auc": 0.666,
+        "ci95": [
+          0.536,
+          0.791
+        ]
+      },
+      "v3_ens": {
+        "auc": 0.669,
+        "ci95": [
+          0.535,
+          0.793
+        ]
+      }
+    },
+    "gpt-4o_judge": {
+      "v3_momentum": {
+        "auc": 0.607,
+        "ci95": [
+          0.483,
+          0.723
+        ]
+      },
+      "v3_embedding": {
+        "auc": 0.499,
+        "ci95": [
+          0.382,
+          0.622
+        ]
+      },
+      "v3_ens": {
+        "auc": 0.548,
+        "ci95": [
+          0.426,
+          0.671
+        ]
+      }
+    }
+  }
+}

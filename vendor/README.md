@@ -2,6 +2,7 @@
 
 | Dir | Source repository | Commit | What is used |
 | --- | --- | --- | --- |
+| `paper2/annotation/` | nonameisready/scientific-question-discovery-benchmark | `5adf210` | the blinded two-annotator study: 90-item packet, both sheets, decode map, codebook |
 | `paper2/prospective_2026/` | nonameisready/scientific-question-discovery-benchmark | `5adf210` | the 200 questions frozen 2026-08-17 (+ their SHA256SUMS) |
 | `paper3/pipeline/` | nonameisready/scientific-question-outcome-prediction-indicators | `9b842fb` | generators, miners, subfield classifier, features, labeling judge, models, structure features |
 | `paper3/data/` | same | `9b842fb` | the 980 frozen questions, features, labels and structure features used as training data |

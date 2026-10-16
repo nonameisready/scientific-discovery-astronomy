@@ -1,0 +1,1112 @@
+{
+  "report": {
+    "n_items": 90,
+    "binary_outcome": "addressed = outcome != not_addressed",
+    "addressed_rate": {
+      "human_1": 0.9,
+      "human_2": 0.733,
+      "gpt-4o": 0.433,
+      "gpt-4o-mini": 0.856
+    },
+    "pairwise": {
+      "human_1 vs human_2": {
+        "agreement": 0.722,
+        "kappa": 0.113,
+        "kappa_ci95": [
+          -0.083,
+          0.315
+        ]
+      },
+      "human_1 vs gpt-4o": {
+        "agreement": 0.444,
+        "kappa": -0.004,
+        "kappa_ci95": [
+          -0.132,
+          0.106
+        ]
+      },
+      "human_1 vs gpt-4o-mini": {
+        "agreement": 0.778,
+        "kappa": -0.031,
+        "kappa_ci95": [
+          -0.164,
+          0.182
+        ]
+      },
+      "human_2 vs gpt-4o": {
+        "agreement": 0.544,
+        "kappa": 0.142,
+        "kappa_ci95": [
+          -0.018,
+          0.318
+        ]
+      },
+      "human_2 vs gpt-4o-mini": {
+        "agreement": 0.678,
+        "kappa": 0.035,
+        "kappa_ci95": [
+          -0.144,
+          0.235
+        ]
+      },
+      "gpt-4o vs gpt-4o-mini": {
+        "agreement": 0.556,
+        "kappa": 0.188,
+        "kappa_ci95": [
+          0.069,
+          0.324
+        ]
+      }
+    },
+    "on_items_where_humans_agree": {
+      "gpt-4o": {
+        "n_items_humans_agree": 65,
+        "agreement_with_human_consensus": 0.492,
+        "kappa": 0.049,
+        "kappa_ci95": [
+          -0.055,
+          0.16
+        ]
+      },
+      "gpt-4o-mini": {
+        "n_items_humans_agree": 65,
+        "agreement_with_human_consensus": 0.815,
+        "kappa": 0.06,
+        "kappa_ci95": [
+          -0.125,
+          0.359
+        ]
+      }
+    },
+    "by_system": {
+      "citation_leader": {
+        "human_1": 0.875,
+        "human_2": 0.688,
+        "gpt-4o": 0.312,
+        "gpt-4o-mini": 0.625
+      },
+      "direct_llm": {
+        "human_1": 0.938,
+        "human_2": 0.875,
+        "gpt-4o": 0.562,
+        "gpt-4o-mini": 1.0
+      },
+      "evidence_graph": {
+        "human_1": 0.8,
+        "human_2": 0.9,
+        "gpt-4o": 0.7,
+        "gpt-4o-mini": 1.0
+      },
+      "random_claim": {
+        "human_1": 0.875,
+        "human_2": 0.625,
+        "gpt-4o": 0.188,
+        "gpt-4o-mini": 0.75
+      },
+      "tension_llm": {
+        "human_1": 1.0,
+        "human_2": 0.812,
+        "gpt-4o": 0.375,
+        "gpt-4o-mini": 0.875
+      },
+      "tension_template": {
+        "human_1": 0.875,
+        "human_2": 0.562,
+        "gpt-4o": 0.562,
+        "gpt-4o-mini": 0.938
+      }
+    }
+  },
+  "items": [
+    {
+      "item_id": "item_001",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_002",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "answered",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "posed_but_open"
+    },
+    {
+      "item_id": "item_003",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_004",
+      "system": "evidence_graph",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_005",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "answered",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_006",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_007",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_008",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_009",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_010",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "posed_but_open",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_011",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_012",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_013",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_014",
+      "system": "tension_template",
+      "human_1": false,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "not_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_015",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_016",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_017",
+      "system": "evidence_graph",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "posed_but_open"
+    },
+    {
+      "item_id": "item_018",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_019",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_020",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_021",
+      "system": "evidence_graph",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_022",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "answered",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_023",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "answered",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_024",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_025",
+      "system": "random_claim",
+      "human_1": false,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "not_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_026",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_027",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_028",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_029",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "posed_but_open",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_030",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_031",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_032",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_033",
+      "system": "evidence_graph",
+      "human_1": false,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "not_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_034",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_035",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_036",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_037",
+      "system": "citation_leader",
+      "human_1": false,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "not_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_038",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "posed_but_open"
+    },
+    {
+      "item_id": "item_039",
+      "system": "evidence_graph",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "posed_but_open",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_040",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "answered",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_041",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "posed_but_open",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_042",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_043",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_044",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "answered",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_045",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_046",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_047",
+      "system": "direct_llm",
+      "human_1": false,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "not_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_048",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "answered",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_049",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_050",
+      "system": "evidence_graph",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_051",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_052",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_053",
+      "system": "random_claim",
+      "human_1": false,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "not_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_054",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_055",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_056",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_057",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_058",
+      "system": "evidence_graph",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "answered",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_059",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_060",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_061",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_062",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_063",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_064",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_065",
+      "system": "tension_template",
+      "human_1": false,
+      "human_2": false,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "not_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_066",
+      "system": "citation_leader",
+      "human_1": false,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "not_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_067",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_068",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "posed_but_open",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_069",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_070",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_071",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "posed_but_open",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_072",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_073",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_074",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_075",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_076",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_077",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_078",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_079",
+      "system": "tension_template",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "answered",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "answered"
+    },
+    {
+      "item_id": "item_080",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_081",
+      "system": "evidence_graph",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_082",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_083",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_084",
+      "system": "evidence_graph",
+      "human_1": false,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "posed_but_open",
+      "human_1_outcome": "not_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_085",
+      "system": "tension_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": false,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "posed_but_open",
+      "human_2_outcome": "posed_but_open"
+    },
+    {
+      "item_id": "item_086",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_087",
+      "system": "evidence_graph",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "answered",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_088",
+      "system": "random_claim",
+      "human_1": true,
+      "human_2": false,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "not_addressed"
+    },
+    {
+      "item_id": "item_089",
+      "system": "citation_leader",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": false,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "not_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    },
+    {
+      "item_id": "item_090",
+      "system": "direct_llm",
+      "human_1": true,
+      "human_2": true,
+      "gpt-4o": true,
+      "gpt-4o-mini": true,
+      "gpt-4o_status": "partially_addressed",
+      "human_1_outcome": "partially_addressed",
+      "human_2_outcome": "partially_addressed"
+    }
+  ]
+}
