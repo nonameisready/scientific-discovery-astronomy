@@ -76,3 +76,31 @@ Each labeller also gives a one-line reason and, where possible, a reference.
 ## What would count as failure
 
 H1 not significant means the round-5 signals were noise, or were specific to cases the analyst picked. That will be reported as such. No feature, lexicon or normalisation will be changed after Packet B arrives.
+
+## Amendment 1 (2026-10-17, before any screening or outcome label exists)
+
+Only one human labeller is available. The labelling panel is therefore:
+
+| Labeller | Identity |
+|---|---|
+| H | Hui Mao |
+| A1 | OpenAI `gpt-5.5-2026-04-23` |
+| A2 | Google `gemini-3.1-pro-preview` |
+
+Each labeller works independently.
+
+**AI labellers.** A1 and A2 receive exactly the human instructions (`INSTRUCTIONS_packet_A.md`, and later Packet B's). Each row is sent in a separate request. They never receive features, scores or hypotheses. Their outputs are written to `data/controversies/r6/sealed/`. A SHA-256 digest of those outputs is committed before H returns a sheet. H agrees not to open the sealed folder until H's own sheet is committed.
+
+**Screening.** A case enters the study if at least 2 of the 3 labellers say yes.
+
+**Outcome.** The label is the 2-of-3 majority among dissolved, confirmed and open. "Can't tell" is not a vote. Cases without a majority are excluded.
+
+**Agreement.** Pairwise Cohen's κ is reported for H–A1, H–A2 and A1–A2.
+
+**Sensitivity analyses** (H1 repeated on each):
+- H's labels alone;
+- cases where A1 and A2 agree, which is the AI-only panel.
+
+**Disclosed limitations:**
+- Unlike the original plan, H knows the hypotheses. H should base each outcome label on the literature and cite a reference.
+- The two AI labellers may know outcomes from their training data. This is acceptable for outcome labelling, which needs truth, not blindness. It is the reason they never see features.
