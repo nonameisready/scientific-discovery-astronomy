@@ -1,0 +1,99 @@
+{"row": "1", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Review paper; round 5 case flag\"\n}"}
+{"row": "2", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"Hubble tension\",\n \"notes\": \"\"\n}"}
+{"row": "3", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Expected detection confirming standard prediction (NS-NS merger producing sGRB); landmark discovery rather than an anomalous or contested claim.\"\n}"}
+{"row": "4", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case (h0_tension)\"\n}"}
+{"row": "5", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case (bicep2)\"\n}"}
+{"row": "6", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case (icecube_astro_nu); expected detection\"\n}"}
+{"row": "7", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"Hubble tension\",\n \"notes\": \"\"\n}"}
+{"row": "8", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "9", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"theory proposal explaining existing anomaly; round5_case_flag\"\n}"}
+{"row": "10", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"expected detection confirming General Relativity\"\n}"}
+{"row": "11", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Expected detection confirming standard BNS-GRB model\"\n}"}
+{"row": "12", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n  \"is_contested_anomalous_claim\": \"no\",\n  \"key_phrase_used_by_later_papers\": \"\",\n  \"notes\": \"round 5 case\"\n}"}
+{"row": "13", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Review / Letter of Interest; flagged in round 5\"\n}"}
+{"row": "14", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Expected detection confirming General Relativity\"\n}"}
+{"row": "15", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Review paper (Annual Review of Astronomy and Astrophysics)\"\n}"}
+{"row": "16", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case (pamela_positrons)\"\n}"}
+{"row": "17", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "18", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"too big to fail\",\n \"notes\": \"\"\n}"}
+{"row": "19", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"subglacial liquid water on Mars\",\n \"notes\": \"\"\n}"}
+{"row": "20", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"review paper\"\n}"}
+{"row": "21", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "22", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "23", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "24", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case (h0_tension)\"\n}"}
+{"row": "25", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case\"\n}"}
+{"row": "26", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "27", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "28", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "29", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "30", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "31", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "32", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "33", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "34", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "35", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "36", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "37", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "38", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "39", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "40", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "41", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "42", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "43", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "44", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "45", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "46", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "47", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "48", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "49", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "50", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "51", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "52", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "53", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "54", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "55", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "56", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "57", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "58", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "59", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "60", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "61", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "62", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "63", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "64", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "65", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "66", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "67", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "68", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "69", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "70", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "71", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "72", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "73", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "74", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "75", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "76", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "77", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "78", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "79", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "80", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "81", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "82", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "83", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "84", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "85", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "86", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "87", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "88", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "89", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "90", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "91", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "92", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "93", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "94", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "95", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "96", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "97", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "98", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "99", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
