@@ -97,3 +97,13 @@
 {"row": "97", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
 {"row": "98", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
 {"row": "99", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "22", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "26", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Expected detection confirming standard model of cosmic-ray acceleration in SNRs\"\n}"}
+{"row": "27", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"intergalactic magnetic field lower bound\",\n \"notes\": \"\"\n}"}
+{"row": "28", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "29", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case (pta_gwb)\"\n}"}
+{"row": "30", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "31", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "32", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Expected detection / confirmation of predicted EM counterpart (kilonova) to GW170817\"\n}"}
+{"row": "33", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "34", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Theory paper analyzing an existing anomaly (Hubble tension)\"\n}"}
