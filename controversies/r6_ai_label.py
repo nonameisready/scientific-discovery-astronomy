@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 R6 = ROOT / "data/controversies/r6"
-LABELLERS = {"A1": ("openai", "gpt-5.5-2026-04-23"), "A2": ("google", "gemini-3.1-pro-preview")}
+LABELLERS = {"A1": ("openai", "gpt-5.5-2026-04-23"), "A2": ("google", "gemini-3.8-flash")}
 SCHEMA = {"A": 'Reply with JSON only: {"is_contested_anomalous_claim": "yes" or "no", "key_phrase_used_by_later_papers": string (empty if no), "notes": string}'}
 
 
@@ -42,7 +42,7 @@ def main(packet):
     out_dir = R6 / "sealed"; out_dir.mkdir(exist_ok=True)
     for name, (vendor, model) in LABELLERS.items():
         path = out_dir / f"packet_{packet}_{name}.jsonl"
-        done = {json.loads(l)["row"] for l in path.open()} if path.exists() else set()
+        done = {json.loads(l)["row"] for l in path.open() if '"error' not in json.loads(l)["response"]} if path.exists() else set()
         todo = [r for r in rows if (r.get("rank") or r.get("case_id")) not in done]
 
         def one(r):
@@ -52,7 +52,7 @@ def main(packet):
             except Exception as e: text = json.dumps({"error": str(e)[:300]})
             return dict(row=r.get("rank") or r.get("case_id"), labeller=name, model=model, response=text)
 
-        with ThreadPoolExecutor(8) as pool, path.open("a") as f:
+        with ThreadPoolExecutor(8 if vendor == "openai" else 2) as pool, path.open("a") as f:
             for res in pool.map(one, todo):
                 f.write(json.dumps(res, ensure_ascii=False) + "\n"); f.flush()
         print(name, model, "rows", len(rows), "new", len(todo))

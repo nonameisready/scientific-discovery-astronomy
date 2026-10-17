@@ -104,3 +104,14 @@ Each labeller works independently.
 **Disclosed limitations:**
 - Unlike the original plan, H knows the hypotheses. H should base each outcome label on the literature and cite a reference.
 - The two AI labellers may know outcomes from their training data. This is acceptable for outcome labelling, which needs truth, not blindness. It is the reason they never see features.
+
+## Amendment 2 (2026-10-17, before any human label exists)
+
+**What changed.** A2 is now Google `gemini-3.8-flash`. It replaces `gemini-3.1-pro-preview`, which A2 was assigned in Amendment 1.
+
+**Why.**
+- The available Google key is on the free tier.
+- On that tier, Pro models have zero quota. Every request in the first A2 run returned HTTP 429. That run is kept in git history (commit 258f5f2) and contains no labels.
+- A2 is rerun with lower concurrency to stay within free-tier rate limits.
+
+**What did not change.** The prompt and the rows are identical.
