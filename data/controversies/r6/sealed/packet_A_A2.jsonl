@@ -162,3 +162,8 @@
 {"row": "87", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
 {"row": "88", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"review of the muon puzzle\"\n}"}
 {"row": "89", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round5_case_flag (closed_universe); defends standard flat universe against closed universe claim\"\n}"}
+{"row": "90", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "91", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case (gc_gev_excess)\"\n}"}
+{"row": "92", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case flag (icecube_astro_nu); confirmation/expected detection\"\n}"}
+{"row": "93", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "94", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
