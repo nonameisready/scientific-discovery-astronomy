@@ -206,3 +206,9 @@
 {"row": "129", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"HD 189733b haze\",\n \"notes\": \"\"\n}"}
 {"row": "130", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Theory paper proposing a model to alleviate an existing anomaly (Hubble tension)\"\n}"}
 {"row": "131", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case (fermi_bubbles)\"\n}"}
+{"row": "132", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Catalog/survey paper using proper motion anomaly as an astrometric detection method for stellar multiplicity\"\n}"}
+{"row": "133", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "134", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "135", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "136", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "137", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"HD 209458b temperature inversion\",\n \"notes\": \"\"\n}"}
