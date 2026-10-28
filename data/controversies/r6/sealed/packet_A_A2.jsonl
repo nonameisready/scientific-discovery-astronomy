@@ -212,3 +212,12 @@
 {"row": "135", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
 {"row": "136", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
 {"row": "137", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"HD 209458b temperature inversion\",\n \"notes\": \"\"\n}"}
+{"row": "133", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "134", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "138", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "139", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"[Errno 104] Connection reset by peer\"}"}
+{"row": "140", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "141", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"Theory paper proposing an explanation for an existing anomaly (Hubble tension); round 5 case flag\"\n}"}
+{"row": "142", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "143", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "144", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
