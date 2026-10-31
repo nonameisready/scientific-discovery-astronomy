@@ -253,3 +253,10 @@
 {"row": "169", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
 {"row": "170", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
 {"row": "171", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "172", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"Lyman-alpha BAO tension\",\n \"notes\": \"\"\n}"}
+{"row": "173", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "174", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"theory/model proposing an explanation for existing cosmological tensions\"\n}"}
+{"row": "175", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "176", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"theory paper proposing an explanation for existing H0 tension; round 5 flag\"\n}"}
+{"row": "177", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"yes\",\n \"key_phrase_used_by_later_papers\": \"marginal evidence for cosmic acceleration\",\n \"notes\": \"\"\n}"}
+{"row": "178", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
