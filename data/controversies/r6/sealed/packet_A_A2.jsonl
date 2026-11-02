@@ -279,3 +279,9 @@
 {"row": "194", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
 {"row": "195", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"is_contested_anomalous_claim\": \"no\", \"key_phrase_used_by_later_papers\": \"\", \"notes\": \"expected detection\"}"}
 {"row": "196", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "173", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "189", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"round 5 case (h0_tension); also a model proposed to explain an existing anomaly\"\n}"}
+{"row": "197", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "198", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"is_contested_anomalous_claim\": \"no\", \"key_phrase_used_by_later_papers\": \"\", \"notes\": \"theory/constraint on EDGES 21cm signal; round5_case_flag\"}"}
+{"row": "199", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\n \"is_contested_anomalous_claim\": \"no\",\n \"key_phrase_used_by_later_papers\": \"\",\n \"notes\": \"\"\n}"}
+{"row": "200", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
