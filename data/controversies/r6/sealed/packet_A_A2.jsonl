@@ -287,3 +287,6 @@
 {"row": "200", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
 {"row": "173", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
 {"row": "197", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "173", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
+{"row": "197", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"Remote end closed connection without response\"}"}
+{"row": "200", "labeller": "A2", "model": "gemini-3.8-flash", "response": "{\"error\": \"retries exhausted\"}"}
