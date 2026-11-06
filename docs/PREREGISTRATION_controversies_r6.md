@@ -115,3 +115,20 @@ Each labeller works independently.
 - A2 is rerun with lower concurrency to stay within free-tier rate limits.
 
 **What did not change.** The prompt and the rows are identical.
+
+## Amendment 3 (2026-11-06, before H's screening sheet is committed)
+
+**What happened.** A2 labelled 197 of the 200 Packet A rows. For rows 173, 197 and 200, every request over five days ended with the Google server closing the connection or timing out. These were transport errors: no label came back and no row was refused for its content. The A2 file keeps every failed attempt.
+
+**How these rows are handled.** They are missing for A2, not "no".
+
+**Screening rule for these rows.** A row enters the study only if both remaining labellers, H and A1, say yes.
+
+**Kappa.** Inter-labeller kappa uses the rows each pair labelled.
+
+**Sealed files.**
+
+| File | SHA-256 |
+|---|---|
+| `sealed/packet_A_A1.jsonl` | `5b67eaff1464ba87256d54b0a9f8f50b6b527462e0259eaf6453bab315847a70` |
+| `sealed/packet_A_A2.jsonl` | `566ad1e8b9d062c3f5e8c14aef27f800e5c97de6c8986ac70ca6fcd14ea9cc5a` |
